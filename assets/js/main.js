@@ -26,20 +26,20 @@
       desc: '非遗数字化与情绪可视化方向的实时交互装置，4 项国家级奖项所在'
     },
     {
-      id: 'threed',
-      num: '叁',
-      name: '三维建模 · 数字场景',
-      en: '3D ART',
-      tagline: 'C4D · Blender · UE5 · Octane',
-      desc: '角色、场景与电商三维创作，覆盖建模、材质、灯光与渲染全流程'
-    },
-    {
       id: 'film',
-      num: '肆',
+      num: '叁',
       name: '影视创作 · 动态影像',
       en: 'FILM & MOTION',
       tagline: '拍摄 · 剪辑 · 调色 · After Effects',
       desc: '从剧本策划、实地拍摄到剪辑调色的完整短片创作'
+    },
+    {
+      id: 'threed',
+      num: '肆',
+      name: '三维建模 · 数字场景',
+      en: '3D ART',
+      tagline: 'C4D · Blender · 场景建模',
+      desc: 'C4D / Blender 三维场景与角色创作，覆盖建模、材质、灯光与渲染'
     },
     {
       id: 'gallery',
@@ -151,14 +151,7 @@
       desc: '中国好创意大赛（学术组）国家级二等奖。声音信号实时驱动灯光与画面联动的音画互动装置。',
       credit: '中国好创意大赛 · 学术组国家级二等奖'
     },
-    /* ---- 叁 · 三维建模 ---- */
-    {
-      id: 'td_qiuyue', dir: 'threed',
-      title: '《秋月共赏》',
-      year: '2024', tags: ['C4D', 'Octane', '场景建模'],
-      desc: '中秋月夜三维场景：传统建筑、灯笼、荷花，Octane 渲染。软件应用2（C4D）结课作品。',
-      credit: '独立创作'
-    },
+    /* ---- 肆 · 三维建模（2 件） ---- */
     {
       id: 'td_tongxiang', dir: 'threed',
       title: '《铜香月影》',
@@ -167,20 +160,13 @@
       credit: '独立创作'
     },
     {
-      id: 'td_turntable', dir: 'threed',
-      title: 'Blender 转台渲染展示',
-      year: '2025', tags: ['Blender', '渲染', '转台'],
-      desc: '数字媒体技术1 结课作业 360° 转台渲染展示。',
+      id: 'td_qiuyue', dir: 'threed',
+      title: '《秋月共赏》',
+      year: '2024', tags: ['C4D', 'Octane', '场景建模'],
+      desc: '中秋月夜三维场景：传统建筑、灯笼、荷花，Octane 渲染。软件应用2（C4D）结课作品。',
       credit: '独立创作'
     },
-    {
-      id: 'td_linjian', dir: 'threed',
-      title: '《林间花境》',
-      year: '2025', tags: ['Blender', '角色', '场景'],
-      desc: '与林间秘境共生的东方角色与场景：柔粉长裙、花朵纹样与治愈系光影，数字媒体技术2（Blender）结课作品。',
-      credit: '独立创作'
-    },
-    /* ---- 肆 · 影视创作 ---- */
+    /* ---- 叁 · 影视创作 ---- */
     {
       id: 'film_hucheng', dir: 'film',
       title: '《湖城烟雨》',
