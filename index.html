@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="陈锦育 · 数字媒体艺术专业个人作品集：交互装置、AI 影像、三维建模、影视创作、创作过程与文字策划。武汉传媒学院 2027 届应届生。">
+  <meta name="theme-color" content="#FAFAF9">
+  <title>陈锦育 · 作品集</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='4'%20fill='%23111111'/%3E%3Ctext%20x='32'%20y='45'%20font-size='34'%20text-anchor='middle'%20fill='%23FAFAF9'%20font-family='STKaiti,KaiTi,serif'%3E%E9%94%A6%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==================== 顶部导航 ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-name">陈锦育</span>
+        <span class="brand-en">CHEN JINYU</span>
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="主导航">
+        <a href="#home" class="active">首页</a>
+        <a href="#ai">AI 影像</a>
+        <a href="#interactive">交互装置</a>
+        <a href="#threed">三维建模</a>
+        <a href="#film">影视创作</a>
+        <a href="#gallery">视觉设计</a>
+        <a href="#process">创作过程</a>
+        <a href="#writing">文字策划</a>
+        <a href="#code">技术代码</a>
+        <a href="#about">关于</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== Hero ==================== -->
+    <section id="home" class="hero">
+      <div class="hero-inner reveal">
+        <p class="kicker">PORTFOLIO&nbsp;&nbsp;2023 — 2027</p>
+        <h1 class="hero-title">数字媒体艺术<br>交互装置 × AI 影像</h1>
+        <p class="hero-sub">武汉传媒学院 · 设计学院 · 数字媒体艺术专业 · 2027 届</p>
+        <p class="hero-name">陈锦育 <span>CHEN JINYU</span></p>
+        <ul class="hero-meta">
+          <li>4 项国家级奖项</li>
+          <li>18 部作品视频</li>
+          <li>43 张图片 · 9 份策划文档</li>
+          <li>8 个方向板块</li>
+        </ul>
+        <div class="hero-featured">
+          <p class="featured-head">精选作品&nbsp;&nbsp;FEATURED WORKS</p>
+          <div class="featured-grid" id="featuredGrid"></div>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#directions" aria-label="向下滚动">
+        <span>SCROLL</span>
+        <i class="chev" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ==================== 方向入口 ==================== -->
+    <section id="directions" class="section section-plain">
+      <div class="section-inner">
+        <div class="directions-grid" id="directionsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 壹 · AI 影像 ==================== -->
+    <section id="ai" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">01 — AI VIDEO</p>
+          <h2 class="head-title">AI 影像 · AIGC 创作</h2>
+          <p class="head-desc">以即梦等 AIGC 工具完成从世界观设定、分镜脚本到视频生成的完整创作管线</p>
+        </header>
+        <div class="works-grid" id="grid-ai"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 贰 · 交互装置 ==================== -->
+    <section id="interactive" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">02 — INTERACTIVE ART</p>
+          <h2 class="head-title">交互装置 · 新媒体艺术</h2>
+          <p class="head-desc">非遗数字化与情绪可视化方向的实时交互装置，4 项国家级奖项所在</p>
+        </header>
+        <div class="works-grid" id="grid-interactive"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 叁 · 三维建模 ==================== -->
+    <section id="threed" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">03 — 3D ART</p>
+          <h2 class="head-title">三维建模 · 数字场景</h2>
+          <p class="head-desc">角色、场景与电商三维创作，覆盖建模、材质、灯光与渲染全流程</p>
+        </header>
+        <div class="works-grid" id="grid-threed"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 肆 · 影视创作 ==================== -->
+    <section id="film" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">04 — FILM &amp; MOTION</p>
+          <h2 class="head-title">影视创作 · 动态影像</h2>
+          <p class="head-desc">从剧本策划、实地拍摄到剪辑调色的完整短片创作</p>
+        </header>
+        <div class="works-grid" id="grid-film"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 伍 · 视觉设计 ==================== -->
+    <section id="gallery" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">05 — DESIGN &amp; ARTWORK</p>
+          <h2 class="head-title">视觉设计 · 展板与衍生品</h2>
+          <p class="head-desc">竞赛展板、课程海报与「青铜遗韵」系列文创衍生品等静态视觉设计，点击任意图片可全屏查看</p>
+        </header>
+        <div id="galleryWrap"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 陆 · 创作过程 / 工作流 ==================== -->
+    <section id="process" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">06 — PROCESS &amp; WORKFLOW</p>
+          <h2 class="head-title">创作过程 · 工作流</h2>
+          <p class="head-desc">以《铁火生花》《绣藏》为样本的完整创作管线：概念 → 生成 → 分镜 → 技术 → 成片。AIGC 岗位核心证据，点击图片可全屏查看</p>
+        </header>
+        <div id="processWrap"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 柒 · 文字与策划 ==================== -->
+    <section id="writing" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">07 — WRITING &amp; PLANNING</p>
+          <h2 class="head-title">文字与策划</h2>
+          <p class="head-desc">世界观设定、剧本分镜与商业策划类文档（新媒体策划岗位证据），点击卡片在新窗口查看 PDF</p>
+        </header>
+        <div id="writingWrap"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 捌 · 技术代码 ==================== -->
+    <section id="code" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">08 — CODE &amp; TOOLS</p>
+          <h2 class="head-title">技术代码</h2>
+          <p class="head-desc">音画互动源码与成片构建脚本（交互装置岗位证据 · 未来 GitHub 开源），点击卡片下载源文件</p>
+        </header>
+        <div id="codeWrap"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 关于 ==================== -->
+    <section id="about" class="section">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="head-en">09 — ABOUT</p>
+          <h2 class="head-title">关于我</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-intro reveal">
+            <dl class="info-list">
+              <div><dt>姓名</dt><dd>陈锦育 / CHEN JINYU</dd></div>
+              <div><dt>学历</dt><dd>武汉传媒学院 · 数字媒体艺术 · 本科（2023—2027）</dd></div>
+              <div><dt>方向</dt><dd>交互装置 · AI 影像 · 三维建模 · 影视创作</dd></div>
+              <div><dt>电话</dt><dd><a href="tel:17377121184">17377121184</a></dd></div>
+              <div><dt>邮箱</dt><dd><a href="mailto:1426263349@qq.com">1426263349@qq.com</a></dd></div>
+              <div><dt>微信</dt><dd>17377121184</dd></div>
+            </dl>
+            <p class="about-text">
+              以 TouchDesigner 实时交互与 AIGC 全流程创作为核心，专注非遗数字化、情绪可视化与沉浸空间方向；
+              拥有 <strong>4 项国家级奖项</strong>与 30+ 课程项目经验，熟悉从策划、分镜到生成 / 拍摄、后期的完整作品管线。
+            </p>
+            <ul class="skill-chips">
+              <li>TouchDesigner</li>
+              <li>AIGC 生成</li>
+              <li>C4D / Octane</li>
+              <li>Blender</li>
+              <li>UE5</li>
+              <li>After Effects</li>
+              <li>剪辑调色</li>
+            </ul>
+          </div>
+
+          <figure class="about-figure reveal">
+            <img src="images/works/portrait.jpg" alt="陈锦育证件照" loading="lazy">
+            <figcaption>陈锦育 · 2027 届应届生</figcaption>
+          </figure>
+        </div>
+
+        <div class="awards reveal">
+          <h3 class="awards-title">获奖与证明</h3>
+          <ul class="awards-grid">
+            <li class="award-item">
+              <figure>
+                <div class="award-img">
+                  <img src="images/works/award_milan.png" alt="《一绣成祥》米兰设计周获奖证明" loading="lazy">
+                </div>
+                <figcaption>《一绣成祥》<em>米兰设计周 · 国家级三等奖</em></figcaption>
+              </figure>
+            </li>
+            <li class="award-item">
+              <figure>
+                <div class="award-img">
+                  <img src="images/works/award_honghua.png" alt="《红花峰林十六点·互动地图》中国好创意大赛获奖证明" loading="lazy">
+                </div>
+                <figcaption>《红花峰林十六点·互动地图》<em>中国好创意大赛 · 国家级三等奖</em></figcaption>
+              </figure>
+            </li>
+            <li class="award-item">
+              <figure>
+                <div class="award-img">
+                  <img src="images/works/award_shange.png" alt="《山歌回音壁》声音与灯光互动装置获奖证明" loading="lazy">
+                </div>
+                <figcaption>《山歌回音壁》声音与灯光互动装置<em>中国好创意大赛 · 学术组国家级二等奖</em></figcaption>
+              </figure>
+            </li>
+            <li class="award-item">
+              <figure>
+                <div class="award-img">
+                  <img src="images/works/award_yanyang.png" alt="《盐阳叹》获奖证明" loading="lazy">
+                </div>
+                <figcaption>《盐阳叹》<em>中国好创意大赛 · 应用组国家级二等奖</em></figcaption>
+              </figure>
+            </li>
+            <li class="award-item">
+              <figure>
+                <div class="award-img">
+                  <img src="images/works/award_xiuzang.png" alt="《绣藏》西湖新风AI漫剧创作大赛参赛证明" loading="lazy">
+                </div>
+                <figcaption>《绣藏》<em>西湖新风 AI 漫剧创作大赛 · 参赛证明</em></figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="site-footer">
+    <p class="footer-main">© 2026 陈锦育 CHEN JINYU</p>
+    <p class="footer-note">Digital Media Art · Portfolio</p>
+  </footer>
+
+  <!-- ==================== 全屏弹层播放器 ==================== -->
+  <div class="modal" id="playerModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-label="作品播放器">
+      <button class="modal-close" id="modalClose" aria-label="关闭播放器">×</button>
+      <div class="modal-video-wrap">
+        <video id="modalVideo" controls playsinline preload="metadata" poster=""></video>
+      </div>
+      <div class="modal-meta">
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-sub" id="modalSub"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 图片灯箱查看器 ==================== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭图片查看器">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="上一张">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="下一张">›</button>
+    <figure class="lightbox-stage" id="lightboxStage">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption class="lightbox-meta">
+        <span class="lb-title" id="lightboxTitle"></span>
+        <span class="lb-desc" id="lightboxDesc"></span>
+        <span class="lb-count" id="lightboxCount"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <noscript>
+    <p style="text-align:center;padding:20px;color:#6B6B6B;">
+      本作品集需要启用 JavaScript 才能展示作品，请开启浏览器脚本功能。
+    </p>
+  </noscript>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
