@@ -115,6 +115,20 @@
       desc: 'AI 媒体创作基础课程结课作品：文字生成视频技术的完整创作。',
       credit: '独立创作'
     },
+    {
+      id: 'ai_dasheng', dir: 'ai',
+      title: '《大圣归位》AI 分镜概念片',
+      year: '2026', tags: ['AI分镜', '即梦', '概念片'],
+      desc: '即梦 AI 分镜管线概念片：六段工业级分镜合成（1′36″），覆盖灾难场景叙事与镜头语言设计。',
+      credit: 'AI 分镜管线 · 独立创作'
+    },
+    {
+      id: 'ai_yegou', dir: 'ai',
+      title: '《野生狗奶》',
+      year: '2026', tags: ['AI影像', '剧情短片'],
+      desc: 'AI 生成剧情短片（4′07″），完整叙事与镜头调度练习。',
+      credit: '独立创作'
+    },
     /* ---- 贰 · 交互装置 ---- */
     {
       id: 'itd_ironfire', dir: 'interactive',
