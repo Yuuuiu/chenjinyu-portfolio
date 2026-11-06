@@ -109,13 +109,6 @@
       credit: '中国好创意大赛 · 应用组国家级二等奖'
     },
     {
-      id: 'ai_futureworld', dir: 'ai',
-      title: '《未来世界》',
-      year: '2024', tags: ['文生视频', '课程作品'],
-      desc: 'AI 媒体创作基础课程结课作品：文字生成视频技术的完整创作。',
-      credit: '独立创作'
-    },
-    {
       id: 'ai_dasheng', dir: 'ai',
       title: '《灾厄战线》',
       year: '2026', tags: ['AI影像', '即梦', '概念片'],
