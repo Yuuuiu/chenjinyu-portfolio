@@ -145,13 +145,6 @@
       credit: '中国好创意大赛 · 国家级三等奖（“跃动峡谷，潮玩清江”文旅融合与创新计时赛）'
     },
     {
-      id: 'itd_enshi', dir: 'interactive',
-      title: '恩施文旅·交互效果演示',
-      year: '2026', tags: ['TouchDesigner', '交互效果'],
-      desc: '恩施文旅项目交互效果与技术演示。',
-      credit: '独立创作'
-    },
-    {
       id: 'itd_shange', dir: 'interactive',
       title: '《山歌回音壁》声音与灯光互动装置',
       year: '2026', tags: ['Processing', '音画互动', '声光装置'],
