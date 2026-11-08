@@ -7,9 +7,17 @@
 (function () {
   'use strict';
 
-  /* ==================== 视频源 ==================== */
-  /* 国内加速：视频托管在阿里云 OSS（上海），页面只留封面图走 GitHub */
+  /* ==================== 资源源 ==================== */
+  /* 国内加速：视频与图片全部托管在阿里云 OSS（上海），GitHub Pages 只承载 HTML/CSS/JS */
   var VIDEO_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
+  var IMG_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/';
+
+  /* 图片路径统一转换：本地相对路径 → OSS 直链 */
+  function imgUrl(p) {
+    if (!p) { return p; }
+    if (p.indexOf('http') === 0) { return p; }
+    return IMG_BASE + p.replace(/^\.?\//, '');
+  }
 
   /* ==================== 数据：方向（八个内容方向） ==================== */
   var DIRECTIONS = [
@@ -528,7 +536,7 @@
           '<article class="work-card reveal" role="button" tabindex="0"' +
             ' id="work-' + w.id + '" data-id="' + w.id + '" aria-label="播放 ' + w.title + '">' +
             '<div class="cover">' +
-              '<img class="work-poster" src="images/posters/' + w.id + '.jpg"' +
+              '<img class="work-poster" src="' + imgUrl('images/posters/' + w.id + '.jpg') + '"' +
                 ' alt="' + w.title + ' 封面" loading="lazy">' +
               '<div class="cover-overlay">' +
                 '<div class="play-wrap">' +
@@ -573,7 +581,7 @@
                   ' role="button" tabindex="0" data-index="' + (base + i) + '"' +
                   ' aria-label="查看 ' + it.title + '">' +
                   '<div class="g-thumb">' +
-                    '<img src="' + it.src + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
+                    '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
                     '<span class="g-zoom" aria-hidden="true">＋</span>' +
                   '</div>' +
                   '<figcaption>' +
@@ -634,7 +642,7 @@
                   ' role="button" tabindex="0" data-index="' + (b + i) + '"' +
                   ' aria-label="查看 ' + it.title + '">' +
                   '<div class="g-thumb">' +
-                    '<img src="' + it.src + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
+                    '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
                     '<span class="g-zoom" aria-hidden="true">＋</span>' +
                   '</div>' +
                   '<figcaption>' +
@@ -783,7 +791,7 @@
   function showLightboxItem() {
     var entry = photoFlat[lbIndex];
     if (!entry) { return; }
-    lightboxImg.src = entry.item.src;
+    lightboxImg.src = imgUrl(entry.item.src);
     lightboxImg.alt = entry.item.title + ' · ' + entry.group;
     lightboxTitle.textContent = entry.item.title;
     lightboxDesc.textContent = entry.item.desc + '　·　' + entry.group;
@@ -879,7 +887,7 @@
       if (wrap) { wrap.classList.remove('bili-mode'); }
       if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
       modalVideo.setAttribute('src', VIDEO_BASE + work.id + '.mp4');
-      modalVideo.setAttribute('poster', 'images/posters/' + work.id + '.jpg');
+      modalVideo.setAttribute('poster', imgUrl('images/posters/' + work.id + '.jpg'));
       modalVideo.autoplay = true;
     }
 
