@@ -272,6 +272,9 @@
         { src: 'images/gallery/board_wusheng.jpg', title: '《无声暗涌》展板', desc: '情绪物质化动态影像 · Ae 结课' },
         { src: 'images/gallery/board_qingtong.jpg', title: '《青铜遗韵》展板', desc: '观察与表现课程 · 组队比赛' },
         { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌展板', desc: '消费心理与品牌传播课程 · 广告策划' },
+        { src: 'images/gallery/board_guhuai.jpg', title: '《孤怀楚殇》前期内容展板', desc: '屈原文化数字创作 · 综合创作5（第十组）' },
+        { src: 'images/gallery/board_hongcang.jpg', title: '《红仓》泥塑娃娃 IP 设计展板', desc: '恩施文旅 IP 设计 · 角色形象与衍生' },
+        { src: 'images/gallery/board_lancang.jpg', title: '《蓝仓》纹样 IP 设计展板', desc: '恩施文旅 IP 设计 · 传统纹样再设计' },
         { src: 'images/gallery/board_webdesign.jpg', title: '网页设计展板', desc: '网页设计课程结课' },
         { src: 'images/gallery/board_enshi.jpg', title: '恩施文旅展板', desc: '文旅融合创新计时赛' }
       ]
