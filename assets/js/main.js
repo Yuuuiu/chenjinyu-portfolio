@@ -271,7 +271,7 @@
         { src: 'images/gallery/board_qiehuang.jpg', title: '《茄香味俱全》展板', desc: '视听语言课程结课' },
         { src: 'images/gallery/board_wusheng.jpg', title: '《无声暗涌》展板', desc: '情绪物质化动态影像 · Ae 结课' },
         { src: 'images/gallery/board_qingtong.jpg', title: '《青铜遗韵》展板', desc: '观察与表现课程 · 组队比赛' },
-        { src: 'images/gallery/board_designbasics.jpg', title: '设计基础展板', desc: '大一设计基础课程' },
+        { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌展板', desc: '消费心理与品牌传播课程 · 广告策划' },
         { src: 'images/gallery/board_webdesign.jpg', title: '网页设计展板', desc: '网页设计课程结课' },
         { src: 'images/gallery/board_enshi.jpg', title: '恩施文旅展板', desc: '文旅融合创新计时赛' }
       ]
