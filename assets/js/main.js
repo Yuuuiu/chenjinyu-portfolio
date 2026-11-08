@@ -285,7 +285,13 @@
         { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》海报 · 二', desc: '西湖新风 AI 漫剧大赛' },
         { src: 'images/gallery/poster_xiuzang_3.jpg', title: '《绣藏》海报 · 三', desc: '西湖新风 AI 漫剧大赛' },
         { src: 'images/gallery/poster_hucheng_1.jpg', title: '《湖城烟雨》海报 · 一', desc: '综合创作课程 · 与焦星宇合作' },
-        { src: 'images/gallery/poster_hucheng_2.jpg', title: '《湖城烟雨》海报 · 二', desc: '综合创作课程 · 与焦星宇合作' }
+        { src: 'images/gallery/poster_hucheng_2.jpg', title: '《湖城烟雨》海报 · 二', desc: '综合创作课程 · 与焦星宇合作' },
+        { src: 'images/gallery/poster_bear_1.jpg', title: '《倒退的棕榈叶》海报 · 一', desc: '小熊 IP · AI 影像概念海报' },
+        { src: 'images/gallery/poster_bear_2.jpg', title: '《倒退的棕榈叶》海报 · 二', desc: '小熊 IP · AI 影像概念海报' },
+        { src: 'images/gallery/poster_bear_3.jpg', title: '《倒退的棕榈叶》海报 · 三', desc: '小熊 IP · AI 影像概念海报' },
+        { src: 'images/gallery/poster_bear_4.jpg', title: '《倒退的棕榈叶》海报 · 四', desc: '小熊 IP · AI 影像概念海报' },
+        { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》海报 · 五', desc: '小熊 IP · AI 影像概念海报' },
+        { src: 'images/gallery/poster_bear_6.jpg', title: '《倒退的棕榈叶》海报 · 六', desc: '小熊 IP · AI 影像概念海报' }
       ]
     }
   ];
