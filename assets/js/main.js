@@ -201,6 +201,13 @@
       credit: '独立创作 · 指导教师：刘琼'
     },
     {
+      id: 'film_zaoba', dir: 'film',
+      title: '《这节早八不太好上》',
+      year: '2025', tags: ['短片', '剧本', '视听语言'],
+      desc: '视听语言课程短片：早八课、闹钟与宿舍的青春叙事，从剧本、分镜到成片的完整创作（1′58″）。',
+      credit: '独立创作 · 视听语言课程'
+    },
+    {
       id: 'film_wusheng', dir: 'film',
       title: '《无声暗涌》',
       year: '2025', tags: ['After Effects', '动态影像', '情绪'],
