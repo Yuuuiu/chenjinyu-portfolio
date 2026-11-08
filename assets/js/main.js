@@ -7,6 +7,10 @@
 (function () {
   'use strict';
 
+  /* ==================== 视频源 ==================== */
+  /* 国内加速：视频托管在阿里云 OSS（上海），页面只留封面图走 GitHub */
+  var VIDEO_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
+
   /* ==================== 数据：方向（八个内容方向） ==================== */
   var DIRECTIONS = [
     {
@@ -874,7 +878,7 @@
     } else {
       if (wrap) { wrap.classList.remove('bili-mode'); }
       if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
-      modalVideo.setAttribute('src', 'videos/' + work.id + '.mp4');
+      modalVideo.setAttribute('src', VIDEO_BASE + work.id + '.mp4');
       modalVideo.setAttribute('poster', 'images/posters/' + work.id + '.jpg');
       modalVideo.autoplay = true;
     }
