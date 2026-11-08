@@ -860,9 +860,25 @@
     if (!work || !modal) { return; }
     lastFocus = document.activeElement;
 
-    modalVideo.setAttribute('src', 'videos/' + work.id + '.mp4');
-    modalVideo.setAttribute('poster', 'images/posters/' + work.id + '.jpg');
-    modalVideo.autoplay = true;
+    var wrap = byId('modalVideoWrap');
+    var bili = byId('modalBili');
+
+    /* 若作品配置了 B 站 BV 号：用国内 CDN 的 B 站播放器嵌入（秒开） */
+    if (work.bili && wrap && bili) {
+      wrap.classList.add('bili-mode');
+      bili.classList.add('active');
+      bili.innerHTML = '<iframe src="//player.bilibili.com/player.html?bvid=' + encodeURIComponent(work.bili) +
+        '&page=1&autoplay=1&high_quality=1&danmaku=0&as_wide=1" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+      modalVideo.removeAttribute('src');
+      modalVideo.load();
+    } else {
+      if (wrap) { wrap.classList.remove('bili-mode'); }
+      if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
+      modalVideo.setAttribute('src', 'videos/' + work.id + '.mp4');
+      modalVideo.setAttribute('poster', 'images/posters/' + work.id + '.jpg');
+      modalVideo.autoplay = true;
+    }
+
     modalTitle.textContent = work.title;
     modalSub.innerHTML = '<b>' + work.year + '</b>' + work.credit;
 
@@ -880,6 +896,10 @@
     modalVideo.pause();
     modalVideo.removeAttribute('src');
     modalVideo.load();
+    var bili = byId('modalBili');
+    if (bili) { bili.innerHTML = ''; bili.classList.remove('active'); }
+    var wrap = byId('modalVideoWrap');
+    if (wrap) { wrap.classList.remove('bili-mode'); }
     if (lastFocus && typeof lastFocus.focus === 'function') { lastFocus.focus(); }
   }
 
