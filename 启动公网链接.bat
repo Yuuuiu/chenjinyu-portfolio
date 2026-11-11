@@ -10,7 +10,7 @@ if not defined PY (
   pause
   exit /b 1
 )
-set "CF=%~dp0..\_tools\cloudflared.exe"
+set "CF=%~dp0..\工具\cloudflared.exe"
 echo ============================================================
 echo   Portfolio: local  http://127.0.0.1:8321/
 echo   Public link will appear below (takes ~10s):
