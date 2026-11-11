@@ -319,7 +319,9 @@
         { src: 'images/process/ai_gen_1.jpg', title: '即梦生成 · 4K 主视觉', desc: '即梦文生图产出的 4K 主视觉画面（2026.09）' },
         { src: 'images/process/ai_gen_2.jpg', title: 'MJ 生成 · 场景概念', desc: 'MJ 文生图产出的场景概念画面（2026.09）' },
         { src: 'images/process/ai_gen_3.jpg', title: 'AI 生成 · 分镜参考 一', desc: '即梦 / MJ 生成的分镜参考画面 · 之一' },
-        { src: 'images/process/ai_gen_4.jpg', title: 'AI 生成 · 分镜参考 二', desc: '即梦 / MJ 生成的分镜参考画面 · 之二' }
+        { src: 'images/process/ai_gen_4.jpg', title: 'AI 生成 · 分镜参考 二', desc: '即梦 / MJ 生成的分镜参考画面 · 之二' },
+        { src: 'images/process/concept_xiuzang_1.jpg', title: '《绣藏》概念设计 · 第一页', desc: 'AI 漫剧参赛作品的概念设计文档（世界观 / 角色 / 视觉基调）' },
+        { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' }
       ]
     },
     {
@@ -338,6 +340,19 @@
         { src: 'images/process/td_2.jpg', title: 'TD 节点网络 · 反馈与合成', desc: 'Feedback / Composite 节点链路搭建过程' },
         { src: 'images/process/td_3.jpg', title: 'TD 节点网络 · 图案生成', desc: '图案生成与色彩映射节点网络' },
         { src: 'images/process/td_4.jpg', title: 'TD 节点网络 · 流体交互', desc: '流体交互效果节点网络与实时预览' }
+      ]
+    },
+    {
+      group: '提示词与生成记录', en: 'PROMPTS & GENERATION LOG', portrait: false,
+      items: [
+        { src: 'images/process/prompt_1.jpg', title: '即梦生成记录 · 提示词（一）', desc: '提示词 ↔ 产出画面一一对应：镜头空间、摄影机位置、光影设定' },
+        { src: 'images/process/prompt_2.jpg', title: '即梦生成记录 · 提示词（二）', desc: '提示词 ↔ 产出画面一一对应：继续迭代的场景与角色镜头' }
+      ]
+    },
+    {
+      group: '工作流总览', en: 'WORKFLOW OVERVIEW', portrait: false,
+      items: [
+        { src: 'images/process/workflow_map.jpg', title: 'AIGC 全流程工作流图', desc: '从世界观设定 → 分镜脚本 → AI 提示词 → 文生图 → 图生视频 → TD 实时交互 → 剪辑成片 → 展板衍生（附三个代表作调用链路）' }
       ]
     }
   ];
