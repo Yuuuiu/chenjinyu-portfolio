@@ -323,12 +323,21 @@
       ]
     },
     {
-      group: 'TD 效果测试', en: 'TOUCHDESIGNER EFFECT TESTS', portrait: false,
+      group: '分镜脚本', en: 'STORYBOARD & SHOT LIST', portrait: false,
       items: [
-        { src: 'images/process/td_1.jpg', title: 'TD 效果测试 · 一', desc: 'TouchDesigner 实时粒子效果实测截图（6 种新效果 + 1 种空间）' },
-        { src: 'images/process/td_2.jpg', title: 'TD 效果测试 · 二', desc: 'TouchDesigner 实时粒子效果实测截图' },
-        { src: 'images/process/td_3.jpg', title: 'TD 效果测试 · 三', desc: 'TouchDesigner 实时粒子效果实测截图' },
-        { src: 'images/process/td_4.jpg', title: 'TD 效果测试 · 四', desc: 'TouchDesigner 空间交互效果实测截图' }
+        { src: 'images/process/storyboard_1.jpg', title: '《铁火生花》分镜脚本 · 第一页', desc: '核心创意、时长规划、概念与立意、镜头表格（V1 定稿）' },
+        { src: 'images/process/storyboard_2.jpg', title: '《铁火生花》分镜脚本 · 第二页', desc: '分镜画面与镜号表格：景别 / 运镜 / 时长 / 音效' },
+        { src: 'images/process/storyboard_3.jpg', title: '《铁火生花》分镜脚本 · 第三页', desc: '逐镜拆解与执行标注' },
+        { src: 'images/process/storyboard_4.jpg', title: '《铁火生花》分镜脚本 · 第四页', desc: '末段镜头与场次收束' }
+      ]
+    },
+    {
+      group: 'TD 工作流界面', en: 'TOUCHDESIGNER WORKFLOW', portrait: false,
+      items: [
+        { src: 'images/process/td_1.jpg', title: 'TD 节点网络 · 粒子系统', desc: 'TouchDesigner 实时粒子节点网络（工程界面实拍）' },
+        { src: 'images/process/td_2.jpg', title: 'TD 节点网络 · 反馈与合成', desc: 'Feedback / Composite 节点链路搭建过程' },
+        { src: 'images/process/td_3.jpg', title: 'TD 节点网络 · 图案生成', desc: '图案生成与色彩映射节点网络' },
+        { src: 'images/process/td_4.jpg', title: 'TD 节点网络 · 流体交互', desc: '流体交互效果节点网络与实时预览' }
       ]
     }
   ];
