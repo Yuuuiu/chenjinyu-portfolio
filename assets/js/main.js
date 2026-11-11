@@ -52,7 +52,7 @@
       en: '2D IP DESIGN',
       tagline: '角色 IP · 文物拟人 · 品牌视觉 · 衍生延展',
       desc: '角色形象与品牌 IP 的平面设计：红仓/蓝仓/江仓文旅 IP、古器争鸣文物拟人、AD钙奶品牌 IP 与文创延展',
-      countLabel: '作品 7 件'
+      countLabel: '作品 6 件'
     },
     {
       id: 'gallery',
@@ -290,7 +290,6 @@
       group: '平面 IP 设计', en: '2D IP DESIGN', portrait: true, hidden: true,
       items: [
         { src: 'images/gallery/board_hongcang.jpg', title: '《红仓》泥塑娃娃 IP 设计', desc: '恩施文旅 IP · 角色形象与衍生延展' },
-        { src: 'images/gallery/ip_jiangcang_1.jpg', title: '《江仓》文旅 IP 角色设定 · 一', desc: '恩施文旅 IP · 角色立绘与表情' },
         { src: 'images/gallery/ip_jiangcang_2.jpg', title: '《江仓》文旅 IP 角色设定 · 二', desc: '恩施文旅 IP · 角色立绘与服饰' },
         { src: 'images/gallery/ip_guqi_1.jpg', title: '《古器争鸣》文物拟人 IP · 展板一', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
         { src: 'images/gallery/ip_guqi_2.jpg', title: '《古器争鸣》文物拟人 IP · 展板二', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
