@@ -46,12 +46,13 @@
       desc: '从剧本策划、实地拍摄到剪辑调色的完整短片创作'
     },
     {
-      id: 'threed',
+      id: 'ipdesign',
       num: '肆',
-      name: '三维建模 · 数字场景',
-      en: '3D ART',
-      tagline: 'C4D · Blender · 场景建模',
-      desc: 'C4D / Blender 三维场景与角色创作，覆盖建模、材质、灯光与渲染'
+      name: '平面 IP 设计',
+      en: '2D IP DESIGN',
+      tagline: '角色 IP · 文物拟人 · 品牌视觉 · 衍生延展',
+      desc: '角色形象与品牌 IP 的平面设计：红仓/蓝仓/江仓文旅 IP、古器争鸣文物拟人、AD钙奶品牌 IP 与文创延展',
+      countLabel: '作品 7 件'
     },
     {
       id: 'gallery',
@@ -170,21 +171,6 @@
       desc: '情绪可视化交互装置：心率传感器与摄像头手势识别（MediaPipe）实时驱动流体粒子花影，将情绪数据转译为可视化的花与影。',
       credit: '独立创作 · 交互装置设计课程'
     },
-    /* ---- 肆 · 三维建模（2 件） ---- */
-    {
-      id: 'td_tongxiang', dir: 'threed',
-      title: '《铜香月影》',
-      year: '2025', tags: ['Blender', '场景', '青铜'],
-      desc: '铜鼎与石柱的东方历史场景：古朴纹理、雕刻与自然环境，数字媒体技术1（Blender）结课作品。',
-      credit: '独立创作'
-    },
-    {
-      id: 'td_qiuyue', dir: 'threed',
-      title: '《秋月共赏》',
-      year: '2024', tags: ['C4D', 'Octane', '场景建模'],
-      desc: '中秋月夜三维场景：传统建筑、灯笼、荷花，Octane 渲染。软件应用2（C4D）结课作品。',
-      credit: '独立创作'
-    },
     /* ---- 叁 · 影视创作 ---- */
     {
       id: 'film_hucheng', dir: 'film',
@@ -277,9 +263,7 @@
         { src: 'images/gallery/board_yixiu.jpg', title: '《一绣成祥》展板', desc: '壮锦绣球非遗数字交互 · 米兰设计周' },
         { src: 'images/gallery/board_qiehuang.jpg', title: '《茄香味俱全》展板', desc: '视听语言课程结课' },
         { src: 'images/gallery/board_wusheng.jpg', title: '《无声暗涌》展板', desc: '情绪物质化动态影像 · Ae 结课' },
-        { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌展板', desc: '消费心理与品牌传播课程 · 广告策划' },
         { src: 'images/gallery/board_guhuai.jpg', title: '《孤怀楚殇》前期内容展板', desc: '屈原文化数字创作 · 综合创作5（第十组）' },
-        { src: 'images/gallery/board_hongcang.jpg', title: '《红仓》泥塑娃娃 IP 设计展板', desc: '恩施文旅 IP 设计 · 角色形象与衍生' },
         { src: 'images/gallery/board_enshi.jpg', title: '恩施文旅展板', desc: '文旅融合创新计时赛' }
       ]
     },
@@ -299,6 +283,19 @@
         { src: 'images/gallery/poster_bear_4.jpg', title: '《倒退的棕榈叶》海报 · 四', desc: '小熊 IP · AI 影像概念海报' },
         { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》海报 · 五', desc: '小熊 IP · AI 影像概念海报' },
         { src: 'images/gallery/poster_bear_6.jpg', title: '《倒退的棕榈叶》海报 · 六', desc: '小熊 IP · AI 影像概念海报' }
+      ]
+    },
+    {
+      /* 平面 IP 设计板块专用：不在「视觉设计」画廊中重复展示 */
+      group: '平面 IP 设计', en: '2D IP DESIGN', portrait: true, hidden: true,
+      items: [
+        { src: 'images/gallery/board_hongcang.jpg', title: '《红仓》泥塑娃娃 IP 设计', desc: '恩施文旅 IP · 角色形象与衍生延展' },
+        { src: 'images/gallery/ip_jiangcang_1.jpg', title: '《江仓》文旅 IP 角色设定 · 一', desc: '恩施文旅 IP · 角色立绘与表情' },
+        { src: 'images/gallery/ip_jiangcang_2.jpg', title: '《江仓》文旅 IP 角色设定 · 二', desc: '恩施文旅 IP · 角色立绘与服饰' },
+        { src: 'images/gallery/ip_guqi_1.jpg', title: '《古器争鸣》文物拟人 IP · 展板一', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
+        { src: 'images/gallery/ip_guqi_2.jpg', title: '《古器争鸣》文物拟人 IP · 展板二', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
+        { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌 IP', desc: '消费心理与品牌传播课程 · 品牌 IP 视觉' },
+        { src: 'images/gallery/ip_wenchuang.jpg', title: 'IP 文创衍生设计', desc: '体验设计课程 · IP 衍生品设计方案' }
       ]
     }
   ];
@@ -580,6 +577,7 @@
     wrap.innerHTML = GALLERY.map(function (g) {
       var base = idx0;
       idx0 += g.items.length;
+      if (g.hidden) { return ''; }   /* 平面 IP 设计组在独立板块展示 */
       return '' +
         '<div class="gallery-group reveal">' +
           '<div class="gallery-group-head">' +
@@ -605,6 +603,32 @@
             }).join('') +
           '</div>' +
         '</div>';
+    }).join('');
+  }
+
+  /* ==================== 渲染：肆 · 平面 IP 设计 ==================== */
+  function renderIPDesign() {
+    var wrap = byId('ipWrap');
+    if (!wrap) { return; }
+    var base = 0, target = null;
+    for (var i = 0; i < GALLERY.length; i++) {
+      if (GALLERY[i].group === '平面 IP 设计') { target = GALLERY[i]; break; }
+      base += GALLERY[i].items.length;
+    }
+    if (!target) { return; }
+    wrap.innerHTML = target.items.map(function (it, n) {
+      return '' +
+        '<figure class="gallery-item g-portrait" role="button" tabindex="0"' +
+          ' data-index="' + (base + n) + '" aria-label="查看 ' + it.title + '">' +
+          '<div class="g-thumb">' +
+            '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · 平面 IP 设计" loading="lazy">' +
+            '<span class="g-zoom" aria-hidden="true">＋</span>' +
+          '</div>' +
+          '<figcaption>' +
+            '<span class="g-title">' + it.title + '</span>' +
+            '<span class="g-desc">' + it.desc + '</span>' +
+          '</figcaption>' +
+        '</figure>';
     }).join('');
   }
 
@@ -1053,6 +1077,7 @@
   renderDirections();
   renderWorks();
   renderGallery();
+  renderIPDesign();
   renderProcess();
   renderWriting();
   renderCode();
