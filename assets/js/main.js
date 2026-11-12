@@ -97,57 +97,57 @@
       id: 'ai_doubao', dir: 'ai',
       title: '《小奶与小美》',
       year: '2026', tags: ['AI数字人', '口播', '即梦'],
-      desc: 'AI 数字人系列作品，全流程 AI 生成的虚拟主持人节目。',
-      credit: '独立创作'
+      desc: 'AI 废土科幻短片：橙色沙海中的异星生物与巨型光柱，数字人角色串联起荒芜世界里的日常对话。',
+      credit: '主创（负责概念设定、分镜与 AI 生成流程）· 团队协作'
     },
     {
       id: 'ai_cannes', dir: 'ai',
       title: '《倒退的棕榈叶》',
       year: '2026', tags: ['AI影像', '短片'],
-      desc: 'AI 生成影像系列短片。',
-      credit: '独立创作'
+      desc: '真实感 AI 剧情短片：疲惫的设计师驾车、伏案绘图，与白发角色的往事在镜头间交织，讲创作与时间。',
+      credit: '主创（负责剧本、分镜与 AI 生成）· 团队协作'
     },
     {
       id: 'ai_xiuzhang', dir: 'ai',
       title: '《绣藏》',
       year: '2026', tags: ['AI漫剧', '非遗', '国风'],
-      desc: '非遗题材 AI 漫剧 PV：「道藏三千」世界观设定、剧本与分镜全流程创作。',
-      credit: '西湖新风 AI 漫剧创作大赛参赛作品'
+      desc: '「道藏三千：非遗证道录」AI 漫剧参赛作品：以道家符箓与非遗纹样构建世界观，完成设定集、剧本、概念设计与 PV 分镜全流程。',
+      credit: '主创（世界观设定、剧本、概念设计与 AI 生成负责人）· 团队协作'
     },
     {
       id: 'ai_yangyangtang', dir: 'ai',
       title: '《盐阳叹》',
       year: '2026', tags: ['AI影像', '文化题材'],
-      desc: '文化题材 AI 影像作品。',
-      credit: '中国好创意大赛 · 应用组国家级二等奖'
+      desc: '水墨与流体抽象的 AI 影像诗：金色流线、蓝雾与星屑在画面中聚散，以「盐阳」古意为题呈现东方意象的情绪流动。',
+      credit: '主创（负责视觉概念与 AI 生成）· 团队协作'
     },
     {
       id: 'ai_dasheng', dir: 'ai',
       title: '《灾厄战线》',
       year: '2026', tags: ['AI影像', '即梦', '概念片'],
-      desc: '即梦 AI 影像概念片完整成片（1′36″），灾难场景叙事与镜头语言设计。',
-      credit: '独立创作'
+      desc: '暗黑科幻 AI 短片：废墟战场上女性战士与巨兽对峙，「灾厄降临」的世界观开篇。',
+      credit: '主创（负责世界观、分镜与 AI 生成）· 团队协作'
     },
     {
       id: 'ai_yegou', dir: 'ai',
       title: '《野生狗奶》',
       year: '2026', tags: ['AI影像', '剧情短片'],
-      desc: 'AI 生成剧情短片（4′07″），完整叙事与镜头调度练习。',
-      credit: '独立创作'
+      desc: '动作喜剧 AI 短片：废墟中五人争夺一箱「野生狗奶」，古装角色与现代包装碰撞出穿越式笑点（150 秒剧本改编）。',
+      credit: '主创（负责剧本、分镜与 AI 生成）· 团队协作'
     },
     /* ---- 贰 · 交互装置 ---- */
     {
       id: 'itd_ironfire', dir: 'interactive',
       title: '《铁火生花》IRON FIRE BLOOM',
       year: '2026', tags: ['TouchDesigner', 'GPU粒子', '手势交互', '非遗数字化'],
-      desc: '非遗打铁花数字沉浸式交互装置成片（2′44″）。手势与位置实时驱动粒子：靠近聚拢、挥手迸发、伸手成莲。',
+      desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可被反复走进。',
       credit: '独立创作 · 第十四届全国大学生数字媒体科技作品及创意竞赛参赛作品（编号 328499）'
     },
     {
       id: 'itd_yixiu', dir: 'interactive',
       title: '《一绣成祥》',
       year: '2026', tags: ['TouchDesigner', '粒子系统', '手势识别', '壮锦'],
-      desc: '壮锦·绣球非遗数字交互装置。米兰设计周国家级三等奖；第二届高校 AIGC 数字艺术设计大赛参赛（队长）。',
+      desc: '壮锦·绣球非遗数字交互装置：蛙纹、花卉、祥云纹样转译为粒子，观众以自然手势操控纹样汇聚生长与解构重组。',
       credit: '独立创作 · 队长 · 米兰设计周国家级三等奖（指导教师：李紫阳、程思、刘琼）'
     },
     {
@@ -161,14 +161,14 @@
       id: 'itd_shange', dir: 'interactive',
       title: '《山歌回音壁》声音与灯光互动装置',
       year: '2026', tags: ['Processing', '音画互动', '声光装置'],
-      desc: '中国好创意大赛（学术组）国家级二等奖。声音信号实时驱动灯光与画面联动的音画互动装置。',
+      desc: '声音与灯光交互装置：观众的声音与动作驱动灯光与画面回应，把「山歌」转译为空间中的声光回响。',
       credit: '中国好创意大赛 · 学术组国家级二等奖'
     },
     {
       id: 'itd_xinmai', dir: 'interactive',
       title: '《心脉·花影》情绪交互装置',
       year: '2025', tags: ['TouchDesigner', '心率传感', 'MediaPipe', '情绪可视化'],
-      desc: '情绪可视化交互装置：心率传感器与摄像头手势识别（MediaPipe）实时驱动流体粒子花影，将情绪数据转译为可视化的花与影。',
+      desc: '情绪可视化交互装置：心率传感与面部微表情（MediaPipe）实时驱动流体粒子，「心脉」被翻译成花与影。',
       credit: '组长（第九组）· 交互装置设计课程'
     },
     /* ---- 叁 · 影视创作 ---- */
@@ -176,28 +176,28 @@
       id: 'film_hucheng', dir: 'film',
       title: '《湖城烟雨》',
       year: '2025', tags: ['实拍', '剪辑', '调色'],
-      desc: '雨中东湖诗意影像：刻意等待雨天拍摄，栈桥、磨山与雨中行人，冷调水墨调色。综合创作3 结课作品。',
+      desc: '雨中东湖的影像实验：刻意等待雨天拍摄，栈桥、荷叶、古亭在雨雾中如水墨，探索城市与自然的关系。',
       credit: '与焦星宇合作 · 指导教师：彭隽'
     },
     {
       id: 'film_qiehuang', dir: 'film',
       title: '《茄香味俱全》',
       year: '2025', tags: ['短片', '剧本', '剪辑'],
-      desc: '泡面品牌创意短片：从超市选购到宿舍煮食的线性叙事，暖色调视听语言，传递家的味道。',
+      desc: '暖色调泡面创意短片：主角小吴从超市选购「茄皇」到宿舍煮食的线性叙事，把对家的思念藏进一碗面。',
       credit: '独立创作 · 指导教师：刘琼'
     },
     {
       id: 'film_zaoba', dir: 'film',
       title: '《这节早八不太好上》',
       year: '2025', tags: ['短片', '剧本', '视听语言'],
-      desc: '视听语言课程短片：早八课、闹钟与宿舍的青春叙事，从剧本、分镜到成片的完整创作（1′58″）。',
+      desc: '视听语言课程短片：以暗调光影与手持镜头记录「早八」前后的宿舍深夜，把起床的挣扎拍成一场小型战役。',
       credit: '独立创作 · 视听语言课程'
     },
     {
       id: 'film_wusheng', dir: 'film',
       title: '《无声暗涌》',
       year: '2025', tags: ['After Effects', '动态影像', '情绪'],
-      desc: '“情绪物质化”动态影像实验：粘稠液体、机械结构与失真画面外化压抑情绪，动态逆向构建情绪循环。',
+      desc: '情绪物质化实验影像：缓慢流动的粘稠液体、机械与生物组织的碰撞、闪烁噪点，把难以宣泄的压抑转成视觉系统。',
       credit: '独立创作'
     },
     {
@@ -211,21 +211,21 @@
       id: 'film_silu', dir: 'film',
       title: '《丝路新篇》',
       year: '2025', tags: ['AI生成', '实拍', '剪辑合成'],
-      desc: '丝绸之路主题影视创作：AI 生成画面与实拍素材的剪辑合成成片（2′12″）。',
+      desc: '丝绸之路主题影像：从沙漠公路到森林、雪地、戈壁与城市高架，跨越古今讲述丝路的传承与发展。',
       credit: '独立创作 · 影视创作课程'
     },
     {
       id: 'film_poster', dir: 'film',
       title: '《动态海报》',
       year: '2024', tags: ['动态海报', '视觉传播', 'AE'],
-      desc: '视觉传播课程动态海报作品：平面海报的动态化演绎（40″）。',
+      desc: '动态排版海报：黑底上文字逐句浮现（「在」「我排着队拿着」「我往前飞飞过一片时间海」），配合心率线条，探索文字的动态节奏。',
       credit: '独立创作 · 视觉传播课程'
     },
     {
       id: 'film_sheji', dir: 'film',
       title: '《设计基础 · 动态影像》',
       year: '2024', tags: ['动态影像', '构成', '实验'],
-      desc: '设计基础课程动态影像实验：平面构成元素的动态表达（37″）。',
+      desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。',
       credit: '独立创作 · 设计基础课程'
     }
   ];
@@ -235,25 +235,25 @@
     {
       group: '文创衍生品', en: 'CULTURAL & CREATIVE PRODUCTS', portrait: false,
       items: [
-        { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/fan_2.jpg', title: '折扇 · 设计二', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/fan_3.jpg', title: '折扇 · 设计三', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/coaster.jpg', title: '杯垫', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/pillow.jpg', title: '抱枕', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/badge_2.jpg', title: '金属徽章 · 款式二', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/badge_3.jpg', title: '金属徽章 · 款式三', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/bag_1.jpg', title: '手提纸袋 · 设计一', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/bag_2.jpg', title: '手提纸袋 · 设计二', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/bag_3.jpg', title: '手提纸袋 · 设计三', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫样机 · 一', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫样机 · 二', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫样机 · 三', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '青铜遗韵 · 文创衍生' },
-        { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '青铜遗韵 · 文创衍生' }
+        { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/fan_2.jpg', title: '折扇 · 设计二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/fan_3.jpg', title: '折扇 · 设计三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/coaster.jpg', title: '杯垫', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/pillow.jpg', title: '抱枕', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/badge_2.jpg', title: '金属徽章 · 款式二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/badge_3.jpg', title: '金属徽章 · 款式三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/bag_1.jpg', title: '手提纸袋 · 设计一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/bag_2.jpg', title: '手提纸袋 · 设计二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/bag_3.jpg', title: '手提纸袋 · 设计三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫样机 · 一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫样机 · 二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫样机 · 三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
+        { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' }
       ]
     },
     {
