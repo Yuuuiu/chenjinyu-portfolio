@@ -275,16 +275,6 @@
         { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌 IP', desc: '消费心理与品牌传播课程 · 品牌 IP 视觉' },
         { src: 'images/gallery/ip_wenchuang.jpg', title: 'IP 文创衍生设计', desc: '体验设计课程 · IP 衍生品设计方案' }
       ]
-    },
-    {
-      group: '网页设计', en: 'WEB DESIGN', portrait: false,
-      items: [
-        { src: 'images/gallery/web_jingju_1.jpg', title: '《京剧文化》网站 · 首页', desc: '网页设计课程结课：国潮视觉首页，红白配色 + 京剧人物 IP 形象', href: 'web/jingju/index.html' },
-        { src: 'images/gallery/web_jingju_2.jpg', title: '《京剧文化》网站 · 角色页', desc: '生旦净丑角色介绍：人物卡片式排版与图文层叠', href: 'web/jingju/role.html' },
-        { src: 'images/gallery/web_jingju_3.jpg', title: '《京剧文化》网站 · 脸谱页', desc: '京剧脸谱专题：色彩谱式解析与图谱展示', href: 'web/jingju/lianpu.html' },
-        { src: 'images/gallery/web_jingju_4.jpg', title: '《京剧文化》网站 · 四大名旦', desc: '梅尚程荀四大名旦：人物档案与唱腔作品', href: 'web/jingju/star.html' },
-        { src: 'images/gallery/web_jingju_5.jpg', title: '《京剧文化》网站 · 现代京剧', desc: '现代京剧：时代脉络与经典剧目', href: 'web/jingju/modern.html' }
-      ]
     }
   ];
 

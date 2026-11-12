@@ -29,48 +29,6 @@ html { scroll-behavior: smooth; }
 }
 @media (prefers-reduced-motion: reduce) { .grain { animation: none; } }
 
-/* ---------- 2. 自定义光标 ---------- */
-.cursor-dot, .cursor-ring, .cursor-label {
-  position: fixed;
-  z-index: 9999;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-}
-.cursor-dot {
-  opacity: 0;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--ink);
-  transform: translate(-50%, -50%);
-}
-.cursor-ring {
-  opacity: 0;
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  border: 1px solid rgba(17, 17, 17, .45);
-  transform: translate(-50%, -50%);
-  transition: width .3s var(--ease), height .3s var(--ease), border-color .3s, background .3s;
-}
-.cursor-ring.grow {
-  width: 64px; height: 64px;
-  border-color: rgba(17, 17, 17, .85);
-  background: rgba(17, 17, 17, .04);
-}
-.cursor-label {
-  font-size: 9px;
-  letter-spacing: .2em;
-  color: var(--ink);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity .25s;
-  font-family: var(--sans);
-}
-.cursor-label.show { opacity: 1; }
-@media (hover: none), (prefers-reduced-motion: reduce) {
-  .cursor-dot, .cursor-ring, .cursor-label { display: none; }
-}
-
 /* ---------- 3. 载入动画 ---------- */
 .loader {
   position: fixed;

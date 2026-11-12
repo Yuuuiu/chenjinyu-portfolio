@@ -30,46 +30,6 @@
     }, 2200);
   }
 
-  /* ---------- 自定义光标 ---------- */
-  function initCursor() {
-    if (!hasHover || reduce) { return; }
-    var dot = document.querySelector('.cursor-dot');
-    var ring = document.querySelector('.cursor-ring');
-    var label = document.querySelector('.cursor-label');
-    if (!dot || !ring) { return; }
-    var mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    var rx = mx, ry = my, shown = false;
-    document.addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      if (!shown) { shown = true; dot.style.opacity = 1; ring.style.opacity = 1; rx = mx; ry = my; }
-    });
-    function raf() {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
-      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
-      if (label) {
-        label.style.transform = 'translate(' + (rx + 46) + 'px,' + (ry - 40) + 'px) translate(-50%,-50%)';
-      }
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    document.addEventListener('mouseover', function (e) {
-      var t = e.target;
-      var hot = t.closest ? t.closest('a, button, .work-card, .gallery-item, .dir-card') : null;
-      var isWork = t.closest ? t.closest('.work-card') : null;
-      ring.classList.toggle('grow', !!hot);
-      if (label) {
-        label.textContent = isWork ? 'PLAY' : (hot ? 'VIEW' : '');
-        label.classList.toggle('show', !!hot);
-      }
-    });
-    document.addEventListener('mouseleave', function () {
-      dot.style.opacity = 0; ring.style.opacity = 0;
-      if (label) { label.classList.remove('show'); }
-    });
-  }
-
   /* ---------- 逐字标题 ---------- */
   function initSplitText() {
     var t = document.querySelector('.hero-title');
@@ -233,7 +193,6 @@
   /* ---------- 启动 ---------- */
   function boot() {
     initLoader();
-    initCursor();
     initSplitText();
     initScroll();
     initMarquee();
