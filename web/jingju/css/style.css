@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/* 大盒子 */
+.max{
+    width: 1200px;
+    margin: auto;
+    border-style: solid;
+    border-color: pink;
+    background-color: rgb(245, 239, 239);
+}
+/* 头部 */
+.header img{
+ width: 100%;
+
+}
+.topnav {
+    overflow: hidden;
+    background-color: rgb(224, 138, 138);
+    margin-top: -4px;
+  }
+   
+  /* 导航链接 */
+  .topnav a {
+   
+    
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 0px;
+	float:left;
+	width:240px;
+    text-decoration: none;
+    text-align: center;
+  }
+   
+  /* 链接 - 修改颜色 */
+  .topnav a:hover {
+    background-color: rgb(235, 98, 98);
+    color: rgb(58, 30, 30); }
+
+    .leftcolumn {   
+        float: left;
+        width: 70%;
+      }
+       
+      /* 右侧栏 */
+      .rightcolumn {
+        float: left;
+        width: 25%;
+        margin-left: 20px;
+        padding-left: 20px;
+      }
+       
+      /* 图像部分 */
+      .fakeimg {
+        width: 100%;
+        padding: 20px;
+      }
+      .fakeimg-left img{
+          margin-left: 100px;
+          margin-top: -20px;
+          width: 80%;
+          height: 120%;
+      }
+      .fakeimg-left2 img{
+        width: 30%;
+        height: 220px;
+      }
+      .fakeimg-right1 img{
+          width: 50%;
+          height: 125px;
+          margin-top: -10px;
+          margin-left: 50px;
+      }
+       
+      /* 文章卡片效果 */
+      .card {
+        padding: 20px;
+        margin-top: 20px;
+      }
+       
+      /* 列后面清除浮动 */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+       
+      /* 底部 */
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: rgb(248, 214, 214);
+        margin-top: 20px;
+      }
+      /* 标题居中 */
+      h2{
+          text-align: center;
+      }
+      /* 首行缩进 */
+      p{
+          text-indent: 2em;
+      }

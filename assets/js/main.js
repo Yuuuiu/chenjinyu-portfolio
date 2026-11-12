@@ -214,25 +214,25 @@
     {
       group: '文创衍生品', en: 'CULTURAL & CREATIVE PRODUCTS', portrait: false,
       items: [
-        { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/fan_2.jpg', title: '折扇 · 设计二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/fan_3.jpg', title: '折扇 · 设计三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/coaster.jpg', title: '杯垫', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/pillow.jpg', title: '抱枕', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/badge_2.jpg', title: '金属徽章 · 款式二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/badge_3.jpg', title: '金属徽章 · 款式三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/bag_1.jpg', title: '手提纸袋 · 设计一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/bag_2.jpg', title: '手提纸袋 · 设计二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/bag_3.jpg', title: '手提纸袋 · 设计三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫样机 · 一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫样机 · 二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫样机 · 三', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' },
-        { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '设计基础课程动态影像实验：以抽象几何、流体与色彩构成探索平面元素的运动规律与视觉节奏。' }
+        { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '《青铜遗韵》文创 · 折扇：青铜云雷纹与兽面纹转译到扇面，国风便携衍生' },
+        { src: 'images/gallery/fan_2.jpg', title: '折扇 · 设计二', desc: '《青铜遗韵》文创 · 折扇：线描青铜纹样版本，素雅黑白' },
+        { src: 'images/gallery/fan_3.jpg', title: '折扇 · 设计三', desc: '《青铜遗韵》文创 · 折扇：青绿山水与青铜器组合的彩绘版本' },
+        { src: 'images/gallery/coaster.jpg', title: '杯垫', desc: '《青铜遗韵》文创 · 杯垫：青铜器纹样圆形排版，日常器物衍生' },
+        { src: 'images/gallery/pillow.jpg', title: '抱枕', desc: '《青铜遗韵》文创 · 抱枕：青铜纹样满版印花的家居衍生' },
+        { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '《青铜遗韵》文创 · 金属徽章：青绿色青铜器造型珐琅徽章' },
+        { src: 'images/gallery/badge_2.jpg', title: '金属徽章 · 款式二', desc: '《青铜遗韵》文创 · 金属徽章：鼎器纹样款' },
+        { src: 'images/gallery/badge_3.jpg', title: '金属徽章 · 款式三', desc: '《青铜遗韵》文创 · 金属徽章：线描纹样款' },
+        { src: 'images/gallery/bag_1.jpg', title: '手提纸袋 · 设计一', desc: '《青铜遗韵》文创 · 手提纸袋：主视觉款，包装延展设计' },
+        { src: 'images/gallery/bag_2.jpg', title: '手提纸袋 · 设计二', desc: '《青铜遗韵》文创 · 手提纸袋：线描款包装' },
+        { src: 'images/gallery/bag_3.jpg', title: '手提纸袋 · 设计三', desc: '《青铜遗韵》文创 · 手提纸袋：青绿款包装' },
+        { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '《青铜遗韵》文创 · 钥匙扣：青铜器造型金属挂件' },
+        { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '《青铜遗韵》文创 · 钥匙扣：瑞兽纹样款' },
+        { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '《青铜遗韵》文创 · 钥匙扣：青绿彩绘款' },
+        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫样机 · 一', desc: '《青铜遗韵》文创 · 鼠标垫：青铜纹样桌面衍生' },
+        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫样机 · 二', desc: '《青铜遗韵》文创 · 鼠标垫：线描纹样款' },
+        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫样机 · 三', desc: '《青铜遗韵》文创 · 鼠标垫：彩绘款' },
+        { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '《青铜遗韵》文创 · 挂墙广告：线下展示物料，主视觉延展' },
+        { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '《青铜遗韵》文创 · 挂墙广告：空间展示效果' }
       ]
     },
     {
@@ -274,6 +274,16 @@
         { src: 'images/gallery/ip_guqi_2.jpg', title: '《古器争鸣》文物拟人 IP · 展板二', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
         { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌 IP', desc: '消费心理与品牌传播课程 · 品牌 IP 视觉' },
         { src: 'images/gallery/ip_wenchuang.jpg', title: 'IP 文创衍生设计', desc: '体验设计课程 · IP 衍生品设计方案' }
+      ]
+    },
+    {
+      group: '网页设计', en: 'WEB DESIGN', portrait: false,
+      items: [
+        { src: 'images/gallery/web_jingju_1.jpg', title: '《京剧文化》网站 · 首页', desc: '网页设计课程结课：国潮视觉首页，红白配色 + 京剧人物 IP 形象', href: 'web/jingju/index.html' },
+        { src: 'images/gallery/web_jingju_2.jpg', title: '《京剧文化》网站 · 角色页', desc: '生旦净丑角色介绍：人物卡片式排版与图文层叠', href: 'web/jingju/role.html' },
+        { src: 'images/gallery/web_jingju_3.jpg', title: '《京剧文化》网站 · 脸谱页', desc: '京剧脸谱专题：色彩谱式解析与图谱展示', href: 'web/jingju/lianpu.html' },
+        { src: 'images/gallery/web_jingju_4.jpg', title: '《京剧文化》网站 · 四大名旦', desc: '梅尚程荀四大名旦：人物档案与唱腔作品', href: 'web/jingju/star.html' },
+        { src: 'images/gallery/web_jingju_5.jpg', title: '《京剧文化》网站 · 现代京剧', desc: '现代京剧：时代脉络与经典剧目', href: 'web/jingju/modern.html' }
       ]
     }
   ];
@@ -590,12 +600,13 @@
           '<div class="gallery-grid">' +
             g.items.map(function (it, i) {
               return '' +
-                '<figure class="gallery-item' + (g.portrait ? ' g-portrait' : '') + '"' +
+                '<figure class="gallery-item' + (g.portrait ? ' g-portrait' : '') + (it.href ? ' is-link' : '') + '"' +
                   ' role="button" tabindex="0" data-index="' + (base + i) + '"' +
+                  (it.href ? ' data-href="' + it.href + '"' : '') +
                   ' aria-label="查看 ' + it.title + '">' +
                   '<div class="g-thumb">' +
                     '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
-                    '<span class="g-zoom" aria-hidden="true">＋</span>' +
+                    '<span class="g-zoom" aria-hidden="true">' + (it.href ? '↗' : '＋') + '</span>' +
                   '</div>' +
                   '<figcaption>' +
                     '<span class="g-title">' + it.title + '</span>' +
@@ -866,7 +877,10 @@
   /* 画廊卡片点击（事件委托） */
   document.addEventListener('click', function (e) {
     var item = e.target && e.target.closest ? e.target.closest('.gallery-item') : null;
-    if (item) { openLightbox(parseInt(item.getAttribute('data-index'), 10)); }
+    if (!item) { return; }
+    var ext = item.getAttribute('data-href');
+    if (ext) { window.open(ext, '_blank', 'noopener'); return; }
+    openLightbox(parseInt(item.getAttribute('data-index'), 10));
   });
 
   /* 灯箱键盘：ESC 关闭；方向键切换；Enter/Space 打开卡片 */

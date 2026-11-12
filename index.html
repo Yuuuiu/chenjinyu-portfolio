@@ -8,8 +8,22 @@
   <title>陈锦育 · 作品集</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='4'%20fill='%23111111'/%3E%3Ctext%20x='32'%20y='45'%20font-size='34'%20text-anchor='middle'%20fill='%23FAFAF9'%20font-family='STKaiti,KaiTi,serif'%3E%E9%94%A6%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/vibe.css">
 </head>
 <body>
+
+  <!-- ===== Vibe: 载入 / 光标 / 颗粒 / 进度 ===== -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader-name">陈锦育 · CHEN JINYU</div>
+    <div class="loader-bar"><i></i></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-label" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <nav class="side-dots" aria-label="章节导航"></nav>
+
 
   <!-- ==================== 顶部导航 ==================== -->
   <header class="site-header">
@@ -39,6 +53,7 @@
   <main>
     <!-- ==================== Hero ==================== -->
     <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true"><span class="b1"></span><span class="b2"></span></div>
       <div class="hero-inner reveal">
         <p class="kicker">PORTFOLIO&nbsp;&nbsp;2023 — 2027</p>
         <h1 class="hero-title">数字媒体艺术<br>交互装置 × AI 影像</h1>
@@ -47,7 +62,7 @@
         <ul class="hero-meta">
           <li>4 项国家级奖项</li>
           <li>16 部作品视频</li>
-          <li>62 张图片 · 9 份策划文档</li>
+          <li>67 张图片 · 9 份策划文档</li>
           <li>8 个方向板块</li>
         </ul>
         <div class="hero-featured">
@@ -60,6 +75,21 @@
         <i class="chev" aria-hidden="true"></i>
       </a>
     </section>
+    </section>
+
+    <!-- ===== Vibe: 跑马灯 ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AI 影像<em>AIGC FILM</em></span>
+        <span>交互装置<em>TOUCHDESIGNER</em></span>
+        <span>平面 IP 设计<em>2D IP DESIGN</em></span>
+        <span>影视创作<em>FILM &amp; MOTION</em></span>
+        <span>创作过程<em>WORKFLOW</em></span>
+        <span>文字策划<em>WRITING</em></span>
+        <span>技术代码<em>CODE</em></span>
+      </div>
+    </div>
+
 
     <!-- ==================== 方向入口 ==================== -->
     <section id="directions" class="section section-plain">
@@ -297,5 +327,6 @@
   </noscript>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/vibe.js" defer></script>
 </body>
 </html>
