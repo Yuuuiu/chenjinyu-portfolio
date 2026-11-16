@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">创作路径：从概念到作品</title>
+  <desc id="desc">展示铁火生花、绣藏与山歌回音壁的制作路径，以及分镜、设定集、展板与源码等对应材料。铁火生花为参赛作品，绣藏为参赛作品，山歌回音壁获国家级二等奖。</desc>
+  <style>
+    text { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #111; }
+    .eyebrow { font-size: 18px; letter-spacing: 4px; fill: #777; }
+    .heading { font-size: 46px; font-weight: 700; }
+    .sub { font-size: 22px; fill: #666; }
+    .num { font-size: 22px; fill: #2547f5; }
+    .stage { font-size: 25px; font-weight: 600; }
+    .detail { font-size: 18px; fill: #666; }
+    .project { font-size: 29px; font-weight: 600; }
+    .path { font-size: 23px; }
+    .material { font-size: 19px; fill: #666; }
+    .status { font-size: 18px; fill: #2547f5; }
+  </style>
+  <rect width="1600" height="980" fill="#fafaf9"/>
+  <text x="64" y="72" class="eyebrow">PROCESS / SELECTED PROJECTS</text>
+  <text x="64" y="144" class="heading">从概念到作品</text>
+  <text x="64" y="190" class="sub">以主题选择制作方式，让叙事、视觉与技术共同服务于作品。</text>
+  <g stroke="#e6e5e1" fill="#fff">
+    <rect x="64" y="230" width="280" height="152"/>
+    <rect x="362" y="230" width="280" height="152"/>
+    <rect x="660" y="230" width="280" height="152"/>
+    <rect x="958" y="230" width="280" height="152"/>
+    <rect x="1256" y="230" width="280" height="152"/>
+  </g>
+  <g>
+    <text x="88" y="268" class="num">01</text><text x="88" y="309" class="stage">概念与叙事</text><text x="88" y="349" class="detail">立意 / 世界观 / 剧本</text>
+    <text x="386" y="268" class="num">02</text><text x="386" y="309" class="stage">分镜与设计</text><text x="386" y="349" class="detail">镜头 / 角色 / 视觉基调</text>
+    <text x="684" y="268" class="num">03</text><text x="684" y="309" class="stage">生成与制作</text><text x="684" y="349" class="detail">AIGC / 实拍 / 数字视觉</text>
+    <text x="982" y="268" class="num">04</text><text x="982" y="309" class="stage">实时交互</text><text x="982" y="349" class="detail">TouchDesigner / Processing</text>
+    <text x="1280" y="268" class="num">05</text><text x="1280" y="309" class="stage">成片与延展</text><text x="1280" y="349" class="detail">剪辑 / 合成 / 视觉物料</text>
+  </g>
+  <text x="64" y="435" class="detail">不同项目各有侧重，以下为作品对应的制作路径。</text>
+  <g stroke="#e6e5e1" fill="#fff">
+    <rect x="64" y="472" width="1472" height="134"/>
+    <rect x="64" y="626" width="1472" height="134"/>
+    <rect x="64" y="780" width="1472" height="134"/>
+  </g>
+  <text x="92" y="518" class="project">《铁火生花》</text>
+  <text x="1190" y="515" class="status">数媒竞赛 · 参赛作品</text>
+  <text x="92" y="558" class="path">概念卡 → 分镜脚本 → TD 粒子视觉与交互 → 剪辑构建 → 作品展示视频</text>
+  <text x="92" y="588" class="material">对应材料：概念卡、分镜 PDF、AI 工具说明、竞赛展板、成片构建脚本</text>
+  <text x="92" y="672" class="project">《绣藏》</text>
+  <text x="1190" y="669" class="status">AI 漫剧大赛 · 参赛作品</text>
+  <text x="92" y="712" class="path">世界观设定 → 剧本 → 概念设计 → PV 分镜 → AI 漫剧影像</text>
+  <text x="92" y="742" class="material">对应材料：完整设定集、剧本、概念设计、PV 分镜、海报</text>
+  <text x="92" y="826" class="project">《山歌回音壁》</text>
+  <text x="1190" y="823" class="status">中国好创意 · 国家级二等奖</text>
+  <text x="92" y="866" class="path">山歌与回响主题 → Processing 音画互动 → 作品展示</text>
+  <text x="92" y="896" class="material">对应材料：作品视频、音画互动核心源码、获奖证明</text>
+  <text x="64" y="952" class="detail">陈锦育 · 数字媒体艺术作品集 / 创作过程</text>
+</svg>

@@ -7,24 +7,30 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('protect');
+    function canCopy(target) {
+      return target && target.closest && target.closest('input, textarea, [data-copyable]');
+    }
 
     /* ---------- 1. 禁用右键 ---------- */
     document.addEventListener('contextmenu', function (e) {
       var t = e.target;
-      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) { return; }
+      if (canCopy(t)) { return; }
       e.preventDefault();
     }, { capture: true });
 
     /* ---------- 2. 禁止选中 / 复制 / 剪切 ---------- */
     document.addEventListener('selectstart', function (e) {
       var t = e.target;
-      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) { return; }
+      if (canCopy(t)) { return; }
       e.preventDefault();
     }, { capture: true });
     ['copy', 'cut'].forEach(function (ev) {
       document.addEventListener(ev, function (e) {
         var t = e.target;
-        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) { return; }
+        var selection = window.getSelection();
+        var selectionNode = selection && selection.anchorNode;
+        var selectionTarget = selectionNode && (selectionNode.nodeType === 1 ? selectionNode : selectionNode.parentElement);
+        if (canCopy(t) || (canCopy(selectionTarget) && selection && canCopy(selection.focusNode && (selection.focusNode.nodeType === 1 ? selection.focusNode : selection.focusNode.parentElement)))) { return; }
         e.preventDefault();
       }, { capture: true });
     });
@@ -64,7 +70,7 @@
 
     /* ---------- 6. 隐形水印（截屏/录屏可溯源） ---------- */
     function buildWatermark() {
-      var text = '陈锦育 · 作品集 · © 2027';
+      var text = '陈锦育 · 作品集 · © 2026';
       var c = document.createElement('canvas');
       c.width = 420;
       c.height = 200;

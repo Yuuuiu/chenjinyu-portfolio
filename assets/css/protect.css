@@ -21,6 +21,11 @@ body.protect video {
   pointer-events: auto;
 }
 body.protect img { pointer-events: none; }
+body.protect [data-copyable], body.protect [data-copyable] * {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
 body.protect .work-card img,
 body.protect .gallery-item img { pointer-events: none; }
 

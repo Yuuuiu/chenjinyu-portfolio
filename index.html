@@ -56,11 +56,12 @@
         <p class="kicker">PORTFOLIO&nbsp;&nbsp;2023 — 2027</p>
         <h1 class="hero-title">数字媒体艺术<br>交互装置 × AI 影像</h1>
         <p class="hero-sub">武汉传媒学院 · 设计学院 · 数字媒体艺术专业 · 2027 届</p>
+        <p class="hero-statement">以非遗与文化叙事为线索，将概念、影像与实时交互连接为完整作品。</p>
         <p class="hero-name">陈锦育 <span>CHEN JINYU</span></p>
         <ul class="hero-meta">
           <li>4 项国家级奖项</li>
-          <li>16 部作品视频</li>
-          <li>62 张图片 · 9 份策划文档</li>
+          <li><span id="videoCount">16</span> 部作品视频</li>
+          <li><span id="photoCount">62</span> 张图片 · <span id="writingCount">9</span> 份策划文档</li>
           <li>8 个方向板块</li>
         </ul>
         <div class="hero-featured">
@@ -72,7 +73,6 @@
         <span>SCROLL</span>
         <i class="chev" aria-hidden="true"></i>
       </a>
-    </section>
     </section>
 
     <!-- ===== Vibe: 跑马灯 ===== -->
@@ -114,7 +114,7 @@
         <header class="section-head reveal">
           <p class="head-en">02 — INTERACTIVE ART</p>
           <h2 class="head-title">交互装置 · 新媒体艺术</h2>
-          <p class="head-desc">非遗数字化与情绪可视化方向的实时交互装置，4 项国家级奖项所在</p>
+          <p class="head-desc">围绕非遗数字化与情绪可视化的实时交互探索，涵盖国家级获奖作品</p>
         </header>
         <div class="works-grid" id="grid-interactive"></div>
       </div>
@@ -162,7 +162,7 @@
         <header class="section-head reveal">
           <p class="head-en">06 — PROCESS &amp; WORKFLOW</p>
           <h2 class="head-title">创作过程 · 工作流</h2>
-          <p class="head-desc">以《铁火生花》《绣藏》为样本的完整创作管线：概念 → 生成 → 分镜 → 技术 → 成片。AIGC 岗位核心证据，点击图片可全屏查看</p>
+          <p class="head-desc">从《铁火生花》的交互与成片，到《绣藏》的世界观与分镜，展开作品背后的制作路径。下方同时收录 AIGC 视觉探索与 TD 技术练习。</p>
         </header>
         <div id="processWrap"></div>
       </div>
@@ -174,7 +174,7 @@
         <header class="section-head reveal">
           <p class="head-en">07 — WRITING &amp; PLANNING</p>
           <h2 class="head-title">文字与策划</h2>
-          <p class="head-desc">世界观设定、剧本分镜与商业策划类文档（新媒体策划岗位证据），点击卡片在新窗口查看 PDF</p>
+          <p class="head-desc">影像之外的叙事与组织：世界观设定、剧本、镜头设计与项目策划。点击卡片阅读完整 PDF。</p>
         </header>
         <div id="writingWrap"></div>
       </div>
@@ -186,7 +186,7 @@
         <header class="section-head reveal">
           <p class="head-en">08 — CODE &amp; TOOLS</p>
           <h2 class="head-title">技术代码</h2>
-          <p class="head-desc">音画互动源码与成片构建脚本（交互装置岗位证据 · 未来 GitHub 开源），点击卡片下载源文件</p>
+          <p class="head-desc">从 Processing 音画互动到成片自动化构建，展示作品中的实时逻辑与制作工具。源码可下载，TD 工程另附清单。</p>
         </header>
         <div id="codeWrap"></div>
       </div>
@@ -206,9 +206,9 @@
               <div><dt>姓名</dt><dd>陈锦育 / CHEN JINYU</dd></div>
               <div><dt>学历</dt><dd>武汉传媒学院 · 数字媒体艺术 · 本科（2023—2027）</dd></div>
               <div><dt>方向</dt><dd>交互装置 · AI 影像 · 平面 IP 设计 · 影视创作</dd></div>
-              <div><dt>电话</dt><dd><a href="tel:17377121184">17377121184</a></dd></div>
-              <div><dt>邮箱</dt><dd><a href="mailto:1426263349@qq.com">1426263349@qq.com</a></dd></div>
-              <div><dt>微信</dt><dd>17377121184</dd></div>
+              <div><dt>电话</dt><dd data-copyable><a href="tel:17377121184">17377121184</a></dd></div>
+              <div><dt>邮箱</dt><dd data-copyable><a href="mailto:1426263349@qq.com">1426263349@qq.com</a></dd></div>
+              <div><dt>微信</dt><dd data-copyable>17377121184</dd></div>
             </dl>
             <p class="about-text">
               以 TouchDesigner 实时交互与 AIGC 全流程创作为核心，专注非遗数字化、情绪可视化与沉浸空间方向；
@@ -284,21 +284,26 @@
   <footer class="site-footer">
     <p class="footer-main">© 2026 陈锦育 CHEN JINYU</p>
     <p class="footer-note">Digital Media Art · Portfolio</p>
-    <p class="copyright-line">本站全部作品受版权保护 · 禁止下载 / 转载 / 截屏 / 录屏传播 · © 陈锦育 2027</p>
+    <p class="copyright-line">本站作品受版权保护 · 未经许可请勿转载或传播 · 标注可下载的源码供学习交流 · © 陈锦育 2026</p>
   </footer>
 
   <!-- ==================== 全屏弹层播放器 ==================== -->
   <div class="modal" id="playerModal" aria-hidden="true">
     <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-box" role="dialog" aria-modal="true" aria-label="作品播放器">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" id="modalClose" aria-label="关闭播放器">×</button>
-      <div class="modal-video-wrap" id="modalVideoWrap">
-        <video id="modalVideo" controls playsinline preload="metadata" poster=""></video>
-        <div class="modal-bili" id="modalBili"></div>
-      </div>
-      <div class="modal-meta">
-        <h3 class="modal-title" id="modalTitle"></h3>
-        <p class="modal-sub" id="modalSub"></p>
+      <div class="modal-content" id="modalContent">
+        <div class="modal-video-wrap" id="modalVideoWrap">
+          <video id="modalVideo" controls playsinline preload="metadata" poster=""></video>
+          <div class="modal-bili" id="modalBili"></div>
+        </div>
+        <div class="modal-meta">
+          <h3 class="modal-title" id="modalTitle"></h3>
+          <p class="modal-sub" id="modalSub"></p>
+          <p class="modal-description" id="modalDescription"></p>
+          <ul class="tags modal-tags" id="modalTags"></ul>
+          <div id="modalCase"></div>
+        </div>
       </div>
     </div>
   </div>

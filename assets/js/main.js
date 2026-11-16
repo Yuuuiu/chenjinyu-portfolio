@@ -9,13 +9,16 @@
 
   /* ==================== 资源源 ==================== */
   /* 国内加速：视频与图片全部托管在阿里云 OSS（上海），GitHub Pages 只承载 HTML/CSS/JS */
-  var VIDEO_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
+  var LOCAL_PREVIEW = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
+  var VIDEO_BASE = LOCAL_PREVIEW ? 'videos/' : 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
   var IMG_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/';
 
   /* 图片路径统一转换：本地相对路径 → OSS 直链 */
   function imgUrl(p) {
     if (!p) { return p; }
+    if (p.indexOf('assets/') === 0) { return p; }
     if (p.indexOf('http') === 0) { return p; }
+    if (LOCAL_PREVIEW) { return p; }
     return IMG_BASE + p.replace(/^\.?\//, '');
   }
 
@@ -35,7 +38,7 @@
       name: '交互装置 · 新媒体艺术',
       en: 'INTERACTIVE ART',
       tagline: 'TouchDesigner · 手势识别 · 粒子系统 · 沉浸空间',
-      desc: '非遗数字化与情绪可视化方向的实时交互装置，4 项国家级奖项所在'
+      desc: '围绕非遗数字化与情绪可视化的实时交互探索，涵盖国家级获奖作品'
     },
     {
       id: 'film',
@@ -69,7 +72,7 @@
       en: 'PROCESS & WORKFLOW',
       tagline: '概念 · 分镜 · AI 生成 · 技术实现',
       desc: '从概念卡、分镜脚本到即梦生成与 TouchDesigner 实现的完整创作工作流',
-      countLabel: '素材 14 件'
+      countLabel: '过程图 18 张'
     },
     {
       id: 'writing',
@@ -282,11 +285,11 @@
 
   /* 创作流程五步 */
   var PROCESS_STEPS = [
-    { num: '01', name: '概念', desc: '设计概念卡定世界观与黑金东方视觉调性' },
-    { num: '02', name: '生成', desc: '即梦 / MJ 提示词文生图，产出关键画面' },
-    { num: '03', name: '分镜', desc: '分镜脚本 V1 编排镜头、时间与音画关系' },
-    { num: '04', name: '技术', desc: 'TouchDesigner GPU 粒子实时交互实现' },
-    { num: '05', name: '成片', desc: '脚本化剪辑、调色与合成，输出 2′44″ 成片' }
+    { num: '01', name: '概念与叙事', desc: '以文化主题组织世界观、视觉方向与创作立意' },
+    { num: '02', name: '分镜与设计', desc: '将叙事拆为镜头、时间与音画关系' },
+    { num: '03', name: '生成与制作', desc: '按项目选择 AIGC 生成、实拍或数字视觉制作' },
+    { num: '04', name: '实时交互', desc: '交互作品通过 TD / Processing 建立输入与视觉反馈' },
+    { num: '05', name: '成片与延展', desc: '完成剪辑合成，并延展为展板、海报与文创' }
   ];
 
   /* 创作过程图片组（复用画廊与灯箱逻辑） */
@@ -331,7 +334,7 @@
     {
       group: '工作流总览', en: 'WORKFLOW OVERVIEW', portrait: false,
       items: [
-        { src: 'images/process/workflow_map.jpg', title: 'AIGC 全流程工作流图', desc: '从世界观设定 → 分镜脚本 → AI 提示词 → 文生图 → 图生视频 → TD 实时交互 → 剪辑成片 → 展板衍生（附三个代表作调用链路）' }
+        { src: 'assets/images/workflow-overview.svg', title: '创作路径 · 三个项目的制作展开', desc: '《铁火生花》《绣藏》《山歌回音壁》各自的制作路径与对应材料；不同作品按主题选择制作方式。' }
       ]
     }
   ];
@@ -354,7 +357,7 @@
       title: '剪辑文案 · 建议与拆解',
       src: '02_10月5日视频提取与文案建议· 剪辑文案建议.md',
       text: '全片 100% 是 CG / 数字粒子特效，叙事弧线非常清楚：火 → 打铁花 → 金莲 → 落水。天然的「淬炼—碎裂—重生/开花」三段式隐喻，文案不是「提炼」而是「赋予」。',
-      foot: '发布文案方向 A（东方美学 · 治愈向）：「一束火落下来，是开端。被击碎的那一刻，万点金光散成星辰。而后它们沉进水面，开成了莲。——从炽烈到寂静，两分十七秒。」'
+      foot: '发布文案方向 A（东方美学 · 治愈向）：「一束火落下来，是开端。被击碎的那一刻，万点金光散成星辰。而后它们沉进水面，开成了莲。」'
     }
   ];
 
@@ -503,6 +506,62 @@
     }
   ];
 
+  /* 项目说明只关联已能确认归属的材料；通用生成练习保留在过程区。 */
+  var PROJECT_NOTES = {
+    itd_ironfire: {
+      focus: '非遗视觉转译 / 实时粒子 / 成片自动化',
+      idea: '将打铁花的火光、迸发与绽放转译为数字粒子，以交互视觉延续这一非遗主题的观看体验。',
+      steps: [
+        { title: '概念与镜头', text: '概念卡确定黑金视觉基调，分镜脚本编排镜头、时长与声音。' },
+        { title: '交互与视觉', text: '使用 TouchDesigner 制作粒子视觉，工程清单包含图像粒子跟随、湍流与沉浸式空间。' },
+        { title: '成片与工具', text: '通过 ffmpeg 构建脚本组织分段剪接、字幕卡叠加与编码，保留制作工具与作品展示视频。' }
+      ],
+      images: ['images/process/concept_card.jpg', 'images/process/storyboard_1.jpg', 'images/gallery/board_ironfire.jpg'],
+      docs: [
+        { href: 'docs/ironfire_storyboard.pdf', label: '分镜脚本', kind: 'PDF' },
+        { href: 'docs/ironfire_ai_tools.pdf', label: 'AI 工具使用说明', kind: 'PDF' },
+        { href: 'docs/code/build_v18.ps1', label: '成片构建脚本', kind: '源码', download: true }
+      ]
+    },
+    itd_yixiu: {
+      focus: '非遗纹样 / 手势识别 / 粒子视觉',
+      idea: '以壮锦与绣球为主题，将蛙纹、花卉、祥云组织为可汇聚、解构与重组的粒子视觉。',
+      steps: [
+        { title: '文化元素', text: '围绕壮锦、绣球与传统纹样建立视觉主题，保留图案的识别特征。' },
+        { title: '交互表达', text: '通过 TouchDesigner 与手势识别，将观众动作与纹样变化连接起来。' },
+        { title: '成果呈现', text: '以作品视频与竞赛展板呈现方案，获米兰设计周国家级三等奖。' }
+      ],
+      images: ['images/gallery/board_yixiu.jpg'],
+      docs: []
+    },
+    ai_xiuzhang: {
+      focus: '世界观设定 / AI 漫剧 / 镜头叙事',
+      idea: '从「道藏三千：非遗证道录」的世界观出发，将道家符箓与非遗纹样转化为角色、场景与镜头叙事。',
+      steps: [
+        { title: '设定与剧本', text: '以设定集组织角色与力量体系，通过剧本展开非遗题材的故事。' },
+        { title: '概念与分镜', text: '概念设计确定视觉方向，PV 分镜安排画面、运镜与节奏。' },
+        { title: '影像呈现', text: '团队完成 AI 漫剧影像创作，作为西湖新风 AI 漫剧创作大赛参赛作品提交。' }
+      ],
+      images: ['images/process/concept_xiuzang_1.jpg', 'images/process/concept_xiuzang_2.jpg', 'images/gallery/poster_xiuzang_1.jpg'],
+      docs: [
+        { href: 'docs/daozang_worldbuilding.pdf', label: '完整世界观设定', kind: 'PDF' },
+        { href: 'docs/xiuzang_script.pdf', label: '剧本', kind: 'PDF' },
+        { href: 'docs/xiuzang_pv_storyboard.pdf', label: 'PV 分镜', kind: 'PDF' }
+      ]
+    },
+    itd_shange: {
+      focus: 'Processing / 音画互动 / 声光表达',
+      idea: '以声音与视觉的实时关联为创作方向，将「山歌」延展为空间中的声光回应。',
+      steps: [
+        { title: '主题', text: '围绕山歌与回响构思声音、灯光和视觉之间的关系。' },
+        { title: '实现', text: '以 Processing 音画互动为技术基础，相关核心源码可供阅读。' },
+        { title: '成果', text: '获中国好创意大赛学术组国家级二等奖。' }
+      ],
+      images: [],
+      docs: [{ href: 'docs/code/audio_visual_interaction.pde', label: '音画互动核心源码', kind: '源码', download: true }]
+    }
+  };
+
   /* ==================== 工具函数 ==================== */
   function byId(id) { return document.getElementById(id); }
   function findWork(id) {
@@ -518,10 +577,15 @@
     if (!grid) { return; }
     var counts = {};
     WORKS.forEach(function (w) { counts[w.dir] = (counts[w.dir] || 0) + 1; });
-    counts.gallery = GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0);
+    counts.gallery = GALLERY.reduce(function (n, g) { return n + (g.hidden ? 0 : g.items.length); }, 0);
+    counts.process = PROCESS_GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0);
+    byId('videoCount').textContent = WORKS.length;
+    byId('photoCount').textContent = GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0) + counts.process;
+    byId('writingCount').textContent = WRITING_DOCS.length;
 
     grid.innerHTML = DIRECTIONS.map(function (d) {
-      var chipText = d.countLabel || ('作品 ' + (counts[d.id] || 0) + ' 件');
+      var chipText = d.id === 'process' ? ('过程图 ' + counts.process + ' 张') :
+        (d.countLabel || ('作品 ' + (counts[d.id] || 0) + ' 件'));
       return '' +
         '<a class="dir-card reveal" href="#' + d.id + '">' +
           '<div class="dir-num">' + d.num + '</div>' +
@@ -640,11 +704,16 @@
     var grid = byId('featuredGrid');
     if (!grid) { return; }
     grid.innerHTML = FEATURED.map(function (f) {
+      var work = findWork(f.href.replace('#work-', ''));
       return '' +
-        '<a class="featured-card reveal" href="' + f.href + '">' +
+        '<a class="featured-card reveal" href="' + f.href + '" data-open-work="' + work.id + '">' +
+          '<div class="featured-cover"><img src="' + imgUrl('images/posters/' + work.id + '.jpg') + '" alt="' + f.title + ' 作品画面" width="480" height="270">' +
+          '<span class="featured-play" aria-hidden="true">▶</span></div>' +
+          '<div class="featured-body">' +
           '<h3 class="featured-title">' + f.title + '</h3>' +
           '<p class="featured-sub">' + f.sub + '</p>' +
           '<p class="featured-award">' + f.award + '</p>' +
+          '<span class="featured-open">观看作品与创作说明 ↗</span></div>' +
         '</a>';
     }).join('');
   }
@@ -722,7 +791,13 @@
         '<div class="docs-grid">' + renderDocCards(PROCESS_DOCS) + '</div>' +
       '</div>';
 
-    wrap.innerHTML = stepsHtml + galleryHtml + quotesHtml + docsHtml;
+    var projectHtml = '<div class="process-projects reveal">' + ['itd_ironfire', 'ai_xiuzhang'].map(function (id) {
+      var work = findWork(id);
+      return '<button class="process-project" type="button" data-open-work="' + id + '">' +
+        '<span class="process-project-label">项目制作路径</span><strong>' + work.title + '</strong>' +
+        '<span>' + PROJECT_NOTES[id].focus + '</span><span class="process-project-open">查看成片与相关材料 ↗</span></button>';
+    }).join('') + '</div>';
+    wrap.innerHTML = projectHtml + stepsHtml + galleryHtml + quotesHtml + docsHtml;
   }
 
   function renderDocCards(docs) {
@@ -876,6 +951,7 @@
   /* 灯箱键盘：ESC 关闭；方向键切换；Enter/Space 打开卡片 */
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
+      e.preventDefault();
       closeLightbox();
       return;
     }
@@ -910,6 +986,33 @@
   var modalSub = byId('modalSub');
   var lastFocus = null;
 
+  function renderProjectNotes(id) {
+    var note = PROJECT_NOTES[id];
+    if (!note) { return ''; }
+    var photos = note.images.map(function (src) {
+      var index = -1;
+      for (var i = 0; i < photoFlat.length; i++) {
+        if (photoFlat[i].item.src === src) { index = i; break; }
+      }
+      if (index < 0) { return ''; }
+      var item = photoFlat[index].item;
+      return '<button class="case-photo" type="button" data-case-photo="' + index + '">' +
+        '<img src="' + imgUrl(src) + '" alt="' + item.title + '" loading="lazy">' +
+        '<span>' + item.title + ' ＋</span></button>';
+    }).join('');
+    return '<section class="project-note" aria-label="创作说明">' +
+      '<p class="case-kicker">PROJECT NOTES · 创作说明</p>' +
+      '<h4 class="case-focus">' + note.focus + '</h4><p class="case-idea">' + note.idea + '</p>' +
+      '<ol class="case-steps">' + note.steps.map(function (step, i) {
+        return '<li><span class="case-step-num">0' + (i + 1) + '</span><h5>' + step.title + '</h5><p>' + step.text + '</p></li>';
+      }).join('') + '</ol>' +
+      (photos ? '<div class="case-photos">' + photos + '</div>' : '') +
+      (note.docs.length ? '<div class="case-links">' + note.docs.map(function (doc) {
+        return '<a href="' + doc.href + '" ' + (doc.download ? 'download' : 'target="_blank" rel="noopener"') + '>' +
+          '<span>' + doc.label + '</span><small>' + doc.kind + (doc.download ? ' ↓' : ' ↗') + '</small></a>';
+      }).join('') + '</div>' : '') + '</section>';
+  }
+
   function openPlayer(id) {
     var work = findWork(id);
     if (!work || !modal) { return; }
@@ -936,10 +1039,14 @@
 
     modalTitle.textContent = work.title;
     modalSub.innerHTML = '<b>' + work.year + '</b>' + work.credit;
+    byId('modalDescription').textContent = work.desc;
+    byId('modalTags').innerHTML = work.tags.map(function (tag) { return '<li>' + tag + '</li>'; }).join('');
+    byId('modalCase').innerHTML = renderProjectNotes(id);
 
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
+    byId('modalContent').scrollTop = 0;
     if (modalCloseBtn) { modalCloseBtn.focus(); }
   }
 
@@ -960,12 +1067,26 @@
 
   /* 卡片点击（事件委托） */
   document.addEventListener('click', function (e) {
+    var opener = e.target && e.target.closest ? e.target.closest('[data-open-work]') : null;
+    if (opener) {
+      e.preventDefault();
+      openPlayer(opener.getAttribute('data-open-work'));
+      return;
+    }
+    var photo = e.target && e.target.closest ? e.target.closest('[data-case-photo]') : null;
+    if (photo) {
+      modalVideo.pause();
+      openLightbox(parseInt(photo.getAttribute('data-case-photo'), 10));
+      return;
+    }
     var card = e.target && e.target.closest ? e.target.closest('.work-card') : null;
     if (card) { openPlayer(card.getAttribute('data-id')); }
   });
 
   /* 键盘：ESC 关闭弹层；Enter/Space 打开卡片 */
   document.addEventListener('keydown', function (e) {
+    /* 灯箱叠在项目之上时，只让最上层处理关闭与焦点。 */
+    if (e.defaultPrevented || (lightbox && lightbox.classList.contains('open'))) { return; }
     if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
       closePlayer();
       return;
@@ -979,6 +1100,23 @@
 
   if (modalCloseBtn) { modalCloseBtn.addEventListener('click', closePlayer); }
   if (modalBackdrop) { modalBackdrop.addEventListener('click', closePlayer); }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') { return; }
+    var panel = lightbox && lightbox.classList.contains('open') ? lightbox :
+      (modal && modal.classList.contains('open') ? modal : null);
+    if (!panel) { return; }
+    var controls = Array.prototype.filter.call(panel.querySelectorAll('button, a[href], video[controls], [tabindex="0"]'), function (el) {
+      return el.getClientRects().length && !el.disabled;
+    });
+    var first = controls[0], last = controls[controls.length - 1];
+    if (!first) { return; }
+    if (!panel.contains(document.activeElement) || (e.shiftKey && document.activeElement === first)) {
+      e.preventDefault(); (e.shiftKey ? last : first).focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  });
 
   /* 封面缺失时的优雅降级 */
   document.addEventListener('error', function (e) {

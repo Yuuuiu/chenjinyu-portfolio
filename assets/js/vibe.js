@@ -98,7 +98,8 @@
   /* ---------- 作品卡悬停视频预览 ---------- */
   function initWorkPreview() {
     if (!hasHover || reduce) { return; }
-    var VIDEO_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
+    var local = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
+    var VIDEO_BASE = local ? 'videos/' : 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
     document.addEventListener('mouseover', function (e) {
       var card = e.target.closest ? e.target.closest('.work-card') : null;
       if (!card) { return; }
