@@ -1,0 +1,80 @@
+/* ============================================================
+   PROTECT — 作品保护层（防下载 / 防复制 / 防打印 / 防拖拽）
+   说明：浏览器端无法阻止 OS 级截屏/录屏，此处做“劝退 + 溯源”：
+   1 禁用右键菜单  2 禁止选中/复制  3 禁止图片拖拽
+   4 拦截 保存/打印/查看源码 快捷键  5 视频禁下载/画中画
+   6 全站隐形水印（截图录屏会带上作者信息，可溯源）
+   ============================================================ */
+
+/* ---------- 禁止选中与拖拽 ---------- */
+body.protect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+body.protect img,
+body.protect video {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+}
+body.protect img { pointer-events: none; }
+body.protect .work-card img,
+body.protect .gallery-item img { pointer-events: none; }
+
+/* ---------- 打印屏蔽 ---------- */
+@media print {
+  body > * { display: none !important; }
+  body::after {
+    content: "© 陈锦育 · 版权所有，禁止下载/转载/录制";
+    display: block;
+    font-size: 20px;
+    padding: 40px;
+  }
+}
+
+/* ---------- 水印层 ---------- */
+.wm-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  opacity: .055;
+  background-repeat: repeat;
+  background-position: 0 0;
+  mix-blend-mode: multiply;
+}
+@media (prefers-reduced-motion: reduce) { .wm-layer { opacity: .05; } }
+
+/* ---------- 开发者工具提示（轻量） ---------- */
+.dev-warn {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 9996;
+  background: rgba(17, 17, 17, .92);
+  color: #FAFAF9;
+  font-size: 12px;
+  letter-spacing: .08em;
+  padding: 10px 18px;
+  border-radius: 999px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+.dev-warn.show { opacity: 1; visibility: visible; }
+
+/* ---------- 视频：隐藏下载相关 ---------- */
+video::-webkit-media-controls-download-button { display: none !important; }
+video::-internal-media-controls-download-button { display: none !important; }
+
+/* ---------- 版权提示条 ---------- */
+.copyright-line {
+  font-size: 11px;
+  color: var(--gray-2);
+  letter-spacing: .06em;
+  margin-top: 10px;
+}
