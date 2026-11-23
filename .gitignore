@@ -1,3 +1,6 @@
 ﻿_build/
 *.log
 videos/
+
+# 大文件走 OSS（71MB）
+docs/xiuzang_pv_storyboard.pdf

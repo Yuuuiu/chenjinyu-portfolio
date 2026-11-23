@@ -386,7 +386,7 @@
       foot: '《绣藏》AI 漫剧 · 世界观文档'
     },
     {
-      href: 'docs/xiuzang_pv_storyboard.pdf', tag: '分镜脚本',
+      href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', tag: '分镜脚本',
       title: '《绣藏》PV 分镜',
       desc: 'AI 漫剧 PV 的镜头级分镜：画面、运镜与节奏设计。',
       foot: '《绣藏》AI 漫剧 · 分镜'
@@ -546,7 +546,7 @@
       docs: [
         { href: 'docs/daozang_worldbuilding.pdf', label: '完整世界观设定', kind: 'PDF' },
         { href: 'docs/xiuzang_script.pdf', label: '剧本', kind: 'PDF' },
-        { href: 'docs/xiuzang_pv_storyboard.pdf', label: 'PV 分镜', kind: 'PDF' }
+        { href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', label: 'PV 分镜', kind: 'PDF' }
       ]
     },
     itd_shange: {
