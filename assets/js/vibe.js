@@ -113,8 +113,9 @@
       v.muted = true;
       v.loop = true;
       v.playsInline = true;
-      v.preload = 'auto';
+      v.preload = 'metadata';
       v.src = VIDEO_BASE + id + '.mp4';
+      v.addEventListener('error', function () { if (v.src.indexOf('/preview/') > -1) { v.src = VIDEO_FALLBACK + id + '.mp4'; } });
       cover.appendChild(v);
       v.addEventListener('canplay', function () {
         v.classList.add('ready');
