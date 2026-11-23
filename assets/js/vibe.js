@@ -99,33 +99,50 @@
   function initWorkPreview() {
     if (!hasHover || reduce) { return; }
     var local = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
-    var VIDEO_BASE = local ? 'videos/' : 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
+    var OSS = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
+    var PREVIEW = local ? 'videos/' : OSS + 'preview/';
+    var FULL = local ? 'videos/' : OSS;
+
+    function removePreview(card) {
+      if (card._pvTimer) { clearTimeout(card._pvTimer); card._pvTimer = null; }
+      var v = card._pv;
+      if (v) {
+        try { v.pause(); } catch (err) {}
+        if (v.parentNode) { v.parentNode.removeChild(v); }
+        card._pv = null;
+      }
+      card.dataset.previewing = '0';
+    }
+
     document.addEventListener('mouseover', function (e) {
       var card = e.target.closest ? e.target.closest('.work-card') : null;
       if (!card) { return; }
       var id = card.getAttribute('data-id');
       if (!id || card.dataset.previewing === '1') { return; }
       card.dataset.previewing = '1';
-      var cover = card.querySelector('.cover');
-      if (!cover) { return; }
-      var v = document.createElement('video');
-      v.className = 'work-preview';
-      v.muted = true;
-      v.loop = true;
-      v.playsInline = true;
-      v.preload = 'metadata';
-      v.src = VIDEO_BASE + id + '.mp4';
-      v.addEventListener('error', function () { if (v.src.indexOf('/preview/') > -1) { v.src = VIDEO_FALLBACK + id + '.mp4'; } });
-      cover.appendChild(v);
-      v.addEventListener('canplay', function () {
-        v.classList.add('ready');
-        var p = v.play();
-        if (p && p.catch) { p.catch(function () {}); }
-      });
-      v.addEventListener('error', function () {
-        util_remove(v, card);
-      });
-      card._pv = v;
+      /* 悬停 250ms 再加载，避免划过就下载 */
+      card._pvTimer = setTimeout(function () {
+        var cover = card.querySelector('.cover');
+        if (!cover) { return; }
+        var v = document.createElement('video');
+        v.className = 'work-preview';
+        v.muted = true;
+        v.loop = true;
+        v.playsInline = true;
+        v.preload = 'metadata';
+        v.src = PREVIEW + id + '.mp4';
+        v.addEventListener('error', function () {
+          if (!v._triedFull) { v._triedFull = true; v.src = FULL + id + '.mp4'; return; }
+          removePreview(card);
+        });
+        v.addEventListener('canplay', function () {
+          v.classList.add('ready');
+          var p = v.play();
+          if (p && p.catch) { p.catch(function () {}); }
+        });
+        cover.appendChild(v);
+        card._pv = v;
+      }, 250);
     });
     document.addEventListener('mouseout', function (e) {
       var card = e.target.closest ? e.target.closest('.work-card') : null;
@@ -133,16 +150,6 @@
       if (card.contains(e.relatedTarget)) { return; }
       removePreview(card);
     });
-    function removePreview(card) {
-      var v = card._pv;
-      if (v) {
-        try { v.pause(); } catch (err) {}
-        if (v.parentNode) { v.parentNode.removeChild(v); }
-      }
-      card._pv = null;
-      card.dataset.previewing = '0';
-    }
-    function util_remove(v, card) { if (v.parentNode) { v.parentNode.removeChild(v); } card.dataset.previewing = '0'; }
   }
 
   /* ---------- 磁吸 ---------- */
