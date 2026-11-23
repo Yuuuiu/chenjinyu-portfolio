@@ -267,8 +267,8 @@
       /* 平面 IP 设计板块专用：不在「视觉设计」画廊中重复展示 */
       group: '平面 IP 设计', en: '2D IP DESIGN', portrait: true, hidden: true,
       items: [
-        { src: 'images/gallery/board_hongcang.jpg', title: '《红仓》泥塑娃娃 IP 设计', desc: '恩施文旅 IP · 角色形象与衍生延展' },
-        { src: 'images/gallery/ip_jiangcang_2.jpg', title: '《江仓》文旅 IP 角色设定 · 二', desc: '恩施文旅 IP · 角色立绘与服饰' },
+        { src: 'images/gallery/board_hongcang_v2.jpg', title: '《红仓》「山仓之灵」IP 设计', desc: '红花峰林文旅 IP · 三视图 / 表情 / 标准色 / 延展服饰与动作（恩施土家族文化）' },
+        { src: 'images/gallery/ip_jiangcang_v2.jpg', title: '《江仓》「水仓之灵」IP 设计', desc: '清江文旅 IP · 三视图 / 表情 / 标准色 / 延展动作（与红仓为兄妹角色）' },
         { src: 'images/gallery/ip_guqi_1.jpg', title: '《古器争鸣》文物拟人 IP · 展板一', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
         { src: 'images/gallery/ip_guqi_2.jpg', title: '《古器争鸣》文物拟人 IP · 展板二', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
         { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌 IP', desc: '消费心理与品牌传播课程 · 品牌 IP 视觉' },
