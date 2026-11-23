@@ -98,7 +98,7 @@
   /* ---------- 作品卡悬停视频预览 ---------- */
   function initWorkPreview() {
     if (!hasHover || reduce) { return; }
-    var local = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
+    var local = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\]|(?:10\.\d+|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d+\.\d+)$/.test(window.location.hostname);
     var OSS = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
     var PREVIEW = local ? 'videos/' : OSS + 'preview/';
     var FULL = local ? 'videos/' : OSS;

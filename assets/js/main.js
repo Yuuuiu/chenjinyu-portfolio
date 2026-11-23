@@ -9,7 +9,7 @@
 
   /* ==================== 资源源 ==================== */
   /* 国内加速：视频与图片全部托管在阿里云 OSS（上海），GitHub Pages 只承载 HTML/CSS/JS */
-  var LOCAL_PREVIEW = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
+  var LOCAL_PREVIEW = window.location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\]|(?:10\.\d+|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d+\.\d+)$/.test(window.location.hostname);
   var VIDEO_BASE = LOCAL_PREVIEW ? 'videos/' : 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/';
   var IMG_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/';
 
@@ -54,8 +54,8 @@
       name: '平面 IP 设计',
       en: '2D IP DESIGN',
       tagline: '角色 IP · 文物拟人 · 品牌视觉 · 衍生延展',
-      desc: '角色形象与品牌 IP 的平面设计：红仓/江仓文旅 IP、古器争鸣文物拟人、AD钙奶品牌 IP 与文创延展',
-      countLabel: '作品 6 件'
+      desc: '角色形象与品牌 IP 的平面设计：红仓/江仓文旅 IP、古器争鸣文物拟人、AD钙奶品牌 IP、游戏角色与文创延展',
+      countLabel: '作品 7 件'
     },
     {
       id: 'gallery',
@@ -72,7 +72,7 @@
       en: 'PROCESS & WORKFLOW',
       tagline: '概念 · 分镜 · AI 生成 · 技术实现',
       desc: '从概念卡、分镜脚本到即梦生成与 TouchDesigner 实现的完整创作工作流',
-      countLabel: '过程图 18 张'
+      countLabel: '过程图 24 张'
     },
     {
       id: 'writing',
@@ -254,17 +254,13 @@
       items: [
         { src: 'images/gallery/poster_qiehuang.jpg', title: '《茄香味俱全》海报', desc: '视听语言课程结课' },
         { src: 'images/gallery/poster_qingtong.jpg', title: '《青铜遗韵》海报', desc: '观察与表现课程 · 组队比赛' },
-        { src: 'images/gallery/poster_xiuzang_1.jpg', title: '《绣藏》海报 · 一', desc: '西湖新风 AI 漫剧大赛' },
-        { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》海报 · 二', desc: '西湖新风 AI 漫剧大赛' },
-        { src: 'images/gallery/poster_xiuzang_3.jpg', title: '《绣藏》海报 · 三', desc: '西湖新风 AI 漫剧大赛' },
-        { src: 'images/gallery/poster_hucheng_1.jpg', title: '《湖城烟雨》海报 · 一', desc: '综合创作课程 · 与焦星宇合作' },
-        { src: 'images/gallery/poster_hucheng_2.jpg', title: '《湖城烟雨》海报 · 二', desc: '综合创作课程 · 与焦星宇合作' },
-        { src: 'images/gallery/poster_bear_1.jpg', title: '《倒退的棕榈叶》海报 · 一', desc: '小熊 IP · AI 影像概念海报' },
-        { src: 'images/gallery/poster_bear_2.jpg', title: '《倒退的棕榈叶》海报 · 二', desc: '小熊 IP · AI 影像概念海报' },
-        { src: 'images/gallery/poster_bear_3.jpg', title: '《倒退的棕榈叶》海报 · 三', desc: '小熊 IP · AI 影像概念海报' },
-        { src: 'images/gallery/poster_bear_4.jpg', title: '《倒退的棕榈叶》海报 · 四', desc: '小熊 IP · AI 影像概念海报' },
-        { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》海报 · 五', desc: '小熊 IP · AI 影像概念海报' },
-        { src: 'images/gallery/poster_bear_6.jpg', title: '《倒退的棕榈叶》海报 · 六', desc: '小熊 IP · AI 影像概念海报' }
+        { src: 'images/gallery/poster_xiuzang_1.jpg', title: '《绣藏》人物海报', desc: '西湖新风 AI 漫剧大赛 · 角色形象主视觉' },
+        { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》主海报', desc: '西湖新风 AI 漫剧大赛 · 角色冲突主视觉' },
+        { src: 'images/gallery/poster_xiuzang_3.jpg', title: '《绣藏》场景海报', desc: '西湖新风 AI 漫剧大赛 · 世界观场景延展' },
+        { src: 'images/gallery/poster_hucheng_1.jpg', title: '《湖城烟雨》海报', desc: '综合创作课程 · 与焦星宇合作' },
+        { src: 'images/gallery/poster_bear_2.jpg', title: '《倒退的棕榈叶》主海报', desc: '小熊 IP · AI 影像概念主视觉' },
+        { src: 'images/gallery/poster_bear_3.jpg', title: '《倒退的棕榈叶》人物海报', desc: '小熊 IP · AI 影像概念角色延展' },
+        { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》场景海报', desc: '小熊 IP · AI 影像概念场景延展' }
       ]
     },
     {
@@ -276,6 +272,7 @@
         { src: 'images/gallery/ip_guqi_1.jpg', title: '《古器争鸣》文物拟人 IP · 展板一', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
         { src: 'images/gallery/ip_guqi_2.jpg', title: '《古器争鸣》文物拟人 IP · 展板二', desc: '青铜器拟人角色卡牌设计 · 组队项目' },
         { src: 'images/gallery/board_adcal.jpg', title: '《AD钙奶 · 成长营养搭子》品牌 IP', desc: '消费心理与品牌传播课程 · 品牌 IP 视觉' },
+        { src: 'images/gallery/board_designbasics.jpg', title: '《三月三的起源与流传》游戏角色 IP', desc: '设计基础课程 · 民族文化角色设定与游戏界面延展' },
         { src: 'images/gallery/ip_wenchuang.jpg', title: 'IP 文创衍生设计', desc: '体验设计课程 · IP 衍生品设计方案' }
       ]
     }
@@ -303,7 +300,13 @@
         { src: 'images/process/ai_gen_3.jpg', title: 'AI 生成 · 分镜参考 一', desc: '即梦 / MJ 生成的分镜参考画面 · 之一' },
         { src: 'images/process/ai_gen_4.jpg', title: 'AI 生成 · 分镜参考 二', desc: '即梦 / MJ 生成的分镜参考画面 · 之二' },
         { src: 'images/process/concept_xiuzang_1.jpg', title: '《绣藏》概念设计 · 第一页', desc: 'AI 漫剧参赛作品的概念设计文档（世界观 / 角色 / 视觉基调）' },
-        { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' }
+        { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' },
+        { src: 'images/process/xiuzang_frame_beast_1.jpg', title: '《绣藏》分镜原画 · 神兽一', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
+        { src: 'images/process/xiuzang_frame_beast_2.jpg', title: '《绣藏》分镜原画 · 神兽二', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
+        { src: 'images/process/xiuzang_frame_beast_3.jpg', title: '《绣藏》分镜原画 · 神兽三', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
+        { src: 'images/process/xiuzang_frame_catastrophe_1.jpg', title: '《绣藏》分镜原画 · 灾厄战线一', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
+        { src: 'images/process/xiuzang_frame_catastrophe_2.jpg', title: '《绣藏》分镜原画 · 灾厄战线二', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
+        { src: 'images/process/xiuzang_frame_catastrophe_3.jpg', title: '《绣藏》分镜原画 · 灾厄战线三', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' }
       ]
     },
     {
@@ -542,7 +545,7 @@
         { title: '概念与分镜', text: '概念设计确定视觉方向，PV 分镜安排画面、运镜与节奏。' },
         { title: '影像呈现', text: '团队完成 AI 漫剧影像创作，作为西湖新风 AI 漫剧创作大赛参赛作品提交。' }
       ],
-      images: ['images/process/concept_xiuzang_1.jpg', 'images/process/concept_xiuzang_2.jpg', 'images/gallery/poster_xiuzang_1.jpg'],
+      images: ['images/process/concept_xiuzang_1.jpg', 'images/process/concept_xiuzang_2.jpg', 'images/gallery/poster_xiuzang_2.jpg'],
       docs: [
         { href: 'docs/daozang_worldbuilding.pdf', label: '完整世界观设定', kind: 'PDF' },
         { href: 'docs/xiuzang_script.pdf', label: '剧本', kind: 'PDF' },
@@ -1034,7 +1037,7 @@
     } else {
       if (wrap) { wrap.classList.remove('bili-mode'); }
       if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
-      modalVideo.setAttribute('src', VIDEO_BASE + (work.videoFile || (work.id + '.mp4')));
+      modalVideo.setAttribute('src', VIDEO_BASE + ((!LOCAL_PREVIEW && work.videoFile) || (work.id + '.mp4')));
       modalVideo.setAttribute('poster', imgUrl('images/posters/' + work.id + '.jpg'));
       modalVideo.autoplay = true;
     }

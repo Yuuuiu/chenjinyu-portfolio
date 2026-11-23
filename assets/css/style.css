@@ -874,6 +874,8 @@ body.modal-open { overflow: hidden; }
 
 /* ---------------- 响应式 ---------------- */
 @media (max-width: 1024px) {
+  .site-nav { gap: clamp(10px, 1.8vw, 20px); }
+  .brand { flex-shrink: 0; }
   .directions-grid { grid-template-columns: repeat(2, 1fr); }
   .works-grid { grid-template-columns: repeat(2, 1fr); }
   .awards-grid { grid-template-columns: repeat(3, 1fr); }
@@ -886,7 +888,7 @@ body.modal-open { overflow: hidden; }
   .td-list li { grid-template-columns: 1fr; gap: 2px; }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 800px) {
   .header-inner { padding: 0 18px; }
   .site-nav {
     display: none;
@@ -899,11 +901,24 @@ body.modal-open { overflow: hidden; }
     flex-direction: column;
     gap: 0;
     padding: 8px 18px 14px;
+    max-height: calc(100vh - 60px);
+    max-height: calc(100dvh - 60px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .site-nav.open { display: flex; }
   .site-nav a { padding: 10px 0; border-bottom: none; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: grid; place-content: center; width: 44px; min-height: 44px; }
+}
 
+@media (hover: none) {
+  .work-card .cover-overlay { opacity: 1; background: transparent; }
+  .work-card .play-wrap { position: absolute; right: 10px; bottom: 10px; }
+  .work-card .play-hint { display: none; }
+  .work-card .play-btn { width: 36px; height: 36px; }
+}
+
+@media (max-width: 680px) {
   .hero { padding: 64px 18px 30px; }
   .hero-title { font-size: 25px; }
   .hero-meta { gap: 18px; flex-wrap: wrap; }
