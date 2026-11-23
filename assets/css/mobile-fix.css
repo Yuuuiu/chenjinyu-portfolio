@@ -1,0 +1,49 @@
+/* ============================================================
+   移动端修复（追加）：防止横向溢出、精选卡在窄屏堆叠、汉堡按钮可见
+   ============================================================ */
+html, body { max-width: 100%; }
+
+@media (max-width: 800px) {
+  html, body { overflow-x: hidden; }
+
+  .header-inner {
+    gap: 10px;
+  }
+  .nav-toggle {
+    display: grid;
+    flex: 0 0 auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 3;
+  }
+  .brand { min-width: 0; }
+  .brand-name, .brand-en { white-space: nowrap; }
+
+  .hero-sub, .hero-statement, .hero-meta, .hero-name {
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  /* 精选作品：窄屏改为上下堆叠，避免文字被挤出屏幕 */
+  .featured-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .featured-card {
+    grid-template-columns: 1fr !important;
+    display: block;
+  }
+  .featured-cover {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 0;
+  }
+  .featured-body { padding: 12px 14px; }
+
+  .marquee-track { will-change: transform; }
+  .gallery-group-head { flex-wrap: wrap; row-gap: 4px; }
+}
+
+@media (max-width: 480px) {
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .hero-meta li { font-size: 11px; }
+  .sec-num { font-size: 34px; }
+  .head-title { font-size: 19px; }
+}
