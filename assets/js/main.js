@@ -154,7 +154,7 @@
       credit: '独立创作 · 队长 · 米兰设计周国家级三等奖（指导教师：李紫阳、程思、刘琼）'
     },
     {
-      id: 'itd_honghua', dir: 'interactive',
+      id: 'itd_honghua', dir: 'interactive', videoFile: 'itd_honghua-v2.mp4',
       title: '《红花峰林十六点·互动地图》',
       year: '2026', tags: ['TouchDesigner', '文旅', '互动地图'],
       desc: '恩施文旅融合创新计时赛作品，中国好创意大赛国家级三等奖。红花峰林景区十六景点交互游览地图。',
@@ -610,7 +610,9 @@
       grid.innerHTML = list.map(function (w) {
         return '' +
           '<article class="work-card reveal" role="button" tabindex="0"' +
-            ' id="work-' + w.id + '" data-id="' + w.id + '" aria-label="播放 ' + w.title + '">' +
+            ' id="work-' + w.id + '" data-id="' + w.id + '"' +
+            (w.videoFile ? ' data-video="' + w.videoFile + '"' : '') +
+            ' aria-label="播放 ' + w.title + '">' +
             '<div class="cover">' +
               '<img class="work-poster" src="' + imgUrl('images/posters/' + w.id + '.jpg') + '"' +
                 ' alt="' + w.title + ' 封面" loading="lazy">' +
@@ -1032,7 +1034,7 @@
     } else {
       if (wrap) { wrap.classList.remove('bili-mode'); }
       if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
-      modalVideo.setAttribute('src', VIDEO_BASE + work.id + '.mp4');
+      modalVideo.setAttribute('src', VIDEO_BASE + (work.videoFile || (work.id + '.mp4')));
       modalVideo.setAttribute('poster', imgUrl('images/posters/' + work.id + '.jpg'));
       modalVideo.autoplay = true;
     }

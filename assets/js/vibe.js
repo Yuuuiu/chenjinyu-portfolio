@@ -130,9 +130,10 @@
         v.loop = true;
         v.playsInline = true;
         v.preload = 'metadata';
-        v.src = PREVIEW + id + '.mp4';
+        var file = card.getAttribute('data-video') || (id + '.mp4');
+        v.src = PREVIEW + file;
         v.addEventListener('error', function () {
-          if (!v._triedFull) { v._triedFull = true; v.src = FULL + id + '.mp4'; return; }
+          if (!v._triedFull) { v._triedFull = true; v.src = FULL + file; return; }
           removePreview(card);
         });
         v.addEventListener('canplay', function () {
