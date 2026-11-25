@@ -72,7 +72,7 @@
       en: 'PROCESS & WORKFLOW',
       tagline: '概念 · 分镜 · AI 生成 · 技术实现',
       desc: '从概念卡、分镜脚本到即梦生成与 TouchDesigner 实现的完整创作工作流',
-      countLabel: '过程图 24 张'
+      countLabel: '过程图 28 张'
     },
     {
       id: 'writing',
@@ -332,6 +332,15 @@
       items: [
         { src: 'images/process/prompt_1.jpg', title: '即梦生成记录 · 提示词（一）', desc: '提示词 ↔ 产出画面一一对应：镜头空间、摄影机位置、光影设定' },
         { src: 'images/process/prompt_2.jpg', title: '即梦生成记录 · 提示词（二）', desc: '提示词 ↔ 产出画面一一对应：继续迭代的场景与角色镜头' }
+      ]
+    },
+    {
+      group: 'AI 角色设定 · 三视图', en: 'CHARACTER SHEETS', portrait: true,
+      items: [
+        { src: 'images/process/charsheet_girl_1.jpg', title: '少女角色三视图 · 无头正面版', desc: 'AI 短剧角色定妆：左侧面部特写 + 正面无头身体 / 侧背全身，保证角色一致性' },
+        { src: 'images/process/charsheet_girl_2.jpg', title: '少女角色三视图 · 经典版', desc: '同一角色的面部特写 + 正 / 侧 / 背三视图（同一张脸、同一服装）' },
+        { src: 'images/process/charsheet_boy_1.jpg', title: '男性角色定妆三视图', desc: '写实国漫风角色定妆：服装与比例三视图，用于短剧分镜前的角色锚定' },
+        { src: 'images/process/charsheet_boy_2.jpg', title: '男性角色换装三视图', desc: '「图一人物 + 图二服装」换装提示词测试：保持人物不变、仅替换服装' }
       ]
     },
     {
