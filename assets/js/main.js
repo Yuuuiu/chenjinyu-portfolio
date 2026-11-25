@@ -72,7 +72,7 @@
       en: 'PROCESS & WORKFLOW',
       tagline: '概念 · 分镜 · AI 生成 · 技术实现',
       desc: '从概念卡、分镜脚本到即梦生成与 TouchDesigner 实现的完整创作工作流',
-      countLabel: '过程图 28 张'
+      countLabel: '过程图 32 张'
     },
     {
       id: 'writing',
@@ -341,6 +341,15 @@
         { src: 'images/process/charsheet_girl_2.jpg', title: '少女角色三视图 · 经典版', desc: '同一角色的面部特写 + 正 / 侧 / 背三视图（同一张脸、同一服装）' },
         { src: 'images/process/charsheet_boy_1.jpg', title: '男性角色定妆三视图', desc: '写实国漫风角色定妆：服装与比例三视图，用于短剧分镜前的角色锚定' },
         { src: 'images/process/charsheet_boy_2.jpg', title: '男性角色换装三视图', desc: '「图一人物 + 图二服装」换装提示词测试：保持人物不变、仅替换服装' }
+      ]
+    },
+    {
+      group: 'AI 二创海报（练习 · 非商用）', en: 'FAN-ART POSTERS (PRACTICE)', portrait: false,
+      items: [
+        { src: 'images/process/ultra_poster_1.jpg', title: '《GALAXY GUARDIANS》二创海报', desc: 'AI 二创练习 · 非商用：战队式群像海报，字体与人物层次排版' },
+        { src: 'images/process/ultra_poster_2.jpg', title: '《ULTRAAX》二创海报', desc: 'AI 二创练习 · 非商用：大标题压字与英雄群像构图' },
+        { src: 'images/process/ultra_poster_3.jpg', title: '《NOVA FORCE》二创海报', desc: 'AI 二创练习 · 非商用：竖版电影海报，冷色调与光效设计' },
+        { src: 'images/process/ultra_poster_4.jpg', title: '《GALAXY GUARDIANS》二创海报 · 二', desc: 'AI 二创练习 · 非商用：另一版群像构图与色彩方案' }
       ]
     },
     {
