@@ -100,6 +100,7 @@
     /* ---- 壹 · AI 影像（主创 · 全程参与 · 团队协作） ---- */
     {
       id: 'ai_xiuzhang', dir: 'ai',
+      duration: '2:56',
       title: '《绣藏》',
       year: '2026', tags: ['AI漫剧', '全流程管线', '非遗国风'],
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
@@ -111,6 +112,7 @@
     },
     {
       id: 'ai_yangyangtang', dir: 'ai',
+      duration: '1:04',
       title: '《盐阳叹》',
       year: '2026', tags: ['AI影像诗', '水墨流体', '文化题材'],
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
@@ -122,6 +124,7 @@
     },
     {
       id: 'ai_cannes', dir: 'ai',
+      duration: '3:55',
       title: '《倒退的棕榈叶》',
       year: '2026', tags: ['AI剧情短片', '电影感', '情绪叙事'],
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
@@ -133,6 +136,7 @@
     },
     {
       id: 'ai_dasheng', dir: 'ai',
+      duration: '1:36',
       title: '《灾厄战线》',
       year: '2026', tags: ['AI概念片', '暗黑科幻', '即梦'],
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
@@ -144,6 +148,7 @@
     },
     {
       id: 'ai_doubao', dir: 'ai',
+      duration: '2:20',
       title: '《小奶与小美》',
       year: '2026', tags: ['AI数字人', '口播叙事', '废土科幻'],
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
@@ -157,7 +162,7 @@
       id: 'ai_yegou', dir: 'ai',
       title: '《野生狗奶》',
       year: '2026', tags: ['AI喜剧短片', '多角色动作', '剧本改编'],
-      duration: '约 2:30（150 秒剧本改编）',
+      duration: '4:07',
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'AIGC 视频生成', '剪辑配音'],
@@ -168,6 +173,7 @@
     /* ---- 贰 · 交互装置 ---- */
     {
       id: 'itd_shange', dir: 'interactive',
+      duration: '0:59',
       title: '《山歌回音壁》声音与灯光互动装置',
       year: '2026', tags: ['Processing', '音画互动', '声光装置'],
       role: '独立创作（概念 / 音画程序 / 声光联动）',
@@ -179,6 +185,7 @@
     },
     {
       id: 'itd_yixiu', dir: 'interactive',
+      duration: '3:33',
       title: '《一绣成祥》',
       year: '2026', tags: ['TouchDesigner', '粒子系统', '手势识别', '壮锦'],
       role: '独立创作 · 队长（TD 粒子 / 手势交互 / 展板）',
@@ -191,7 +198,7 @@
       id: 'itd_ironfire', dir: 'interactive',
       title: '《铁火生花》IRON FIRE BLOOM',
       year: '2026', tags: ['TouchDesigner', 'GPU粒子', '手势交互', '非遗数字化'],
-      duration: '2:44',
+      duration: '1:54',
       role: '独立创作（概念 / 分镜 / TD 粒子 / 脚本成片）',
       team: '独立完成',
       tools: ['TouchDesigner', 'GPU 粒子', 'PowerShell / ffmpeg'],
@@ -200,6 +207,7 @@
     },
     {
       id: 'itd_honghua', dir: 'interactive', videoFile: 'itd_honghua-v2.mp4',
+      duration: '2:18',
       title: '《红花峰林十六点·互动地图》',
       year: '2026', tags: ['TouchDesigner', '文旅', '互动地图'],
       role: '交互视觉与地图实现',
@@ -210,6 +218,7 @@
     },
     {
       id: 'itd_xinmai', dir: 'interactive',
+      duration: '2:24',
       title: '《心脉·花影》情绪交互装置',
       year: '2025', tags: ['TouchDesigner', '心率传感', 'MediaPipe', '情绪可视化'],
       role: '组长（传感器接入 / 流体粒子交互）',
@@ -221,6 +230,7 @@
     /* ---- 叁 · 影视创作 ---- */
     {
       id: 'film_wusheng', dir: 'film',
+      duration: '0:59',
       title: '《无声暗涌》',
       year: '2025', tags: ['After Effects', '动态影像', '情绪'],
       role: '独立创作（概念 / 动态视觉 / 后期合成）',
@@ -231,6 +241,7 @@
     },
     {
       id: 'film_silu', dir: 'film',
+      duration: '3:03',
       title: '《丝路新篇》',
       year: '2025', tags: ['AI生成', '实拍', '剪辑合成'],
       role: '独立创作（AI 生成 / 实拍素材整合 / 剪辑）',
@@ -241,6 +252,7 @@
     },
     {
       id: 'film_hucheng', dir: 'film',
+      duration: '1:36',
       title: '《湖城烟雨》',
       year: '2025', tags: ['实拍', '剪辑', '调色'],
       role: '拍摄 / 剪辑 / 调色',
@@ -251,6 +263,7 @@
     },
     {
       id: 'film_qiehuang', dir: 'film',
+      duration: '3:00',
       title: '《茄香味俱全》',
       year: '2025', tags: ['短片', '剧本', '剪辑'],
       role: '独立创作（剧本 / 拍摄 / 剪辑）',
@@ -261,6 +274,7 @@
     },
     {
       id: 'film_zaoba', dir: 'film',
+      duration: '1:58',
       title: '《这节早八不太好上》',
       year: '2025', tags: ['短片', '剧本', '视听语言'],
       role: '独立创作（剧本 / 手持拍摄 / 剪辑）',
