@@ -706,6 +706,127 @@
       ],
       images: [],
       docs: [{ href: 'docs/code/audio_visual_interaction.pde', label: '音画互动核心源码', kind: '源码', download: true }]
+    },
+    ai_dasheng: {
+      focus: '暗黑科幻概念片 / 废墟战场大场面 / 即梦动态探索',
+      idea: '围绕「灾厄降临」世界观，探索女性战士与巨兽对峙的高反差暗黑科幻视觉与大场面镜头张力。',
+      steps: [
+        { title: '世界观与氛围定调', text: '确立低饱和废墟质感与巨物压迫感，统一光影方向、烟尘层次与角色装备细节。' },
+        { title: '关键镜头与动态生成', text: '借助即梦等工具迭代关键帧与图生视频，控制人物动作幅度与巨兽压迫镜头的稳定性。' },
+        { title: '节奏剪辑与音效强化', text: '团队协作完成短片剪辑、色调统一与氛围音效合成，形成高冲击力的概念预告短片。' }
+      ],
+      images: [],
+      docs: []
+    },
+    ai_doubao: {
+      focus: 'AI 数字人口播 / 废土科幻场景 / 角色叙事融合',
+      idea: '把数字人口播与橙色沙海、巨型光柱的废土科幻场景结合，用日常对话反衬荒芜世界的陌生感。',
+      steps: [
+        { title: '角色与对话设计', text: '设定两位角色的口播互动节奏与性格反差，让废土背景下的对话保持轻松与记忆点。' },
+        { title: '数字人与场景协同', text: '结合即梦与 AI 数字人工具生成角色口型与异星场景，兼顾人物表现力与画面氛围统一。' },
+        { title: '后期合成与成片输出', text: '团队协作完成剪辑衔接、字幕排版与整体调色，输出完整 AI 数字人剧情短片。' }
+      ],
+      images: [],
+      docs: []
+    },
+    ai_yegou: {
+      focus: '150 秒剧本改编 / 多角色动作喜剧 / 快节奏剪辑',
+      idea: '基于 150 秒喜剧剧本，在废墟场景中围绕「野生狗奶」展开五人争夺，用古装角色与现代包装制造穿越反差笑点。',
+      steps: [
+        { title: '剧本拆解与分镜节奏', text: '将 150 秒剧本拆解为紧凑的冲突段落，规划五位角色的出场顺序与喜剧包袱节点。' },
+        { title: '多角色生成与反差控制', text: '通过即梦等工具生成古装人物与现代包装的混搭画面，保持多角色同场时的视觉辨识度。' },
+        { title: '动作剪辑与配音合成', text: '团队协作完成快节奏卡点剪辑与配音音效配合，强化动作喜剧的观看流畅度。' }
+      ],
+      images: [],
+      docs: []
+    },
+    itd_honghua: {
+      focus: 'TouchDesigner 互动地图 / 恩施文旅计时赛 / 国家级三等奖',
+      idea: '围绕恩施红花峰林景区十六个核心景点，构建可交互游览的数字文旅地图，并结合《红仓》《江仓》文旅 IP 延展视觉体验。',
+      steps: [
+        { title: '文旅调研与景点梳理', text: '提炼红花峰林与清江地域文化符号，将十六处景点组织为清晰的空间游览动线。' },
+        { title: 'TD 互动地图实现', text: '在计时赛周期内使用 TouchDesigner 完成地图交互逻辑与视觉反馈，兼顾导览清晰度与趣味性。' },
+        { title: '展板呈现与获奖成果', text: '配合恩施文旅展板与角色 IP 视觉完成汇报展示，获中国好创意大赛国家级三等奖。' }
+      ],
+      images: [
+        'images/gallery/board_enshi.jpg',
+        'images/gallery/board_hongcang_v2.jpg',
+        'images/gallery/ip_jiangcang_v2.jpg'
+      ],
+      docs: []
+    },
+    itd_xinmai: {
+      focus: '心率传感 + MediaPipe / 情绪可视化 / 实时流体粒子',
+      idea: '将不可见的生理心率与面部微表情转译为实时流动的花影粒子，让观众的情绪波动在空间中具象可见。',
+      steps: [
+        { title: '多模态数据采集', text: '接入心率传感器与 MediaPipe 面部微表情识别，提取可驱动视觉变化的实时情绪参数。' },
+        { title: '流体粒子视觉映射', text: '在 TouchDesigner 中建立参数到粒子形态、流速与色彩的映射关系，呈现「心脉生花」的视觉隐喻。' },
+        { title: '小组协同与联调展示', text: '作为第九组组长统筹方案与实时联调，完成交互装置设计课程的现场体验演示。' }
+      ],
+      images: [],
+      docs: []
+    },
+    film_wusheng: {
+      focus: 'After Effects 动态视觉 / 情绪物质化 / 实验影像',
+      idea: '把难以宣泄的压抑情绪转译为粘稠液体、机械与生物组织碰撞及闪烁噪点，建立克制而具压迫感的实验视觉系统。',
+      steps: [
+        { title: '情绪意象转译', text: '从材质质感与运动阻尼出发，确立暗调实验影像的视觉母题与节奏推进。' },
+        { title: 'AE 动态图形合成', text: '独立完成 After Effects 材质合成、噪点闪烁与镜头转场，突出声音与画面的张力。' },
+        { title: '成片与展板收束', text: '同步输出动态成片与结课展示展板，完整呈现实验影像的视觉概念。' }
+      ],
+      images: ['images/gallery/board_wusheng.jpg'],
+      docs: []
+    },
+    film_silu: {
+      focus: 'AI 生成 × 实拍混剪 / 丝绸之路主题 / 跨时空叙事',
+      idea: '结合 AI 生成画面与实拍素材，串联沙漠公路、森林、雪地、戈壁与城市高架，跨越古今呈现丝绸之路的延续与变迁。',
+      steps: [
+        { title: '主题结构与场景串联', text: '按地理与时间双线索组织地貌切换，建立从古丝路到现代交通的视觉呼应。' },
+        { title: 'AI 与实拍风格融合', text: '统一 AI 生成镜头与实拍镜头的色彩影调与运动速度，减少跨媒介拼接割裂感。' },
+        { title: '节奏剪辑与音乐合成', text: '独立完成全片剪辑合成与调色，作为影视创作课程结课作品呈现。' }
+      ],
+      images: [],
+      docs: []
+    },
+    film_hucheng: {
+      focus: '雨景实拍实验 / 水墨影调调色 / 城市与自然',
+      idea: '刻意等待雨天前往东湖实地拍摄，以栈桥、荷叶与古亭在雨雾中的朦胧层次，探索城市空间与东方水墨意境的契合。',
+      steps: [
+        { title: '气候等待与实地采风', text: '选择雨雾天气进行实拍，捕捉水面涟漪、雨幕反光与建筑剪影的自然肌理。' },
+        { title: '剪辑节奏与水墨调色', text: '与焦星宇合作完成镜头筛选、舒缓节奏剪辑与低饱和水墨风调色。' },
+        { title: '影像与海报延展', text: '同步完成《湖城烟雨》主题海报设计，统一短片与平面视觉气质。' }
+      ],
+      images: ['images/gallery/poster_hucheng_1.jpg'],
+      docs: []
+    },
+    film_qiehuang: {
+      focus: '暖调创意短片 / 剧本到成片 / 海报与展板全套',
+      idea: '以主角小吴从超市选购「茄皇」到宿舍煮食的日常线性叙事，借暖色调光影把对家的思念藏进一碗泡面里。',
+      steps: [
+        { title: '剧本与视听策划', text: '独立撰写《茄皇》短片剧本，规划超市到宿舍的场景过渡与情感升温节点。' },
+        { title: '实拍与暖调剪辑', text: '突出食物热气、近景细节与暖色灯光，强化治愈日常的观看体验。' },
+        { title: '平面物料完整延展', text: '同步产出结课海报与展示展板，并保留完整剧本文档可供查阅。' }
+      ],
+      images: [
+        'images/gallery/poster_qiehuang.jpg',
+        'images/gallery/board_qiehuang.jpg'
+      ],
+      docs: [
+        { href: 'docs/qiehuang_script.pdf', label: '《茄皇》完整剧本', kind: 'PDF' }
+      ]
+    },
+    film_zaoba: {
+      focus: '校园题材短片 / 暗调手持镜头 / 视听语言训练',
+      idea: '以暗调光影与手持跟拍记录「早八」前后的宿舍深夜，把大学生起床的挣扎拍成一场充满张力的小型战役。',
+      steps: [
+        { title: '校园剧本创作', text: '围绕宿舍夜戏与清晨闹钟冲突撰写短片剧本，构建贴近真实生活的戏剧张力。' },
+        { title: '暗调光影与手持拍摄', text: '运用明暗对比与贴身手持运镜放大紧迫感，强化视听语言的情绪调度。' },
+        { title: '剪辑成片与剧本归档', text: '独立完成剪辑与声效设计，完整保留短片成片与原剧本 PDF。' }
+      ],
+      images: [],
+      docs: [
+        { href: 'docs/zaoba_script.pdf', label: '《这个早八不太好上》剧本', kind: 'PDF' }
+      ]
     }
   };
 
@@ -761,7 +882,9 @@
       if (!grid || !list.length) { return; }
 
       grid.innerHTML = list.map(function (w) {
-        var hasCase = !!PROJECT_NOTES[w.id];
+        var noteObj = PROJECT_NOTES[w.id];
+        var hasCase = !!noteObj;
+        var hasRichAssets = !!(noteObj && ((noteObj.images && noteObj.images.length) || (noteObj.docs && noteObj.docs.length)));
         return '' +
           '<article class="work-card reveal" role="button" tabindex="0"' +
             ' id="work-' + w.id + '" data-id="' + w.id + '"' +
@@ -776,7 +899,7 @@
                   '<span class="play-hint">' + (hasCase ? '播放 · 看拆解' : '播放') + '</span>' +
                 '</div>' +
               '</div>' +
-              (hasCase ? '<span class="case-badge">含案例拆解</span>' : '') +
+              (hasRichAssets ? '<span class="case-badge">含拆解与材料</span>' : (hasCase ? '<span class="case-badge case-badge-lite">含案例拆解</span>' : '')) +
               '<span class="year-chip">' + w.year + '</span>' +
             '</div>' +
             '<div class="work-body">' +
