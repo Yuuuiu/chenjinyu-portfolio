@@ -202,6 +202,30 @@
     });
   }
 
+
+  /* ---------- Tab 底部滑动墨水指示条 ---------- */
+  function initTabInk() {
+    var bars = document.querySelectorAll('.gallery-tabs');
+    [].forEach.call(bars, function (bar) {
+      if (bar.querySelector('.gallery-tab-ink')) { return; }
+      var ink = document.createElement('span');
+      ink.className = 'gallery-tab-ink';
+      ink.setAttribute('aria-hidden', 'true');
+      bar.appendChild(ink);
+      function sync() {
+        var active = bar.querySelector('.gallery-tab.active');
+        if (!active) { return; }
+        ink.style.width = active.offsetWidth + 'px';
+        ink.style.transform = 'translateX(' + active.offsetLeft + 'px)';
+        ink.classList.add('ready');
+      }
+      bar.addEventListener('click', function () { setTimeout(sync, 20); });
+      bar.addEventListener('keydown', function () { setTimeout(sync, 20); });
+      window.addEventListener('resize', sync);
+      setTimeout(sync, 120);
+    });
+  }
+
   /* ---------- 启动 ---------- */
   function boot() {
     initLoader();
@@ -212,6 +236,7 @@
     initMagnetic();
     setTimeout(initRevealBoost, 180);
     setTimeout(initSecNumbers, 100);
+    setTimeout(initTabInk, 160);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

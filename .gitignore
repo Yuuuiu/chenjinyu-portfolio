@@ -7,3 +7,8 @@ docs/xiuzang_pv_storyboard.pdf
 
 # 本地剪辑脚本（不部署）
 build_showreel_60s.ps1
+
+# 本地 Showreel 渲染脚本与字卡（不部署）
+render_showreel_1080p_master.ps1
+showreel_overlays/
+
