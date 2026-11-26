@@ -15,7 +15,9 @@
   /* 图片路径统一转换：本地相对路径 → OSS 直链 */
   function imgUrl(p) {
     if (!p) { return p; }
-    if (p.indexOf('assets/') === 0) { return p; }
+    if (p.indexOf('assets/') === 0) {
+      return LOCAL_PREVIEW ? p : (IMG_BASE + 'images/' + p.split('/').pop());
+    }
     if (p.indexOf('http') === 0) { return p; }
     if (LOCAL_PREVIEW) { return p; }
     return IMG_BASE + p.replace(/^\.?\//, '');
@@ -185,7 +187,7 @@
       role: '独立创作（概念 / 音画程序 / 声光联动）',
       team: '独立完成',
       tools: ['Processing', '音画互动', '灯光联动'],
-      poster: 'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/itd_shange_v2.jpg',
+      poster: 'assets/images/itd_shange_v2.jpg',
       result: '', scale: '', teamSize: '',
       desc: '声音与灯光交互装置：以《文山·沉积之书》影像为呈现载体，观众的声音与动作驱动灯光与画面回应，把「山歌」转译为空间中的声光回响。',
       credit: '独立创作 · 中国好创意大赛 · 学术组国家级二等奖'
@@ -757,8 +759,8 @@
         { title: '节奏剪辑与音效强化', text: '团队协作完成短片剪辑、色调统一与氛围音效合成，形成高冲击力的概念预告短片。' }
       ],
       images: [
-        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_1.jpg',
-        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_2.jpg',
+        'assets/images/dasheng_cover_1.jpg',
+        'assets/images/dasheng_cover_2.jpg',
         'assets/images/gen_ai_dasheng_1.jpg'
       ],
       docs: []
@@ -811,9 +813,9 @@
         { title: '小组协同与联调展示', text: '作为第九组组长统筹方案与实时联调，完成交互装置设计课程的现场体验演示。' }
       ],
       images: [
-        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/xinmai_board_1.jpg',
-        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/xinmai_board_2.jpg',
-        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/xinmai_board_3.jpg'
+        'assets/images/xinmai_board_1.jpg',
+        'assets/images/xinmai_board_2.jpg',
+        'assets/images/xinmai_board_3.jpg'
       ],
       docs: [
         { href: 'docs/xinmai_design.pdf', label: '多感官情绪互动装置设计', kind: 'PDF' },
@@ -1604,8 +1606,9 @@
 
 
   /* ==================== 个人 Showreel 播放 ==================== */
-  var SHOWREEL_SRC = 'assets/videos/chenjinyu_showreel_60s_1080p.mp4';
-  var SHOWREEL_POSTER = 'assets/images/showreel_cover.jpg';
+  var SHOWREEL_SRC = LOCAL_PREVIEW ? 'assets/videos/chenjinyu_showreel_60s_1080p.mp4'
+    : 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/videos/chenjinyu_showreel_60s_1080p.mp4';
+  var SHOWREEL_POSTER = imgUrl('assets/images/showreel_cover.jpg');
 
   function openShowreel() {
     if (!modal) { return; }
