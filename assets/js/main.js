@@ -1,7 +1,7 @@
 /* =====================================================================
    陈锦育 · 个人作品集 —— 前端脚本
    数据源：本文件内维护（纯原生 JS，无任何外部依赖）
-   AI 实习导向优化版：强化 AIGC 案例拆解、Tab 分类精简长画廊、即时锚点显现
+   支持：Tab 无障碍与 URL Hash 深链接、弹窗项目信息表、上下部切换与失败重试、SVG 兜底
    ===================================================================== */
 (function () {
   'use strict';
@@ -19,6 +19,18 @@
     if (p.indexOf('http') === 0) { return p; }
     if (LOCAL_PREVIEW) { return p; }
     return IMG_BASE + p.replace(/^\.?\//, '');
+  }
+
+  /* 内联 SVG 占位图（图片加载失败时兜底，避免破图） */
+  function fallbackSvg(label) {
+    var safe = String(label || '作品画面').replace(/[<>&"']/g, '').slice(0, 22);
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">' +
+      '<rect width="640" height="360" fill="#EFEEEA"/>' +
+      '<rect x="20" y="20" width="600" height="320" fill="none" stroke="#DCDAD3" stroke-width="1"/>' +
+      '<text x="320" y="176" text-anchor="middle" fill="#6E6E6E" font-size="18" font-family="Microsoft YaHei,PingFang SC,sans-serif">' + safe + '</text>' +
+      '<text x="320" y="206" text-anchor="middle" fill="#9A9A9A" font-size="12" font-family="sans-serif">IMAGE LOADING UNAVAILABLE</text>' +
+      '</svg>';
+    return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
   }
 
   /* ==================== 数据：方向（七个内容方向，聚焦 AI 主线） ==================== */
@@ -85,11 +97,14 @@
   ];
 
   var WORKS = [
-    /* ---- 壹 · AI 影像（优先排布核心代表作） ---- */
+    /* ---- 壹 · AI 影像（主创 · 全程参与 · 团队协作） ---- */
     {
       id: 'ai_xiuzhang', dir: 'ai',
       title: '《绣藏》',
       year: '2026', tags: ['AI漫剧', '全流程管线', '非遗国风'],
+      role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
+      team: '团队协作',
+      tools: ['即梦', 'Midjourney', 'After Effects', '剪辑合成'],
       desc: '「道藏三千：非遗证道录」AI 漫剧参赛作品：以道家符箓与非遗纹样构建世界观，主创推进设定集、剧本、概念设计与 PV 分镜全流程。',
       credit: '',
       highlight: '西湖新风 AI 漫剧创作大赛 · 全流程含设定集与 PV 分镜'
@@ -98,6 +113,9 @@
       id: 'ai_yangyangtang', dir: 'ai',
       title: '《盐阳叹》',
       year: '2026', tags: ['AI影像诗', '水墨流体', '文化题材'],
+      role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
+      team: '团队协作',
+      tools: ['即梦', 'AIGC 视频生成', '后期调色剪辑'],
       desc: '水墨与流体抽象的 AI 影像诗：金色流线、蓝雾与星屑在画面中聚散，以「盐阳」古意为题呈现东方意象的情绪流动。',
       credit: '',
       highlight: '中国好创意大赛 · 应用组国家级二等奖'
@@ -106,6 +124,9 @@
       id: 'ai_cannes', dir: 'ai',
       title: '《倒退的棕榈叶》',
       year: '2026', tags: ['AI剧情短片', '电影感', '情绪叙事'],
+      role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
+      team: '团队协作',
+      tools: ['即梦', 'Midjourney', '剪辑调色'],
       desc: '真实感 AI 剧情短片：疲惫的设计师驾车、伏案绘图，与白发角色的往事在镜头间交织，探讨创作与时间。',
       credit: '',
       highlight: '电影感真实系 AI 剧情短片 · 含主视觉海报系列'
@@ -114,6 +135,9 @@
       id: 'ai_dasheng', dir: 'ai',
       title: '《灾厄战线》',
       year: '2026', tags: ['AI概念片', '暗黑科幻', '即梦'],
+      role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
+      team: '团队协作',
+      tools: ['即梦', 'AIGC 视频生成', '剪辑合成'],
       desc: '暗黑科幻 AI 概念短片：废墟战场上女性战士与巨兽对峙，「灾厄降临」世界观的大场面动态探索。',
       credit: '',
       highlight: '暗黑科幻大场面 · 概念预告片视觉探索'
@@ -122,6 +146,9 @@
       id: 'ai_doubao', dir: 'ai',
       title: '《小奶与小美》',
       year: '2026', tags: ['AI数字人', '口播叙事', '废土科幻'],
+      role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
+      team: '团队协作',
+      tools: ['即梦', 'AI 数字人', '剪辑合成'],
       desc: 'AI 废土科幻短片：橙色沙海中的异星生物与巨型光柱，数字人角色串联起荒芜世界里的日常对话。',
       credit: '',
       highlight: 'AI 数字人口播 × 废土科幻场景融合'
@@ -130,6 +157,10 @@
       id: 'ai_yegou', dir: 'ai',
       title: '《野生狗奶》',
       year: '2026', tags: ['AI喜剧短片', '多角色动作', '剧本改编'],
+      duration: '约 2:30（150 秒剧本改编）',
+      role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
+      team: '团队协作',
+      tools: ['即梦', 'AIGC 视频生成', '剪辑配音'],
       desc: '动作喜剧 AI 短片：废墟中五人争夺一箱「野生狗奶」，古装角色与现代包装碰撞出穿越式笑点（150 秒剧本改编）。',
       credit: '',
       highlight: '多角色快节奏动作喜剧 · 150 秒剧本改编'
@@ -139,6 +170,9 @@
       id: 'itd_shange', dir: 'interactive',
       title: '《山歌回音壁》声音与灯光互动装置',
       year: '2026', tags: ['Processing', '音画互动', '声光装置'],
+      role: '独立创作（概念 / 音画程序 / 声光联动）',
+      team: '独立完成',
+      tools: ['Processing', '音画互动', '灯光联动'],
       poster: 'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/itd_shange_v2.jpg',
       desc: '声音与灯光交互装置：以《文山·沉积之书》影像为呈现载体，观众的声音与动作驱动灯光与画面回应，把「山歌」转译为空间中的声光回响。',
       credit: '独立创作 · 中国好创意大赛 · 学术组国家级二等奖'
@@ -147,6 +181,9 @@
       id: 'itd_yixiu', dir: 'interactive',
       title: '《一绣成祥》',
       year: '2026', tags: ['TouchDesigner', '粒子系统', '手势识别', '壮锦'],
+      role: '独立创作 · 队长（TD 粒子 / 手势交互 / 展板）',
+      team: '独立完成',
+      tools: ['TouchDesigner', '粒子系统', '手势识别'],
       desc: '壮锦·绣球非遗数字交互装置：蛙纹、花卉、祥云纹样转译为粒子，观众以自然手势操控纹样汇聚生长与解构重组。',
       credit: '独立创作 · 队长 · 米兰设计周国家级三等奖（指导教师：李紫阳、程思、刘琼）'
     },
@@ -154,6 +191,10 @@
       id: 'itd_ironfire', dir: 'interactive',
       title: '《铁火生花》IRON FIRE BLOOM',
       year: '2026', tags: ['TouchDesigner', 'GPU粒子', '手势交互', '非遗数字化'],
+      duration: '2:44',
+      role: '独立创作（概念 / 分镜 / TD 粒子 / 脚本成片）',
+      team: '独立完成',
+      tools: ['TouchDesigner', 'GPU 粒子', 'PowerShell / ffmpeg'],
       desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可以被反复走近、反复体验。',
       credit: '独立创作 · 第十四届全国大学生数字媒体科技作品及创意竞赛参赛作品（编号 328499）'
     },
@@ -161,6 +202,9 @@
       id: 'itd_honghua', dir: 'interactive', videoFile: 'itd_honghua-v2.mp4',
       title: '《红花峰林十六点·互动地图》',
       year: '2026', tags: ['TouchDesigner', '文旅', '互动地图'],
+      role: '交互视觉与地图实现',
+      team: '计时赛团队',
+      tools: ['TouchDesigner', '互动地图'],
       desc: '恩施文旅融合创新计时赛作品，中国好创意大赛国家级三等奖。红花峰林景区十六景点交互游览地图。',
       credit: '中国好创意大赛 · 国家级三等奖（“跃动峡谷，潮玩清江”文旅融合与创新计时赛）'
     },
@@ -168,6 +212,9 @@
       id: 'itd_xinmai', dir: 'interactive',
       title: '《心脉·花影》情绪交互装置',
       year: '2025', tags: ['TouchDesigner', '心率传感', 'MediaPipe', '情绪可视化'],
+      role: '组长（传感器接入 / 流体粒子交互）',
+      team: '第九组协作',
+      tools: ['TouchDesigner', 'MediaPipe', '心率传感'],
       desc: '情绪可视化交互装置：心率传感与面部微表情（MediaPipe）实时驱动流体粒子，「心脉」被翻译成花与影。',
       credit: '组长（第九组）· 交互装置设计课程'
     },
@@ -176,6 +223,9 @@
       id: 'film_wusheng', dir: 'film',
       title: '《无声暗涌》',
       year: '2025', tags: ['After Effects', '动态影像', '情绪'],
+      role: '独立创作（概念 / 动态视觉 / 后期合成）',
+      team: '独立完成',
+      tools: ['After Effects', '动态图形合成'],
       desc: '情绪物质化实验影像：缓慢流动的粘稠液体、机械与生物组织的碰撞、闪烁噪点，把难以宣泄的压抑转成视觉系统。',
       credit: '独立创作'
     },
@@ -183,6 +233,9 @@
       id: 'film_silu', dir: 'film',
       title: '《丝路新篇》',
       year: '2025', tags: ['AI生成', '实拍', '剪辑合成'],
+      role: '独立创作（AI 生成 / 实拍素材整合 / 剪辑）',
+      team: '独立完成',
+      tools: ['AI 生成', '实拍', '剪辑合成'],
       desc: '丝绸之路主题影像：融合 AI 生成与实拍画面，从沙漠公路到森林、雪地、戈壁与城市高架，跨越古今讲述丝路传承。',
       credit: '独立创作 · 影视创作课程'
     },
@@ -190,6 +243,9 @@
       id: 'film_hucheng', dir: 'film',
       title: '《湖城烟雨》',
       year: '2025', tags: ['实拍', '剪辑', '调色'],
+      role: '拍摄 / 剪辑 / 调色',
+      team: '双人合作（与焦星宇）',
+      tools: ['实拍', '剪辑调色'],
       desc: '雨中东湖的影像实验：刻意等待雨天拍摄，栈桥、荷叶、古亭在雨雾中如水墨，探索城市与自然的关系。',
       credit: '与焦星宇合作 · 指导教师：彭隽'
     },
@@ -197,6 +253,9 @@
       id: 'film_qiehuang', dir: 'film',
       title: '《茄香味俱全》',
       year: '2025', tags: ['短片', '剧本', '剪辑'],
+      role: '独立创作（剧本 / 拍摄 / 剪辑）',
+      team: '独立完成',
+      tools: ['剧本', '实拍', '剪辑调色'],
       desc: '暖色调泡面创意短片：主角小吴从超市选购「茄皇」到宿舍煮食的线性叙事，把对家的思念藏进一碗面。',
       credit: '独立创作 · 指导教师：刘琼'
     },
@@ -204,6 +263,9 @@
       id: 'film_zaoba', dir: 'film',
       title: '《这节早八不太好上》',
       year: '2025', tags: ['短片', '剧本', '视听语言'],
+      role: '独立创作（剧本 / 手持拍摄 / 剪辑）',
+      team: '独立完成',
+      tools: ['剧本', '实拍', '视听剪辑'],
       desc: '视听语言课程短片：以暗调光影与手持镜头记录「早八」前后的宿舍深夜，把起床的挣扎拍成一场小型战役。',
       credit: '独立创作 · 视听语言课程'
     }
@@ -212,7 +274,9 @@
   /* ==================== 数据（平面 IP 与视觉设计画廊 · 合并 Tab 切换） ==================== */
   var GALLERY = [
     {
+      slug: 'ip',
       group: '平面 IP 设计', en: '2D IP DESIGN', portrait: true,
+      intro: '文旅角色（红仓 / 江仓）、青铜文物拟人（古器争鸣）与品牌 IP 的三视图、标准色与延展应用。',
       items: [
         { src: 'images/gallery/board_hongcang_v2.jpg', title: '《红仓》「山仓之灵」IP 设计', desc: '红花峰林文旅 IP · 三视图 / 表情 / 标准色 / 延展服饰与动作（恩施土家族文化）' },
         { src: 'images/gallery/ip_jiangcang_v2.jpg', title: '《江仓》「水仓之灵」IP 设计', desc: '清江文旅 IP · 三视图 / 表情 / 标准色 / 延展动作（与红仓为兄妹角色）' },
@@ -224,7 +288,9 @@
       ]
     },
     {
+      slug: 'poster',
       group: '海报设计', en: 'POSTER DESIGN', portrait: true,
+      intro: '《绣藏》《倒退的棕榈叶》等 AI 影像与影视短片的主海报、角色海报及场景视觉延展。',
       items: [
         { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》主海报', desc: '西湖新风 AI 漫剧大赛 · 角色冲突主视觉' },
         { src: 'images/gallery/poster_xiuzang_1.jpg', title: '《绣藏》人物海报', desc: '西湖新风 AI 漫剧大赛 · 角色形象主视觉' },
@@ -238,7 +304,9 @@
       ]
     },
     {
+      slug: 'board',
       group: '展板设计', en: 'EXHIBITION BOARDS', portrait: true,
+      intro: '《铁火生花》《一绣成祥》等竞赛汇报展板与课程综合展示版式。',
       items: [
         { src: 'images/gallery/board_ironfire.jpg', title: '《铁火生花》展板', desc: '非遗打铁花数字交互装置 · 数媒竞赛' },
         { src: 'images/gallery/board_yixiu.jpg', title: '《一绣成祥》展板', desc: '壮锦绣球非遗数字交互 · 米兰设计周' },
@@ -249,7 +317,9 @@
       ]
     },
     {
+      slug: 'merch',
       group: '文创衍生品', en: 'CULTURAL & CREATIVE PRODUCTS', portrait: false,
+      intro: '《青铜遗韵》系列文创的折扇、徽章、纸袋、抱枕与线下物料延展（默认展示精选 8 件，可展开全部）。',
       items: [
         { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '《青铜遗韵》文创 · 折扇：青铜云雷纹与兽面纹转译到扇面，国风便携衍生' },
         { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '《青铜遗韵》文创 · 金属徽章：青绿色青铜器造型珐琅徽章' },
@@ -283,10 +353,12 @@
     { num: '05', name: '剪辑与脚本', desc: '完成剪辑合成与 ffmpeg 脚本批处理，延展海报与展板' }
   ];
 
-  /* 创作过程图片组（AI 强相关分组置顶，支持 Tab 切换） */
+  /* 创作过程图片组（按项目聚类加前缀，AI 强相关分组置顶） */
   var PROCESS_GALLERY = [
     {
-      group: 'AI 概念与分镜', en: 'AI CONCEPT & STORYBOARD', portrait: false,
+      slug: 'concept',
+      group: '绣藏 · 概念与分镜', en: 'XIUZANG CONCEPT & STORYBOARD', portrait: false,
+      intro: '《绣藏》概念设计、PV 分镜原画与即梦 / MJ 场景探索，展示从概念定调到镜头构图的推演。',
       items: [
         { src: 'images/process/concept_xiuzang_1.jpg', title: '《绣藏》概念设计 · 第一页', desc: 'AI 漫剧参赛作品的概念设计文档（世界观 / 角色 / 视觉基调）' },
         { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' },
@@ -304,7 +376,9 @@
       ]
     },
     {
-      group: 'AI 角色三视图', en: 'CHARACTER CONSISTENCY', portrait: true,
+      slug: 'charsheet',
+      group: 'AI · 角色三视图', en: 'CHARACTER CONSISTENCY', portrait: true,
+      intro: 'AI 漫剧前期定妆与换装测试：通过面部特写 + 正侧背三视图锚定同一角色，控制多镜头一致性。',
       items: [
         { src: 'images/process/charsheet_girl_1.jpg', title: '少女角色三视图 · 无头正面版', desc: 'AI 短剧角色定妆：左侧面部特写 + 正面无头身体 / 侧背全身，保证角色一致性' },
         { src: 'images/process/charsheet_girl_2.jpg', title: '少女角色三视图 · 经典版', desc: '同一角色的面部特写 + 正 / 侧 / 背三视图（同一张脸、同一服装）' },
@@ -313,14 +387,18 @@
       ]
     },
     {
-      group: '提示词与生成记录', en: 'PROMPTS & GENERATION LOG', portrait: false,
+      slug: 'prompt',
+      group: '即梦 · 提示词记录', en: 'PROMPTS & GENERATION LOG', portrait: false,
+      intro: '提示词与产出画面一一对应的迭代记录，聚焦机位、光影氛围与空间构图控制。',
       items: [
         { src: 'images/process/prompt_1.jpg', title: '即梦生成记录 · 提示词（一）', desc: '提示词 ↔ 产出画面一一对应：镜头空间、摄影机位置、光影设定' },
         { src: 'images/process/prompt_2.jpg', title: '即梦生成记录 · 提示词（二）', desc: '提示词 ↔ 产出画面一一对应：继续迭代的场景与角色镜头' }
       ]
     },
     {
-      group: '分镜脚本', en: 'STORYBOARD & SHOT LIST', portrait: false,
+      slug: 'storyboard',
+      group: '铁火生花 · 分镜脚本', en: 'IRON FIRE STORYBOARD', portrait: false,
+      intro: '《铁火生花》V1 定稿分镜：逐镜拆解景别、运镜、时长与音效节点。',
       items: [
         { src: 'images/process/storyboard_1.jpg', title: '《铁火生花》分镜脚本 · 第一页', desc: '核心创意、时长规划、概念与立意、镜头表格（V1 定稿）' },
         { src: 'images/process/storyboard_2.jpg', title: '《铁火生花》分镜脚本 · 第二页', desc: '分镜画面与镜号表格：景别 / 运镜 / 时长 / 音效' },
@@ -329,7 +407,9 @@
       ]
     },
     {
-      group: 'TD 工作流界面', en: 'TOUCHDESIGNER WORKFLOW', portrait: false,
+      slug: 'td',
+      group: 'TD · 交互节点界面', en: 'TOUCHDESIGNER WORKFLOW', portrait: false,
+      intro: 'TouchDesigner 实时粒子、Feedback 反馈合成与流体交互的工程节点实拍。',
       items: [
         { src: 'images/process/td_1.jpg', title: 'TD 节点网络 · 粒子系统', desc: 'TouchDesigner 实时粒子节点网络（工程界面实拍）' },
         { src: 'images/process/td_2.jpg', title: 'TD 节点网络 · 反馈与合成', desc: 'Feedback / Composite 节点链路搭建过程' },
@@ -338,7 +418,9 @@
       ]
     },
     {
-      group: 'AI 二创海报（练习）', en: 'FAN-ART POSTERS (PRACTICE)', portrait: false,
+      slug: 'fanart',
+      group: '二创练习 · 非商用海报', en: 'FAN-ART POSTERS (PRACTICE)', portrait: false,
+      intro: 'AI 群像构图与电影感压字排版的个人二创练习，仅作学习展示，非商用。',
       items: [
         { src: 'images/process/ultra_poster_1.jpg', title: '《GALAXY GUARDIANS》二创海报', desc: 'AI 二创练习 · 非商用：战队式群像海报，字体与人物层次排版' },
         { src: 'images/process/ultra_poster_2.jpg', title: '《ULTRAAX》二创海报', desc: 'AI 二创练习 · 非商用：大标题压字与英雄群像构图' },
@@ -347,7 +429,9 @@
       ]
     },
     {
-      group: '工作流总览', en: 'WORKFLOW OVERVIEW', portrait: false,
+      slug: 'overview',
+      group: '通用 · 工作流总览', en: 'WORKFLOW OVERVIEW', portrait: false,
+      intro: '横向对照《铁火生花》《绣藏》《山歌回音壁》三个项目的制作路径与关键产出物。',
       items: [
         { src: 'assets/images/workflow-overview.svg', title: '创作路径 · 三个项目的制作展开', desc: '《铁火生花》《绣藏》《山歌回音壁》各自的制作路径与对应材料；不同作品按主题选择制作方式。' }
       ]
@@ -529,7 +613,7 @@
       steps: [
         { title: '世界观与剧本', text: '先搭建完整非遗证道体系与角色设定，再输出完整剧本文本，确保长线叙事逻辑自洽。' },
         { title: '概念与 PV 分镜', text: '完成两版概念设计定调视觉基调，逐镜绘制神兽与灾厄战线 PV 分镜原画，锚定构图与运镜。' },
-        { title: 'AI 生成与成片交付', text: '结合即梦等 AIGC 工具完成画面与动态生成，配合后期剪辑与主视觉海报延展，完成西湖新风 AI 漫剧创作大赛提交。' }
+        { title: 'AI 生成与成片交付', text: '结合即梦等 AIGC 工具完成画面与动态生成，配合后期剪辑与主视觉海报延展，团队协作完成西湖新风 AI 漫剧创作大赛提交。' }
       ],
       images: [
         'images/process/concept_xiuzang_1.jpg',
@@ -613,11 +697,15 @@
 
   /* ==================== 工具函数 ==================== */
   function byId(id) { return document.getElementById(id); }
-  function findWork(id) {
+  function findWorkIndex(id) {
     for (var i = 0; i < WORKS.length; i++) {
-      if (WORKS[i].id === id) { return WORKS[i]; }
+      if (WORKS[i].id === id) { return i; }
     }
-    return null;
+    return -1;
+  }
+  function findWork(id) {
+    var idx = findWorkIndex(id);
+    return idx >= 0 ? WORKS[idx] : null;
   }
 
   /* ==================== 渲染：方向入口卡片 ==================== */
@@ -667,7 +755,7 @@
             ' aria-label="播放 ' + w.title + '">' +
             '<div class="cover">' +
               '<img class="work-poster" src="' + imgUrl(w.poster || ('images/posters/' + w.id + '.jpg')) + '"' +
-                ' alt="' + w.title + ' 封面" loading="lazy">' +
+                ' alt="' + w.title + ' 封面" width="640" height="360" loading="lazy" decoding="async">' +
               '<div class="cover-overlay">' +
                 '<div class="play-wrap">' +
                   '<span class="play-btn"><span class="play-tri"></span></span>' +
@@ -691,16 +779,20 @@
     });
   }
 
-  /* ==================== 渲染：平面 IP 与视觉设计（Tab 切换 + 折叠） ==================== */
+  /* ==================== 渲染：平面 IP 与视觉设计（无障碍 Tab + 深链接 + 导语） ==================== */
   function renderGallery() {
     var wrap = byId('galleryWrap');
     if (!wrap) { return; }
     var idx0 = 0;
 
-    var tabsHtml = '<div class="gallery-tabs reveal" role="tablist" aria-label="视觉设计分类">' +
+    var tabsHtml = '<div class="gallery-tabs reveal" role="tablist" aria-label="视觉设计分类" data-tablist-scope="gallery">' +
       GALLERY.map(function (g, gi) {
+        var tabId = 'tab-gallery-' + g.slug;
+        var panelId = 'panel-gallery-' + g.slug;
         return '<button class="gallery-tab' + (gi === 0 ? ' active' : '') + '" type="button" role="tab"' +
-          ' aria-selected="' + (gi === 0 ? 'true' : 'false') + '" data-tab-scope="gallery" data-tab-idx="' + gi + '">' +
+          ' id="' + tabId + '" aria-controls="' + panelId + '"' +
+          ' aria-selected="' + (gi === 0 ? 'true' : 'false') + '" tabindex="' + (gi === 0 ? '0' : '-1') + '"' +
+          ' data-tab-scope="gallery" data-tab-idx="' + gi + '" data-tab-slug="' + g.slug + '">' +
           g.group + '<span>' + g.items.length + '</span></button>';
       }).join('') +
     '</div>';
@@ -708,13 +800,19 @@
     var panelsHtml = GALLERY.map(function (g, gi) {
       var base = idx0;
       idx0 += g.items.length;
+      var tabId = 'tab-gallery-' + g.slug;
+      var panelId = 'panel-gallery-' + g.slug;
+      var wAttr = g.portrait ? 'width="360" height="480"' : 'width="480" height="360"';
       return '' +
-        '<div class="gallery-group tab-panel reveal' + (gi === 0 ? ' active' : '') + '" data-panel-scope="gallery" data-panel-idx="' + gi + '">' +
+        '<div class="gallery-group tab-panel reveal' + (gi === 0 ? ' active' : '') + '"' +
+          ' id="' + panelId + '" role="tabpanel" aria-labelledby="' + tabId + '"' +
+          ' data-panel-scope="gallery" data-panel-idx="' + gi + '" data-panel-slug="' + g.slug + '">' +
           '<div class="gallery-group-head">' +
             '<span class="g-group-name">' + g.group + '</span>' +
             '<span class="g-group-en">' + g.en + '</span>' +
             '<span class="g-group-count">' + g.items.length + ' 件 · 点击查看大图</span>' +
           '</div>' +
+          (g.intro ? '<p class="g-group-intro">' + g.intro + '</p>' : '') +
           '<div class="gallery-grid">' +
             g.items.map(function (it, i) {
               return '' +
@@ -723,7 +821,7 @@
                   (it.href ? ' data-href="' + it.href + '"' : '') +
                   ' aria-label="查看 ' + it.title + '">' +
                   '<div class="g-thumb">' +
-                    '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
+                    '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" ' + wAttr + ' loading="lazy" decoding="async">' +
                     '<span class="g-zoom" aria-hidden="true">' + (it.href ? '↗' : '＋') + '</span>' +
                   '</div>' +
                   '<figcaption>' +
@@ -740,7 +838,7 @@
     wrap.innerHTML = tabsHtml + panelsHtml;
   }
 
-  /* ==================== 渲染：hero 精选作品快捷入口 ==================== */
+  /* ==================== 渲染：hero 精选作品快捷入口（首屏高优先级加载） ==================== */
   function renderFeatured() {
     var grid = byId('featuredGrid');
     if (!grid) { return; }
@@ -749,7 +847,7 @@
       if (!work) { return ''; }
       return '' +
         '<a class="featured-card reveal visible" href="' + f.href + '" data-open-work="' + work.id + '">' +
-          '<div class="featured-cover"><img src="' + imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')) + '" alt="' + f.title + ' 作品画面" width="480" height="270">' +
+          '<div class="featured-cover"><img src="' + imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')) + '" alt="' + f.title + ' 作品画面" width="480" height="270" decoding="async" fetchpriority="high">' +
           '<span class="featured-play" aria-hidden="true">▶</span></div>' +
           '<div class="featured-body">' +
           '<h3 class="featured-title">' + f.title + '</h3>' +
@@ -760,7 +858,7 @@
     }).join('');
   }
 
-  /* ==================== 渲染：伍 · 创作过程（Tab 分类 + 3 项目快捷拆解） ==================== */
+  /* ==================== 渲染：伍 · 创作过程（无障碍 Tab + 项目聚类 + 导语） ==================== */
   function renderProcess() {
     var wrap = byId('processWrap');
     if (!wrap) { return; }
@@ -774,26 +872,35 @@
         }).join('') +
       '</ol>';
 
-    var tabsHtml = '<div class="gallery-tabs reveal" role="tablist" aria-label="创作过程分类">' +
+    var tabsHtml = '<div class="gallery-tabs reveal" role="tablist" aria-label="创作过程分类" data-tablist-scope="process">' +
       PROCESS_GALLERY.map(function (g, gi) {
+        var tabId = 'tab-process-' + g.slug;
+        var panelId = 'panel-process-' + g.slug;
         return '<button class="gallery-tab' + (gi === 0 ? ' active' : '') + '" type="button" role="tab"' +
-          ' aria-selected="' + (gi === 0 ? 'true' : 'false') + '" data-tab-scope="process" data-tab-idx="' + gi + '">' +
+          ' id="' + tabId + '" aria-controls="' + panelId + '"' +
+          ' aria-selected="' + (gi === 0 ? 'true' : 'false') + '" tabindex="' + (gi === 0 ? '0' : '-1') + '"' +
+          ' data-tab-scope="process" data-tab-idx="' + gi + '" data-tab-slug="' + g.slug + '">' +
           g.group + '<span>' + g.items.length + '</span></button>';
       }).join('') +
     '</div>';
 
-    /* 创作过程画廊的灯箱索引 = 视觉设计画廊总数之后继续编号 */
     var base = GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0);
     var galleryHtml = PROCESS_GALLERY.map(function (g, gi) {
       var b = base;
       base += g.items.length;
+      var tabId = 'tab-process-' + g.slug;
+      var panelId = 'panel-process-' + g.slug;
+      var wAttr = g.portrait ? 'width="360" height="480"' : 'width="480" height="360"';
       return '' +
-        '<div class="gallery-group tab-panel reveal' + (gi === 0 ? ' active' : '') + '" data-panel-scope="process" data-panel-idx="' + gi + '">' +
+        '<div class="gallery-group tab-panel reveal' + (gi === 0 ? ' active' : '') + '"' +
+          ' id="' + panelId + '" role="tabpanel" aria-labelledby="' + tabId + '"' +
+          ' data-panel-scope="process" data-panel-idx="' + gi + '" data-panel-slug="' + g.slug + '">' +
           '<div class="gallery-group-head">' +
             '<span class="g-group-name">' + g.group + '</span>' +
             '<span class="g-group-en">' + g.en + '</span>' +
             '<span class="g-group-count">' + g.items.length + ' 件 · 点击查看大图</span>' +
           '</div>' +
+          (g.intro ? '<p class="g-group-intro">' + g.intro + '</p>' : '') +
           '<div class="gallery-grid">' +
             g.items.map(function (it, i) {
               return '' +
@@ -801,7 +908,7 @@
                   ' role="button" tabindex="0" data-index="' + (b + i) + '"' +
                   ' aria-label="查看 ' + it.title + '">' +
                   '<div class="g-thumb">' +
-                    '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" loading="lazy">' +
+                    '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · ' + g.group + '" ' + wAttr + ' loading="lazy" decoding="async">' +
                     '<span class="g-zoom" aria-hidden="true">＋</span>' +
                   '</div>' +
                   '<figcaption>' +
@@ -932,26 +1039,107 @@
       '</div>';
   }
 
-  /* ==================== Tab 切换 / 画廊折叠 / 复制按钮 ==================== */
+  /* ==================== Tab 切换（无障碍 + 键盘 ←/→ + Hash 深链接 + 移动端居中） ==================== */
+  function activateTab(scope, slugOrIdx, opts) {
+    opts = opts || {};
+    var tabs = document.querySelectorAll('.gallery-tab[data-tab-scope="' + scope + '"]');
+    var panels = document.querySelectorAll('.tab-panel[data-panel-scope="' + scope + '"]');
+    if (!tabs.length) { return false; }
+
+    var targetBtn = null;
+    for (var i = 0; i < tabs.length; i++) {
+      if (tabs[i].getAttribute('data-tab-slug') === String(slugOrIdx) ||
+          tabs[i].getAttribute('data-tab-idx') === String(slugOrIdx)) {
+        targetBtn = tabs[i];
+        break;
+      }
+    }
+    if (!targetBtn) { return false; }
+
+    var idx = targetBtn.getAttribute('data-tab-idx');
+    var slug = targetBtn.getAttribute('data-tab-slug');
+
+    for (var t = 0; t < tabs.length; t++) {
+      var isCur = tabs[t].getAttribute('data-tab-idx') === idx;
+      tabs[t].classList.toggle('active', isCur);
+      tabs[t].setAttribute('aria-selected', isCur ? 'true' : 'false');
+      tabs[t].setAttribute('tabindex', isCur ? '0' : '-1');
+    }
+    for (var p = 0; p < panels.length; p++) {
+      var match = panels[p].getAttribute('data-panel-idx') === idx;
+      panels[p].classList.toggle('active', match);
+      if (match) { panels[p].classList.add('visible', 'force-visible'); }
+    }
+
+    if (opts.scrollTab && targetBtn.scrollIntoView) {
+      try { targetBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); } catch (err) {}
+    }
+    if (opts.focusTab) { targetBtn.focus(); }
+    if (opts.updateHash && slug && window.history && window.history.replaceState) {
+      try { window.history.replaceState(null, '', '#' + scope + '-' + slug); } catch (err) {}
+    }
+    if (opts.scrollSection) {
+      var sec = byId(scope);
+      if (sec) {
+        revealSectionById(scope);
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    return true;
+  }
+
+  function applyHashTab(scrollToSection) {
+    var h = (location.hash || '').replace(/^#/, '');
+    var m = h.match(/^(gallery|process)-([a-z0-9_-]+)$/i);
+    if (!m) { return false; }
+    return activateTab(m[1], m[2], { scrollTab: true, scrollSection: !!scrollToSection });
+  }
+
   function initGalleryTabs() {
     document.addEventListener('click', function (e) {
       var btn = e.target && e.target.closest ? e.target.closest('.gallery-tab') : null;
       if (!btn) { return; }
-      var scope = btn.getAttribute('data-tab-scope');
-      var idx = btn.getAttribute('data-tab-idx');
-      var tabs = document.querySelectorAll('.gallery-tab[data-tab-scope="' + scope + '"]');
-      var panels = document.querySelectorAll('.tab-panel[data-panel-scope="' + scope + '"]');
-      for (var i = 0; i < tabs.length; i++) {
-        var isCur = tabs[i].getAttribute('data-tab-idx') === idx;
-        tabs[i].classList.toggle('active', isCur);
-        tabs[i].setAttribute('aria-selected', isCur ? 'true' : 'false');
-      }
-      for (var j = 0; j < panels.length; j++) {
-        var match = panels[j].getAttribute('data-panel-idx') === idx;
-        panels[j].classList.toggle('active', match);
-        if (match) { panels[j].classList.add('visible', 'force-visible'); }
-      }
+      activateTab(btn.getAttribute('data-tab-scope'), btn.getAttribute('data-tab-slug'), {
+        scrollTab: true,
+        updateHash: true
+      });
     });
+
+    /* 键盘 ← / → / Home / End 切换 Tab */
+    document.addEventListener('keydown', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('.gallery-tab') : null;
+      if (!btn) { return; }
+      if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].indexOf(e.key) === -1) { return; }
+      e.preventDefault();
+      var scope = btn.getAttribute('data-tab-scope');
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.gallery-tab[data-tab-scope="' + scope + '"]'));
+      var cur = tabs.indexOf(btn);
+      if (cur < 0) { return; }
+      var next = cur;
+      if (e.key === 'ArrowRight') { next = (cur + 1) % tabs.length; }
+      else if (e.key === 'ArrowLeft') { next = (cur - 1 + tabs.length) % tabs.length; }
+      else if (e.key === 'Home') { next = 0; }
+      else if (e.key === 'End') { next = tabs.length - 1; }
+      activateTab(scope, tabs[next].getAttribute('data-tab-slug'), {
+        scrollTab: true,
+        focusTab: true,
+        updateHash: true
+      });
+    });
+
+    /* 拦截站内 #gallery-xxx / #process-xxx 快捷链接 */
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href^="#gallery-"], a[href^="#process-"]') : null;
+      if (!a) { return; }
+      var h = a.getAttribute('href').slice(1);
+      var m = h.match(/^(gallery|process)-([a-z0-9_-]+)$/i);
+      if (!m) { return; }
+      e.preventDefault();
+      activateTab(m[1], m[2], { scrollTab: true, updateHash: true, scrollSection: true });
+    });
+
+    window.addEventListener('hashchange', function () { applyHashTab(true); });
+    applyHashTab(true);
   }
 
   function initGalleryExpand() {
@@ -1008,7 +1196,6 @@
   var lightboxDesc = byId('lightboxDesc');
   var lightboxCount = byId('lightboxCount');
 
-  /* 全局照片清单：视觉设计画廊与创作过程画廊共用同一灯箱 */
   var photoFlat = [];
   GALLERY.forEach(function (g) {
     g.items.forEach(function (it) { photoFlat.push({ group: g.group, item: it }); });
@@ -1023,6 +1210,7 @@
   function showLightboxItem() {
     var entry = photoFlat[lbIndex];
     if (!entry) { return; }
+    lightboxImg.dataset.fallbackDone = '';
     lightboxImg.src = imgUrl(entry.item.src);
     lightboxImg.alt = entry.item.title + ' · ' + entry.group;
     lightboxTitle.textContent = entry.item.title;
@@ -1056,7 +1244,6 @@
     showLightboxItem();
   }
 
-  /* 画廊卡片点击（事件委托） */
   document.addEventListener('click', function (e) {
     var item = e.target && e.target.closest ? e.target.closest('.gallery-item') : null;
     if (!item) { return; }
@@ -1065,7 +1252,6 @@
     openLightbox(parseInt(item.getAttribute('data-index'), 10));
   });
 
-  /* 灯箱键盘：ESC 关闭；方向键切换；Enter/Space 打开卡片 */
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
       e.preventDefault();
@@ -1093,14 +1279,40 @@
     });
   }
 
-  /* ==================== 全屏弹层播放器 ==================== */
+  /* ==================== 全屏弹层播放器（项目信息表 + 上/下一部 + 加载失败重试） ==================== */
   var modal = byId('playerModal');
   var modalBackdrop = byId('modalBackdrop');
   var modalCloseBtn = byId('modalClose');
+  var modalPrevBtn = byId('modalPrev');
+  var modalNextBtn = byId('modalNext');
+  var modalIndexEl = byId('modalIndex');
   var modalVideo = byId('modalVideo');
+  var modalVideoError = byId('modalVideoError');
+  var modalRetryBtn = byId('modalRetryBtn');
   var modalTitle = byId('modalTitle');
   var modalSub = byId('modalSub');
+  var modalFacts = byId('modalFacts');
   var lastFocus = null;
+  var currentWorkIdx = -1;
+  var currentVideoUrl = '';
+
+  function renderProjectFacts(work) {
+    if (!modalFacts) { return; }
+    var rows = [];
+    if (work.role) { rows.push({ k: '担任角色', v: work.role }); }
+    if (work.team) { rows.push({ k: '协作方式', v: work.team }); }
+    if (work.tools && work.tools.length) { rows.push({ k: '核心工具', v: work.tools.join(' · ') }); }
+    if (work.duration) { rows.push({ k: '作品时长', v: work.duration }); }
+    if (!rows.length) {
+      modalFacts.innerHTML = '';
+      modalFacts.hidden = true;
+      return;
+    }
+    modalFacts.hidden = false;
+    modalFacts.innerHTML = rows.map(function (r) {
+      return '<div><dt>' + r.k + '</dt><dd>' + r.v + '</dd></div>';
+    }).join('');
+  }
 
   function renderProjectNotes(id) {
     var note = PROJECT_NOTES[id];
@@ -1113,7 +1325,7 @@
       if (index < 0) { return ''; }
       var item = photoFlat[index].item;
       return '<button class="case-photo" type="button" data-case-photo="' + index + '">' +
-        '<img src="' + imgUrl(src) + '" alt="' + item.title + '" loading="lazy">' +
+        '<img src="' + imgUrl(src) + '" alt="' + item.title + '" width="320" height="240" loading="lazy" decoding="async">' +
         '<span>' + item.title + ' ＋</span></button>';
     }).join('');
     return '<section class="project-note" aria-label="案例拆解">' +
@@ -1129,31 +1341,51 @@
       }).join('') + '</div>' : '') + '</section>';
   }
 
-  function openPlayer(id) {
-    var work = findWork(id);
-    if (!work || !modal) { return; }
-    lastFocus = document.activeElement;
+  function hideVideoError() {
+    if (modalVideoError) { modalVideoError.hidden = true; }
+  }
+
+  function showVideoError() {
+    if (modal && modal.classList.contains('open') && modalVideoError && currentVideoUrl) {
+      modalVideoError.hidden = false;
+    }
+  }
+
+  function openPlayer(id, keepFocus) {
+    var idx = findWorkIndex(id);
+    if (idx < 0 || !modal) { return; }
+    var work = WORKS[idx];
+    var wasOpen = modal.classList.contains('open');
+    if (!wasOpen) { lastFocus = document.activeElement; }
+    currentWorkIdx = idx;
+    hideVideoError();
 
     var wrap = byId('modalVideoWrap');
     var bili = byId('modalBili');
 
     if (work.bili && wrap && bili) {
+      currentVideoUrl = '';
       wrap.classList.add('bili-mode');
       bili.classList.add('active');
       bili.innerHTML = '<iframe src="//player.bilibili.com/player.html?bvid=' + encodeURIComponent(work.bili) +
-        '&page=1&autoplay=1&high_quality=1&danmaku=0&as_wide=1" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+        '&page=1&autoplay=0&high_quality=1&danmaku=0&as_wide=1" scrolling="no" frameborder="0" allowfullscreen></iframe>';
       modalVideo.removeAttribute('src');
       modalVideo.load();
     } else {
       if (wrap) { wrap.classList.remove('bili-mode'); }
       if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
-      modalVideo.setAttribute('src', VIDEO_BASE + ((!LOCAL_PREVIEW && work.videoFile) || (work.id + '.mp4')));
+      currentVideoUrl = VIDEO_BASE + ((!LOCAL_PREVIEW && work.videoFile) || (work.id + '.mp4'));
+      modalVideo.pause();
+      modalVideo.setAttribute('preload', 'none');
       modalVideo.setAttribute('poster', imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')));
-      modalVideo.autoplay = true;
+      modalVideo.setAttribute('src', currentVideoUrl);
+      modalVideo.autoplay = false;
     }
 
+    if (modalIndexEl) { modalIndexEl.textContent = (idx + 1) + ' / ' + WORKS.length; }
     modalTitle.textContent = work.title;
     modalSub.innerHTML = '<b>' + work.year + '</b>' + (work.credit || work.highlight || '');
+    renderProjectFacts(work);
     byId('modalDescription').textContent = work.desc;
     byId('modalTags').innerHTML = work.tags.map(function (tag) { return '<li>' + tag + '</li>'; }).join('');
     byId('modalCase').innerHTML = renderProjectNotes(id);
@@ -1162,11 +1394,19 @@
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
     byId('modalContent').scrollTop = 0;
-    if (modalCloseBtn) { modalCloseBtn.focus(); }
+    if (!keepFocus && modalCloseBtn) { modalCloseBtn.focus(); }
+  }
+
+  function stepPlayer(delta) {
+    if (currentWorkIdx < 0 || !WORKS.length) { return; }
+    var next = (currentWorkIdx + delta + WORKS.length) % WORKS.length;
+    openPlayer(WORKS[next].id, true);
   }
 
   function closePlayer() {
     if (!modal) { return; }
+    currentVideoUrl = '';
+    hideVideoError();
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
@@ -1180,7 +1420,25 @@
     if (lastFocus && typeof lastFocus.focus === 'function') { lastFocus.focus(); }
   }
 
-  /* 卡片点击（事件委托） */
+  if (modalVideo) {
+    modalVideo.addEventListener('error', showVideoError);
+    modalVideo.addEventListener('loadeddata', hideVideoError);
+    modalVideo.addEventListener('playing', hideVideoError);
+  }
+  if (modalRetryBtn) {
+    modalRetryBtn.addEventListener('click', function () {
+      if (!currentVideoUrl || !modalVideo) { return; }
+      hideVideoError();
+      var sep = currentVideoUrl.indexOf('?') === -1 ? '?' : '&';
+      modalVideo.setAttribute('src', currentVideoUrl + sep + 'retry=' + Date.now());
+      modalVideo.load();
+      var p = modalVideo.play();
+      if (p && p.catch) { p.catch(function () {}); }
+    });
+  }
+  if (modalPrevBtn) { modalPrevBtn.addEventListener('click', function () { stepPlayer(-1); }); }
+  if (modalNextBtn) { modalNextBtn.addEventListener('click', function () { stepPlayer(1); }); }
+
   document.addEventListener('click', function (e) {
     var opener = e.target && e.target.closest ? e.target.closest('[data-open-work]') : null;
     if (opener) {
@@ -1198,11 +1456,13 @@
     if (card) { openPlayer(card.getAttribute('data-id')); }
   });
 
-  /* 键盘：ESC 关闭弹层；Enter/Space 打开卡片 */
+  /* 键盘：ESC 关闭弹层；←/→ 切换作品；Enter/Space 打开卡片 */
   document.addEventListener('keydown', function (e) {
     if (e.defaultPrevented || (lightbox && lightbox.classList.contains('open'))) { return; }
-    if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
-      closePlayer();
+    if (modal && modal.classList.contains('open')) {
+      if (e.key === 'Escape') { e.preventDefault(); closePlayer(); return; }
+      if (e.key === 'ArrowLeft' && document.activeElement !== modalVideo) { e.preventDefault(); stepPlayer(-1); return; }
+      if (e.key === 'ArrowRight' && document.activeElement !== modalVideo) { e.preventDefault(); stepPlayer(1); return; }
       return;
     }
     if ((e.key === 'Enter' || e.key === ' ') &&
@@ -1215,13 +1475,14 @@
   if (modalCloseBtn) { modalCloseBtn.addEventListener('click', closePlayer); }
   if (modalBackdrop) { modalBackdrop.addEventListener('click', closePlayer); }
 
+  /* 弹层与灯箱焦点陷阱 */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Tab') { return; }
     var panel = lightbox && lightbox.classList.contains('open') ? lightbox :
       (modal && modal.classList.contains('open') ? modal : null);
     if (!panel) { return; }
     var controls = Array.prototype.filter.call(panel.querySelectorAll('button, a[href], video[controls], [tabindex="0"]'), function (el) {
-      return el.getClientRects().length && !el.disabled;
+      return el.getClientRects().length && !el.disabled && !el.hidden;
     });
     var first = controls[0], last = controls[controls.length - 1];
     if (!first) { return; }
@@ -1232,14 +1493,13 @@
     }
   });
 
-  /* 封面缺失时的优雅降级 */
+  /* 全局图片失败兜底：替换为内联 SVG 占位（灰底 + 作品名），避免破图 */
   document.addEventListener('error', function (e) {
     var t = e.target;
-    if (t && t.tagName === 'IMG' && t.classList && t.classList.contains('work-poster')) {
-      t.style.display = 'none';
-      var cover = t.closest ? t.closest('.cover') : null;
-      if (cover) { cover.classList.add('no-poster'); }
-    }
+    if (!t || t.tagName !== 'IMG') { return; }
+    if (t.dataset.fallbackDone === '1') { return; }
+    t.dataset.fallbackDone = '1';
+    t.src = fallbackSvg(t.getAttribute('alt') || '作品画面');
   }, true);
 
   /* ==================== 移动端导航折叠 ==================== */
@@ -1280,34 +1540,38 @@
   }
 
   /* ==================== 锚点跳转：即时强制显示目标区域（杜绝白屏） ==================== */
-  function initAnchorReveal() {
-    function revealSection(id) {
-      if (!id) { return; }
-      var sec = byId(id);
-      if (!sec) { return; }
-      var els = sec.querySelectorAll('.reveal');
-      for (var i = 0; i < els.length; i++) {
-        els[i].classList.add('visible', 'force-visible');
-      }
-      var cards = sec.querySelectorAll('.work-card, .gallery-item, .dir-card');
-      for (var j = 0; j < cards.length; j++) {
-        cards[j].classList.add('reveal-in');
-      }
+  function revealSectionById(id) {
+    if (!id) { return; }
+    var sec = byId(id);
+    if (!sec) { return; }
+    var els = sec.querySelectorAll('.reveal');
+    for (var i = 0; i < els.length; i++) {
+      els[i].classList.add('visible', 'force-visible');
     }
+    var cards = sec.querySelectorAll('.work-card, .gallery-item, .dir-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].classList.add('reveal-in');
+    }
+  }
+
+  function initAnchorReveal() {
     document.addEventListener('click', function (e) {
       var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
       if (!a) { return; }
       var id = a.getAttribute('href').slice(1);
       if (!id) { return; }
-      revealSection(id);
-      setTimeout(function () { revealSection(id); }, 120);
+      var secId = id.replace(/-(ip|poster|board|merch|concept|charsheet|prompt|storyboard|td|fanart|overview)$/i, '');
+      revealSectionById(secId);
+      setTimeout(function () { revealSectionById(secId); }, 120);
     });
     window.addEventListener('hashchange', function () {
-      revealSection(location.hash.slice(1));
+      var h = location.hash.slice(1).replace(/-(ip|poster|board|merch|concept|charsheet|prompt|storyboard|td|fanart|overview)$/i, '');
+      revealSectionById(h);
     });
     if (location.hash.length > 1) {
-      revealSection(location.hash.slice(1));
-      setTimeout(function () { revealSection(location.hash.slice(1)); }, 200);
+      var h0 = location.hash.slice(1).replace(/-(ip|poster|board|merch|concept|charsheet|prompt|storyboard|td|fanart|overview)$/i, '');
+      revealSectionById(h0);
+      setTimeout(function () { revealSectionById(h0); }, 200);
     }
   }
 

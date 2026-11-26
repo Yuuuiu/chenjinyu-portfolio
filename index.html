@@ -17,6 +17,34 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="陈锦育 · AIGC 影像与交互装置作品集，背景为《铁火生花》画面">
   <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "陈锦育",
+    "alternateName": "CHEN JINYU",
+    "url": "https://yuuuiu.github.io/chenjinyu-portfolio/",
+    "email": "mailto:1426263349@qq.com",
+    "jobTitle": "AIGC 影像创作者 / 数字媒体艺术（2027 届）",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "武汉传媒学院"
+    },
+    "knowsAbout": [
+      "AIGC 影像创作",
+      "AI 漫剧编导与分镜",
+      "TouchDesigner 交互装置",
+      "平面 IP 与视觉设计",
+      "ffmpeg 自动化脚本"
+    ],
+    "award": [
+      "中国好创意大赛 · 应用组国家级二等奖（《盐阳叹》）",
+      "中国好创意大赛 · 学术组国家级二等奖（《山歌回音壁》）",
+      "米兰设计周 · 国家级三等奖（《一绣成祥》）",
+      "中国好创意大赛 · 国家级三等奖（《红花峰林十六点·互动地图》）"
+    ]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='4'%20fill='%23111111'/%3E%3Ctext%20x='32'%20y='45'%20font-size='34'%20text-anchor='middle'%20fill='%23FAFAF9'%20font-family='STKaiti,KaiTi,serif'%3E%E9%94%A6%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com" crossorigin>
   <link rel="dns-prefetch" href="https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com">
@@ -78,9 +106,8 @@
         <p class="hero-name">陈锦育 <span>CHEN JINYU</span></p>
         <ul class="hero-meta">
           <li>4 项国家级奖项</li>
-          <li><span id="aiCount">6</span> 部 AIGC 全流程成片</li>
-          <li><span id="videoCount">16</span> 部作品视频</li>
-          <li><span id="writingCount">9</span> 份策划文档 · 自动化脚本</li>
+          <li><span id="videoCount">16</span> 部作品视频（含 <span id="aiCount">6</span> 部 AIGC）</li>
+          <li><span id="photoCount">73</span> 张图集 · <span id="writingCount">9</span> 份策划文档</li>
         </ul>
         <div class="hero-actions">
           <a class="btn-primary" href="交付/陈锦育_个人简历_设计版_最终.pdf" target="_blank" rel="noopener">下载简历 PDF</a>
@@ -112,7 +139,7 @@
         <header class="section-head reveal">
           <p class="head-en">01 — AI VIDEO &amp; AIGC</p>
           <h2 class="head-title">AI 影像 · AIGC 全流程创作</h2>
-          <p class="head-desc">以即梦 / Midjourney 等 AIGC 工具完成从世界观设定、角色三视图锚定、分镜脚本到视频生成与剪辑合成的完整管线。以下作品均由本人主创、全程参与核心环节。</p>
+          <p class="head-desc">以即梦 / Midjourney 等 AIGC 工具完成从世界观设定、角色三视图锚定、分镜脚本到视频生成与剪辑合成的完整管线。以下作品均由本人主创、全程参与核心环节，团队协作完成。</p>
         </header>
         <div class="ai-pipeline-strip reveal" aria-label="AIGC 核心工作流">
           <div class="ai-pipe-item">
@@ -125,7 +152,7 @@
             <span class="ai-pipe-num">STEP 02</span>
             <strong>角色一致性与提示词</strong>
             <p>通过三视图定妆、换装测试与提示词迭代稳定角色与画风</p>
-            <a href="#process">查看三视图与记录 →</a>
+            <a href="#process-charsheet">查看三视图与记录 →</a>
           </div>
           <div class="ai-pipe-item">
             <span class="ai-pipe-num">STEP 03</span>
@@ -186,7 +213,7 @@
         <header class="section-head reveal">
           <p class="head-en">05 — PROCESS &amp; WORKFLOW</p>
           <h2 class="head-title">创作过程 · 工作流证据</h2>
-          <p class="head-desc">优先展开《绣藏》《倒退的棕榈叶》与《铁火生花》的制作路径，下方按标签收录 AI 角色三视图、提示词记录、概念分镜与 TouchDesigner 节点界面。</p>
+          <p class="head-desc">优先展开《绣藏》《倒退的棕榈叶》与《铁火生花》的制作路径，下方按项目与环节收录概念分镜、AI 角色三视图、提示词记录与 TouchDesigner 节点界面。</p>
         </header>
         <div id="processWrap"></div>
       </div>
@@ -236,7 +263,7 @@
             </dl>
             <p class="about-text">
               以 <strong>AIGC 全流程影像创作</strong>（即梦 / Midjourney / SD 协同、角色一致性控制、AI 漫剧分镜与后期剪辑）与 <strong>TouchDesigner 实时交互</strong>为核心，兼具 ffmpeg 自动化脚本提效与平面 IP 视觉能力；
-              拥有 <strong>4 项国家级奖项</strong>与 30+ 课程与竞赛项目经验，能够快速融入团队并独立推进从概念策划到成片交付的完整管线。
+              拥有 <strong>4 项国家级奖项</strong>与 30+ 课程与竞赛项目经验，能够快速融入团队并主创推进从概念策划到成片交付的完整管线。
             </p>
             <div class="about-actions">
               <a class="btn-primary" href="交付/陈锦育_个人简历_设计版_最终.pdf" target="_blank" rel="noopener">下载简历 PDF</a>
@@ -258,7 +285,7 @@
           </div>
 
           <figure class="about-figure reveal">
-            <img src="images/works/portrait.jpg" alt="陈锦育个人照片" loading="lazy">
+            <img src="images/works/portrait.jpg" alt="陈锦育个人照片" width="340" height="453" loading="lazy" decoding="async">
             <figcaption>陈锦育 · 2027 届数字媒体艺术</figcaption>
           </figure>
         </div>
@@ -269,7 +296,7 @@
             <li class="award-item">
               <figure>
                 <div class="award-img">
-                  <img src="images/works/award_yanyang.jpg" alt="《盐阳叹》获奖证明" loading="lazy">
+                  <img src="images/works/award_yanyang.jpg" alt="《盐阳叹》获奖证明" width="400" height="300" loading="lazy" decoding="async">
                 </div>
                 <figcaption>《盐阳叹》<em>中国好创意大赛 · 应用组国家级二等奖</em></figcaption>
               </figure>
@@ -277,7 +304,7 @@
             <li class="award-item">
               <figure>
                 <div class="award-img">
-                  <img src="images/works/award_shange.jpg" alt="《山歌回音壁》声音与灯光互动装置获奖证明" loading="lazy">
+                  <img src="images/works/award_shange.jpg" alt="《山歌回音壁》声音与灯光互动装置获奖证明" width="400" height="300" loading="lazy" decoding="async">
                 </div>
                 <figcaption>《山歌回音壁》声音与灯光互动装置<em>中国好创意大赛 · 学术组国家级二等奖</em></figcaption>
               </figure>
@@ -285,7 +312,7 @@
             <li class="award-item">
               <figure>
                 <div class="award-img">
-                  <img src="images/works/award_milan.jpg" alt="《一绣成祥》米兰设计周获奖证明" loading="lazy">
+                  <img src="images/works/award_milan.jpg" alt="《一绣成祥》米兰设计周获奖证明" width="400" height="300" loading="lazy" decoding="async">
                 </div>
                 <figcaption>《一绣成祥》<em>米兰设计周 · 国家级三等奖</em></figcaption>
               </figure>
@@ -293,7 +320,7 @@
             <li class="award-item">
               <figure>
                 <div class="award-img">
-                  <img src="images/works/award_honghua.jpg" alt="《红花峰林十六点·互动地图》中国好创意大赛获奖证明" loading="lazy">
+                  <img src="images/works/award_honghua.jpg" alt="《红花峰林十六点·互动地图》中国好创意大赛获奖证明" width="400" height="300" loading="lazy" decoding="async">
                 </div>
                 <figcaption>《红花峰林十六点·互动地图》<em>中国好创意大赛 · 国家级三等奖</em></figcaption>
               </figure>
@@ -301,7 +328,7 @@
             <li class="award-item">
               <figure>
                 <div class="award-img">
-                  <img src="images/works/award_xiuzang.jpg" alt="《绣藏》西湖新风AI漫剧创作大赛参赛证明" loading="lazy">
+                  <img src="images/works/award_xiuzang.jpg" alt="《绣藏》西湖新风AI漫剧创作大赛参赛证明" width="400" height="300" loading="lazy" decoding="async">
                 </div>
                 <figcaption>《绣藏》<em>西湖新风 AI 漫剧创作大赛 · 参赛证明</em></figcaption>
               </figure>
@@ -323,15 +350,28 @@
   <div class="modal" id="playerModal" aria-hidden="true">
     <div class="modal-backdrop" id="modalBackdrop"></div>
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="关闭播放器">×</button>
+      <div class="modal-topbar">
+        <div class="modal-nav-group">
+          <button class="modal-step-btn" id="modalPrev" type="button" aria-label="上一部作品">← 上一部</button>
+          <span class="modal-index" id="modalIndex"></span>
+          <button class="modal-step-btn" id="modalNext" type="button" aria-label="下一部作品">下一部 →</button>
+        </div>
+        <span class="modal-esc-hint" aria-hidden="true">ESC 关闭 · ←/→ 切换</span>
+        <button class="modal-close" id="modalClose" type="button" aria-label="关闭播放器">×</button>
+      </div>
       <div class="modal-content" id="modalContent">
         <div class="modal-video-wrap" id="modalVideoWrap">
-          <video id="modalVideo" controls playsinline preload="metadata" poster=""></video>
+          <video id="modalVideo" controls playsinline preload="none" poster=""></video>
           <div class="modal-bili" id="modalBili"></div>
+          <div class="modal-video-error" id="modalVideoError" hidden>
+            <p>网络较慢，视频暂未加载成功</p>
+            <button class="modal-retry-btn" id="modalRetryBtn" type="button">点击重试</button>
+          </div>
         </div>
         <div class="modal-meta">
           <h3 class="modal-title" id="modalTitle"></h3>
           <p class="modal-sub" id="modalSub"></p>
+          <dl class="modal-facts" id="modalFacts"></dl>
           <p class="modal-description" id="modalDescription"></p>
           <ul class="tags modal-tags" id="modalTags"></ul>
           <div id="modalCase"></div>
@@ -341,13 +381,13 @@
   </div>
 
   <!-- ==================== 图片灯箱查看器 ==================== -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="图片大图查看器">
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
-    <button class="lightbox-close" id="lightboxClose" aria-label="关闭图片查看器">×</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="上一张">‹</button>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="下一张">›</button>
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭图片查看器">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="上一张">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="下一张">›</button>
     <figure class="lightbox-stage" id="lightboxStage">
-      <img id="lightboxImg" src="" alt="">
+      <img id="lightboxImg" src="" alt="" decoding="async">
       <figcaption class="lightbox-meta">
         <span class="lb-title" id="lightboxTitle"></span>
         <span class="lb-desc" id="lightboxDesc"></span>

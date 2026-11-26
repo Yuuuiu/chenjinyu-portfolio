@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yuuuiu.github.io/chenjinyu-portfolio/sitemap.xml

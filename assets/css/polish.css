@@ -1,5 +1,5 @@
 /* ============================================================
-   POLISH — 视觉对比度、AI 实习导向组件与交互修正
+   POLISH — 视觉对比度、AI 实习导向组件与 P0/P1 交互体验
    ============================================================ */
 
 /* ---------- 1. 文字对比度 ---------- */
@@ -21,7 +21,15 @@
 /* ---------- 3. 锚点跳转强制显示（配合 JS） ---------- */
 .reveal.force-visible { opacity: 1 !important; transform: none !important; }
 
-/* ---------- 4. 顶部 CTA / 首屏 CTA ---------- */
+/* ---------- 4. 全局键盘焦点可见样式 ---------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- 5. 顶部 CTA / 首屏 CTA ---------- */
 .site-nav { gap: 20px; }
 .header-actions {
   display: flex;
@@ -56,7 +64,7 @@
   font-size: 13px;
   letter-spacing: 0.04em;
   padding: 11px 20px;
-  min-height: 42px;
+  min-height: 44px;
   cursor: pointer;
   font-family: var(--sans);
   transition: background .2s, color .2s, border-color .2s, transform .2s;
@@ -68,7 +76,7 @@
 
 .about-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 
-/* ---------- 5. AIGC 生产管线速览条（01 板块） ---------- */
+/* ---------- 6. AIGC 生产管线速览条（01 板块） ---------- */
 .ai-pipeline-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -109,7 +117,7 @@
 }
 .ai-pipe-item a:hover { text-decoration: underline; }
 
-/* ---------- 6. 作品卡获奖/亮点行与案例拆解徽标 ---------- */
+/* ---------- 7. 作品卡获奖/亮点行与案例拆解徽标 ---------- */
 .case-badge {
   position: absolute;
   left: 10px;
@@ -132,7 +140,7 @@
 }
 .work-credit { margin-top: 8px; }
 
-/* ---------- 7. 文档卡片 meta 与底部对齐 ---------- */
+/* ---------- 8. 文档卡片 meta 与底部对齐 ---------- */
 .doc-meta {
   font-size: 11px;
   color: #7A7A7A;
@@ -152,17 +160,18 @@
 }
 .doc-open { flex: 0 0 auto; }
 
-/* ---------- 8. 画廊与创作过程：Tab 分类 + 折叠展开 ---------- */
+/* ---------- 9. 画廊与创作过程：Tab 分类 + 导语 + 折叠展开 ---------- */
 .gallery-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 .gallery-tab {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  min-height: 44px;
   padding: 8px 16px;
   font-size: 12.5px;
   letter-spacing: 0.03em;
@@ -171,6 +180,7 @@
   border: 1px solid var(--line);
   cursor: pointer;
   font-family: var(--sans);
+  white-space: nowrap;
   transition: background .18s, color .18s, border-color .18s;
 }
 .gallery-tab span {
@@ -192,12 +202,21 @@
 .tab-panel { display: none; margin-top: 0 !important; }
 .tab-panel.active { display: block; }
 
+.g-group-intro {
+  margin: -12px 0 22px;
+  font-size: 12.5px;
+  color: var(--gray);
+  line-height: 1.65;
+  max-width: 720px;
+}
+
 .gallery-group:not(.expanded) .gallery-item:nth-child(n+9) { display: none; }
 .gallery-expand {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   margin: 22px auto 0;
+  min-height: 42px;
   padding: 9px 18px;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -211,16 +230,116 @@
 .gallery-expand:hover { border-color: var(--ink); background: var(--white); }
 .gallery-expand-wrap { text-align: center; }
 
-/* 创作过程 3 项案例拆解卡片 */
 .process-projects {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* ---------- 9. 词组不拆行 ---------- */
+/* ---------- 10. 弹窗顶栏（上一部 / 下一部 / ESC 轻提示）与项目信息表 ---------- */
+.modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.modal-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-step-btn {
+  padding: 6px 12px;
+  min-height: 34px;
+  font-size: 12px;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.modal-step-btn:hover { border-color: var(--ink); }
+.modal-index {
+  font-size: 11px;
+  color: var(--gray-2);
+  letter-spacing: 0.1em;
+  min-width: 46px;
+  text-align: center;
+}
+.modal-esc-hint {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--gray-2);
+  letter-spacing: 0.06em;
+}
+.modal-topbar .modal-close {
+  position: static;
+  flex-shrink: 0;
+}
+
+.modal-video-error {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: rgba(17, 17, 17, 0.88);
+  color: #FAFAF9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+.modal-video-error[hidden] { display: none; }
+.modal-retry-btn {
+  padding: 9px 20px;
+  min-height: 40px;
+  font-size: 12.5px;
+  font-family: var(--sans);
+  background: #FAFAF9;
+  color: #111111;
+  border: 1px solid #FAFAF9;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.modal-retry-btn:hover { opacity: 0.86; }
+
+.modal-facts {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+.modal-facts[hidden] { display: none; }
+.modal-facts div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.modal-facts dt {
+  font-size: 10.5px;
+  color: var(--gray-2);
+  letter-spacing: 0.08em;
+}
+.modal-facts dd {
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* ---------- 11. 词组不拆行 ---------- */
 .dir-tagline { word-break: keep-all; }
 .head-title, .dir-name, .work-title, .doc-title { word-break: keep-all; }
 
-/* ---------- 10. 响应式适配 ---------- */
+/* ---------- 12. 响应式适配（含移动端 Tab 横向滚动） ---------- */
 @media (max-width: 1024px) {
   .site-nav { gap: clamp(10px, 1.4vw, 16px); }
   .header-actions { margin-left: 10px; gap: 6px; }
@@ -232,15 +351,35 @@
   .header-actions { display: none; }
   .hero-actions { gap: 8px; }
   .btn-primary, .btn-ghost { flex: 1 1 auto; min-width: 44%; padding: 11px 12px; }
+
+  .gallery-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+  }
+  .gallery-tabs::-webkit-scrollbar { display: none; }
+  .gallery-tab {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    min-height: 44px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+  .modal-esc-hint { display: none; }
 }
 @media (max-width: 680px) {
   .ai-pipeline-strip { grid-template-columns: 1fr; }
   .process-projects { grid-template-columns: 1fr; }
-  .gallery-tab { padding: 7px 12px; font-size: 12px; }
+  .modal-facts { grid-template-columns: 1fr; }
   .doc-foot { flex-wrap: wrap; }
+  .modal-step-btn { padding: 6px 9px; font-size: 11.5px; }
 }
 
-/* ---------- 11. 复制成功反馈 ---------- */
+/* ---------- 13. 复制成功反馈 ---------- */
 .btn-ghost.copied, .about-actions .btn-ghost.copied {
   border-color: #2E7D4F;
   color: #2E7D4F;
