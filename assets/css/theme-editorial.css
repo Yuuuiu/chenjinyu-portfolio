@@ -1,0 +1,182 @@
+/* ============================================================
+   主题层：编辑档案 EDITORIAL（只换视觉，不改内容）
+   纸感底色 + 宋体大标题 + 朱红点睛 + 硬朗按钮
+   ============================================================ */
+:root {
+  --paper: #f6f1e7;
+  --white: #fffdf8;
+  --ink: #17130f;
+  --ink-2: #3d382f;
+  --gray: #6d6558;
+  --gray-2: #8b8375;
+  --line: #d8cfbd;
+  --accent: #b23a2e;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ---------- 字体：标题走宋体，正文保持无衬线 ---------- */
+.hero-title,
+.head-title,
+.work-title,
+.featured-title,
+.doc-title,
+.case-focus,
+.about-figure figcaption,
+.modal-title,
+.modal h2,
+.modal-facts dt,
+#modalTitle {
+  font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "SimSun", "STSong", serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.hero-title {
+  font-size: clamp(54px, 7.4vw, 112px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+.hero-title br { display: block; }
+
+.kicker {
+  color: var(--accent);
+  letter-spacing: 0.42em;
+  font-size: 10px;
+}
+.kicker::before { background: var(--accent); }
+
+.hero-sub { color: var(--ink-2); letter-spacing: 0.01em; }
+.hero-statement { color: var(--ink-2); }
+.hero-name { font-family: "Songti SC", "SimSun", serif; font-weight: 600; }
+
+/* ---------- 区块标题 ---------- */
+.section-head { border-bottom: 1px solid var(--ink); padding-bottom: 14px; }
+.head-en {
+  color: var(--accent);
+  letter-spacing: 0.34em;
+  font-size: 10px;
+}
+.head-title {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.18;
+  margin-top: 8px;
+}
+.head-desc { color: var(--ink-2); }
+
+/* 章节大数字：朱红细线数字，不再用灰描边 */
+.sec-num {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(178, 58, 46, 0.55);
+  font-family: "Songti SC", "SimSun", serif !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+/* ---------- 按钮：硬朗方形，主按钮朱红 ---------- */
+.btn-primary,
+.header-cta {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  letter-spacing: 0.14em;
+  font-size: 11.5px;
+  padding: 13px 22px;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.btn-primary:hover,
+.header-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.btn-ghost,
+.header-cta-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  letter-spacing: 0.14em;
+  font-size: 11.5px;
+  padding: 13px 20px;
+}
+.btn-ghost:hover,
+.header-cta-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- 导航 ---------- */
+.site-header { border-bottom: 1px solid var(--ink); background: rgba(246, 241, 231, 0.94); }
+.site-nav a,
+.site-nav .nav-showreel,
+.site-nav .nav-more-toggle {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+}
+.site-nav a:hover,
+.site-nav a.active,
+.site-nav .nav-showreel:hover,
+.site-nav .nav-more-toggle:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-more-menu { border: 1px solid var(--ink); background: var(--paper); box-shadow: none; }
+.nav-more-menu a:hover,
+.nav-more-menu a.active { background: var(--ink); color: var(--paper); }
+
+/* ---------- 作品卡：编辑档案式，年份红色 ---------- */
+.work-card .cover { background: #e9e2d3; }
+.work-title { font-size: 21px; line-height: 1.3; }
+.work-desc { color: var(--ink-2); }
+.year-chip {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0;
+  letter-spacing: 0.14em;
+}
+.tags li { color: var(--gray); letter-spacing: 0.06em; }
+.tags li:not(:last-child)::after { color: var(--accent); }
+
+/* ---------- 画廊 ---------- */
+.gallery-tab {
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: transparent;
+  letter-spacing: 0.08em;
+}
+.gallery-tab.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.gallery-tab-ink { background: var(--accent); height: 2px; }
+.g-title { font-family: "Songti SC", "SimSun", serif; font-weight: 600; font-size: 15px; }
+.g-thumb { border: 0; }
+.g-desc { color: var(--gray); }
+
+/* ---------- 文档 / 代码卡：细线 + 朱红标签 ---------- */
+.doc-card, .td-card, .code-card {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--white);
+}
+.doc-card:hover { border-color: var(--ink); }
+.doc-tag { color: var(--accent); border-color: rgba(178, 58, 46, 0.35); background: rgba(178, 58, 46, 0.05); border-radius: 0; }
+.doc-open { color: var(--accent); }
+
+/* ---------- 关于 / 页脚 ---------- */
+.about-figure img { border: 1px solid var(--ink); }
+.info-list dt { letter-spacing: 0.1em; color: var(--gray); }
+.about-en { color: var(--gray); font-style: italic; }
+.site-footer, footer { border-top: 1px solid var(--ink); }
+footer .brand, footer h2, footer p:first-child { font-family: "Songti SC", "SimSun", serif; }
+
+/* ---------- 弹窗 / 灯箱：保持深色，但细节点朱红 ---------- */
+.modal-close:hover, .lightbox-close:hover { background: var(--accent); color: #fff; }
+.lb-count, .modal-index { color: var(--accent); }
+.lightbox-backdrop { background: rgba(12, 10, 8, 0.95); }
+
+/* ---------- 动效：更慢更稳 ---------- */
+.reveal, .tab-panel.active .gallery-item { transition-timing-function: cubic-bezier(.22, .61, .36, 1); }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 800px) {
+  .hero-title { font-size: clamp(42px, 11vw, 64px); }
+  .head-title { font-size: 26px; }
+  .work-title { font-size: 19px; }
+  .site-nav a, .site-nav .nav-showreel { font-size: 14px; letter-spacing: 0.08em; }
+  .btn-primary, .btn-ghost, .header-cta, .header-cta-ghost { padding: 12px 16px; }
+}
