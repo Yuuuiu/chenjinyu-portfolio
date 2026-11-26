@@ -616,3 +616,112 @@ section[id] { scroll-margin-top: 84px; }
   letter-spacing: inherit;
   cursor: pointer;
 }
+
+/* ---------- 18. 批次 B：字号体系 / 卡片去框 / 导航更多 / 标题层级 ---------- */
+
+/* 字号：正文 14，辅助 12 */
+.hero-sub { font-size: 14px; line-height: 1.8; }
+.hero-statement { font-size: 14.5px; line-height: 1.85; }
+.head-desc { font-size: 14px; line-height: 1.8; }
+.work-desc { font-size: 13px; line-height: 1.7; }
+.work-credit { font-size: 11px; }
+.tags li { font-size: 11px; }
+.g-title { font-size: 14px; }
+.g-desc { font-size: 12px; line-height: 1.6; }
+.doc-title { font-size: 15px; }
+.doc-desc { font-size: 12px; line-height: 1.7; }
+.doc-foot { font-size: 11px; }
+.hero-meta li { font-size: 12px; }
+.featured-title { font-size: 15px; }
+.featured-head { font-size: 11.5px; }
+.play-hint { font-size: 10.5px; }
+.year-chip { font-size: 10.5px; }
+
+/* 作品卡：去描边、图片贴底 */
+.work-card { background: transparent; border: 0; }
+.work-card:hover { border: 0; transform: translateY(-3px); }
+.work-card .work-body { padding: 14px 2px 0; }
+.work-card .cover { background: #efeeea; }
+
+/* 标题层级：作品名放大，文档名次之 */
+.work-title { font-size: 18px; line-height: 1.35; letter-spacing: 0.01em; }
+
+/* 导航「更多」下拉 */
+.nav-more { position: relative; display: inline-flex; }
+.nav-more-toggle {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  margin: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.nav-more-toggle:hover,
+.nav-more.open .nav-more-toggle,
+.nav-more:focus-within .nav-more-toggle { color: var(--ink); }
+.nav-more-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  min-width: 152px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, .09);
+  padding: 6px 0;
+  display: none;
+  z-index: 60;
+}
+.nav-more.open .nav-more-menu,
+.nav-more:focus-within .nav-more-menu { display: block; }
+.nav-more-menu a {
+  display: block;
+  padding: 9px 16px;
+  font-size: 12.5px;
+  color: var(--gray);
+  border-bottom: 0;
+  letter-spacing: 0.04em;
+}
+.nav-more-menu a:hover,
+.nav-more-menu a.active { background: var(--paper); color: var(--ink); }
+
+@media (max-width: 900px) {
+  .nav-more { display: block; width: 100%; }
+  .nav-more-toggle { display: none; }
+  .nav-more-menu {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    background: none;
+  }
+  .nav-more-menu a { padding: 10px 0; font-size: 14px; border-bottom: 1px solid var(--line); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card, .work-card .work-poster { transition: none; }
+}
+
+/* 移动端：导航 Showreel 按钮与其它链接对齐 */
+@media (max-width: 900px) {
+  .site-nav .nav-showreel {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--gray);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-nav .nav-showreel:hover { color: var(--ink); }
+}

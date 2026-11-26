@@ -1836,6 +1836,30 @@
     });
   }
 
+  /* ==================== 导航「更多」下拉 ==================== */
+  (function () {
+    var navMore = document.querySelector('.nav-more');
+    var navMoreToggle = byId('navMoreToggle');
+    if (!navMore || !navMoreToggle) { return; }
+    function setOpen(open) {
+      navMore.classList.toggle('open', open);
+      navMoreToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    navMoreToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!navMore.classList.contains('open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (navMore.classList.contains('open') && !navMore.contains(e.target)) { setOpen(false); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { setOpen(false); }
+    });
+    [].forEach.call(navMore.querySelectorAll('a'), function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+
   /* ==================== 滚动渐入动画 ==================== */
   function initReveal() {
     var els = document.querySelectorAll('.reveal');
