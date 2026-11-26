@@ -1466,7 +1466,13 @@
   function showLightboxItem() {
     var entry = photoFlat[lbIndex];
     if (!entry) { return; }
-    lightboxImg.dataset.fallbackDone = '';
+    if (!lightboxImg.dataset.fadeBound) {
+    lightboxImg.dataset.fadeBound = '1';
+    lightboxImg.addEventListener('load', function () { lightboxImg.classList.add('lb-ready'); });
+    lightboxImg.addEventListener('error', function () { lightboxImg.classList.remove('lb-ready'); });
+  }
+  lightboxImg.classList.remove('lb-ready');
+  lightboxImg.dataset.fallbackDone = '';
     lightboxImg.src = imgUrl(entry.item.src);
     lightboxImg.alt = entry.item.title + ' · ' + entry.group;
     lightboxTitle.textContent = entry.item.title;
