@@ -12,3 +12,8 @@ build_showreel_60s.ps1
 render_showreel_1080p_master.ps1
 showreel_overlays/
 
+
+# 例外：网站内嵌 Showreel 网页版（需要仓库托管）
+!assets/videos/
+!assets/videos/*.mp4
+
