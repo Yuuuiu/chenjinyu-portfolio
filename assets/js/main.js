@@ -1560,7 +1560,54 @@
     }
   }
 
+
+  /* ==================== 个人 Showreel 播放 ==================== */
+  var SHOWREEL_SRC = 'assets/videos/chenjinyu_showreel_60s_720p.mp4';
+  var SHOWREEL_POSTER = 'assets/images/showreel_cover.jpg';
+
+  function openShowreel() {
+    if (!modal) { return; }
+    var escHint = document.querySelector('.modal-esc-hint');
+    if (escHint) { escHint.textContent = 'ESC 关闭'; }
+    var wasOpen = modal.classList.contains('open');
+    if (!wasOpen) { lastFocus = document.activeElement; }
+    currentWorkIdx = -1;
+    hideVideoError();
+    modal.classList.add('showreel-mode');
+
+    var wrap = byId('modalVideoWrap');
+    var bili = byId('modalBili');
+    if (wrap) { wrap.classList.remove('bili-mode'); }
+    if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
+
+    currentVideoUrl = SHOWREEL_SRC;
+    modalVideo.pause();
+    modalVideo.setAttribute('preload', 'auto');
+    modalVideo.setAttribute('poster', SHOWREEL_POSTER);
+    modalVideo.setAttribute('src', SHOWREEL_SRC);
+    modalVideo.autoplay = true;
+    modalVideo.load();
+    var playPromise = modalVideo.play();
+    if (playPromise && playPromise.catch) { playPromise.catch(function () {}); }
+
+    if (modalIndexEl) { modalIndexEl.textContent = 'SHOWREEL'; }
+    if (modalTitle) { modalTitle.textContent = '个人 Showreel · 60 秒'; }
+    if (modalSub) { modalSub.innerHTML = '<b>2026</b>混剪 · 16 部作品高光片段'; }
+    renderProjectFacts({});
+    byId('modalDescription').textContent = '从 16 部作品中精选的 60 秒混剪：打铁花非遗数字装置、东方水墨 AI 影像、AI 漫剧与实时交互装置。';
+    byId('modalTags').innerHTML = '<li>Showreel</li><li>2026</li><li>1080p</li>';
+    byId('modalCase').innerHTML = '';
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    byId('modalContent').scrollTop = 0;
+    if (modalCloseBtn) { modalCloseBtn.focus(); }
+  }
+
   function openPlayer(id, keepFocus) {
+    var escHint = document.querySelector('.modal-esc-hint');
+    if (escHint) { escHint.textContent = 'ESC 关闭 · ←/→ 切换'; }
     var idx = findWorkIndex(id);
     if (idx < 0 || !modal) { return; }
     var work = WORKS[idx];
@@ -1626,6 +1673,9 @@
     if (bili) { bili.innerHTML = ''; bili.classList.remove('active'); }
     var wrap = byId('modalVideoWrap');
     if (wrap) { wrap.classList.remove('bili-mode'); }
+    modal.classList.remove('showreel-mode');
+    modalVideo.autoplay = false;
+    modalVideo.setAttribute('preload', 'none');
     if (lastFocus && typeof lastFocus.focus === 'function') { lastFocus.focus(); }
   }
 
@@ -1649,6 +1699,12 @@
   if (modalNextBtn) { modalNextBtn.addEventListener('click', function () { stepPlayer(1); }); }
 
   document.addEventListener('click', function (e) {
+    var showreelBtn = e.target && e.target.closest ? e.target.closest('[data-showreel]') : null;
+    if (showreelBtn) {
+      e.preventDefault();
+      openShowreel();
+      return;
+    }
     var opener = e.target && e.target.closest ? e.target.closest('[data-open-work]') : null;
     if (opener) {
       e.preventDefault();
@@ -1670,6 +1726,7 @@
     if (e.defaultPrevented || (lightbox && lightbox.classList.contains('open'))) { return; }
     if (modal && modal.classList.contains('open')) {
       if (e.key === 'Escape') { e.preventDefault(); closePlayer(); return; }
+      if (modal.classList.contains('showreel-mode')) { return; }
       if (e.key === 'ArrowLeft' && document.activeElement !== modalVideo) { e.preventDefault(); stepPlayer(-1); return; }
       if (e.key === 'ArrowRight' && document.activeElement !== modalVideo) { e.preventDefault(); stepPlayer(1); return; }
       return;

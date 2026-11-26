@@ -533,3 +533,64 @@ section[id] { scroll-margin-top: 84px; }
     transform: none !important;
   }
 }
+
+/* ---------- 16. Showreel 板块 ---------- */
+.showreel-section .section-inner { max-width: 1180px; }
+.showreel-cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--ink);
+  margin-top: 8px;
+}
+.showreel-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: .92;
+  transition: transform .6s var(--ease), opacity .3s;
+}
+.showreel-cover:hover img,
+.showreel-cover:focus-visible img { transform: scale(1.02); opacity: 1; }
+.showreel-cover:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.showreel-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: rgba(17,17,17,.58);
+  color: #FAFAF9;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  border: 1px solid rgba(250,250,249,.45);
+  backdrop-filter: blur(4px);
+  transition: transform .3s var(--ease), background .3s;
+}
+.showreel-cover:hover .showreel-play { transform: scale(1.08); background: rgba(17,17,17,.78); }
+.showreel-meta {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  color: #FAFAF9;
+  font-size: 11px;
+  letter-spacing: .12em;
+  background: rgba(17,17,17,.5);
+  padding: 6px 10px;
+}
+.showreel-meta b { font-size: 14px; margin-right: 4px; }
+
+/* showreel 模式：隐藏上一部/下一部与项目信息 */
+#playerModal.showreel-mode .modal-nav-group,
+#playerModal.showreel-mode #modalPrev,
+#playerModal.showreel-mode #modalNext,
+#playerModal.showreel-mode .modal-index,
+#playerModal.showreel-mode .modal-facts,
+#playerModal.showreel-mode .modal-tags,
+#playerModal.showreel-mode .project-note { display: none !important; }
