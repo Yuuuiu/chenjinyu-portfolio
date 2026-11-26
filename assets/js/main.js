@@ -337,8 +337,6 @@
         { src: 'assets/images/gen_ai_dasheng_1.jpg', title: '《灾厄战线》概念横幅', desc: 'AI 视觉延展（练习）· 16:9 宽银幕概念，非原画/实拍' },
         { src: 'assets/images/gen_ai_yegou_1.jpg', title: '《野生狗奶》视觉延展海报', desc: 'AI 视觉延展（练习）· 废墟群像喜剧，非原画/实拍' },
         { src: 'assets/images/gen_film_silu_1_v2.jpg', title: '《丝路新篇》视觉延展海报', desc: 'AI 视觉延展（练习）· 跨时空三段切片，非原画/实拍' },
-        { src: 'assets/images/yumeng_vi_identity.jpg', title: '《宇梦造物》工作室 VI 视觉', desc: '工作室品牌视觉提案：标志、名片与印刷物料' },
-        { src: 'assets/images/jinxi_keyframe_02_bottle.jpg', title: '《锦息》产品概念海报', desc: '工作室商业向 AI 概念短片 · 产品主视觉' }
       ]
     },
     {
