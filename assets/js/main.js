@@ -715,7 +715,10 @@
         { title: '关键镜头与动态生成', text: '借助即梦等工具迭代关键帧与图生视频，控制人物动作幅度与巨兽压迫镜头的稳定性。' },
         { title: '节奏剪辑与音效强化', text: '团队协作完成短片剪辑、色调统一与氛围音效合成，形成高冲击力的概念预告短片。' }
       ],
-      images: [],
+      images: [
+        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_1.jpg',
+        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_2.jpg'
+      ],
       docs: []
     },
     ai_doubao: {
@@ -763,7 +766,11 @@
         { title: '流体粒子视觉映射', text: '在 TouchDesigner 中建立参数到粒子形态、流速与色彩的映射关系，呈现「心脉生花」的视觉隐喻。' },
         { title: '小组协同与联调展示', text: '作为第九组组长统筹方案与实时联调，完成交互装置设计课程的现场体验演示。' }
       ],
-      images: [],
+      images: [
+        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/xinmai_board_1.jpg',
+        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/xinmai_board_2.jpg',
+        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/xinmai_board_3.jpg'
+      ],
       docs: [
         { href: 'docs/xinmai_design.pdf', label: '多感官情绪互动装置设计', kind: 'PDF' },
         { href: 'docs/xinmai_tech.pdf', label: '交互装置技术方案', kind: 'PDF' },
