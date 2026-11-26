@@ -371,6 +371,17 @@
         { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫 · 三', desc: '《青铜遗韵》文创 · 鼠标垫：彩绘款' },
         { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '《青铜遗韵》文创 · 挂墙广告：空间展示效果' }
       ]
+    },
+    {
+      slug: 'yumeng',
+      group: '工作室 IP · 商业视觉', en: 'STUDIO IP & COMMERCIAL', portrait: false,
+      intro: '「宇梦造物」工作室品牌 VI、IP 吉祥物与《锦息》产品概念短片的视觉提案（AI 视觉 + 版式设计 · 工作室自研提案）。',
+      items: [
+        { src: 'assets/images/yumeng_vi_identity.jpg', title: '《宇梦造物》工作室 VI 视觉', desc: '工作室品牌基础系统：标志、名片、文件夹、色卡与印刷物料视觉' },
+        { src: 'assets/images/yumeng_ip_mascot.jpg', title: '《宇梦造物》IP 吉祥物 · 星礼', desc: '3D 角色 IP：暗色礼官造型 + 全息头部，工作室人格化形象' },
+        { src: 'assets/images/jinxi_keyframe_01_drop.jpg', title: '《锦息》产品概念短片 · 关键帧一', desc: '金色香液滴入水面、东方纹样随涟漪展开的产品概念镜头' },
+        { src: 'assets/images/jinxi_keyframe_02_bottle.jpg', title: '《锦息》产品概念短片 · 关键帧二', desc: '产品与光雾氛围的概念镜头，商业向产品视觉提案' }
+      ]
     }
   ];
 
@@ -561,6 +572,18 @@
       title: '项目管理章程与传播方案',
       desc: '《文化挪用视角下的敦煌文化数字媒体艺术研究》项目管理章程与传播方案。',
       foot: '大四专题 · 第三组（陈锦育等）'
+    },
+    {
+      href: 'docs/yumeng_studio_ip_plan.pptx', meta: '提案 · 8.5 MB', tag: '品牌提案',
+      title: '《宇梦造物》工作室 IP 全案提案',
+      desc: '工作室品牌定位、VI 基础系统、IP 吉祥物与商业短片视觉方向的全案提案（PPTX）。',
+      foot: '工作室项目 · 自研提案'
+    },
+    {
+      href: 'docs/yumeng_jinxi_storyboard.md', meta: '分镜 · 文本', tag: '分镜与提示词',
+      title: '《锦息》分镜与提示词',
+      desc: '产品概念短片的分镜规划、镜头描述与 AI 生成提示词记录。',
+      foot: '商业向 AI 概念短片 · 分镜文档'
     }
   ];
 
