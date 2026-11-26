@@ -327,6 +327,23 @@
       ]
     },
     {
+      slug: 'aiassets',
+      group: 'AI 资产 · 角色与场景', en: 'AI ASSETS · CHARACTER & SCENE', portrait: false,
+      intro: 'AI 视觉开发素材：角色三视图锚定与场景概念，来自《无限流》《大圣归来》等项目的制作过程资产。',
+      items: [
+        { src: 'assets/images/assets/assets_wx_bus.jpg', title: '《无限流》场景 · 大巴车厢', desc: 'AI 场景概念 · 短剧视觉开发' },
+        { src: 'assets/images/assets/assets_wx_puppet.jpg', title: '《无限流》角色 · 木偶人三视图', desc: 'AI 角色设定 · 三视图锚定' },
+        { src: 'assets/images/assets/assets_wx_man.jpg', title: '《无限流》角色 · 中年男性三视图', desc: 'AI 角色设定 · 三视图锚定' },
+        { src: 'assets/images/assets/assets_wx_woman.jpg', title: '《无限流》角色 · 女性三视图', desc: 'AI 角色设定 · 三视图锚定' },
+        { src: 'assets/images/assets/assets_wx_theater.jpg', title: '《无限流》场景 · 戏台夜色', desc: 'AI 场景概念 · 氛围光效' },
+        { src: 'assets/images/assets/assets_wx_passengers.jpg', title: '《无限流》场景 · 大巴乘客', desc: 'AI 场景概念 · 群像构图' },
+        { src: 'assets/images/assets/assets_ds_mammoth.jpg', title: '《大圣归来》概念 · 巨兽', desc: 'AI 概念设计 · 神兽' },
+        { src: 'assets/images/assets/assets_ds_dragon.jpg', title: '《大圣归来》概念 · 龙形神兽', desc: 'AI 概念设计 · 场景' },
+        { src: 'assets/images/assets/assets_ds_boy.jpg', title: '《大圣归来》角色 · 少年三视图', desc: 'AI 角色设定 · 三视图' },
+        { src: 'assets/images/assets/assets_ds_girl.jpg', title: '《大圣归来》角色 · 少女三视图', desc: 'AI 角色设定 · 三视图' }
+      ]
+    },
+    {
       slug: 'team',
       group: '团队项目 · 像素创研', en: 'TEAM PROJECTS · PIXEL LAB', portrait: true,
       intro: '与团队协作完成的 AI 视觉海报系列（参与视觉与制作），含《IRON CLAW》《WILD WING》《CHICK SQUAD》《NOVA》《GALAXY GUARDIANS》。',
