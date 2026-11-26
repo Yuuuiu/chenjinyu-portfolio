@@ -802,7 +802,7 @@
         { title: '节奏剪辑与音乐合成', text: '独立完成全片剪辑合成与调色，作为影视创作课程结课作品呈现。' }
       ],
       images: [
-        'assets/images/gen_film_silu_1.jpg'
+        'assets/images/gen_film_silu_1_v2.jpg'
       ],
       docs: []
     },
@@ -1362,7 +1362,7 @@
   /* 案例拆解专用附图（含 AI 视觉延展海报）注册进灯箱索引，不新建画廊分组、不影响 73 张图集计数 */
   var CASE_IMAGE_META = {
     'assets/images/gen_ai_yangyangtang_1.jpg': { title: '《盐阳叹》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 东方水墨流体主视觉' },
-    'assets/images/gen_film_silu_1.jpg': { title: '《丝路新篇》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 跨时空三段切片' },
+    'assets/images/gen_film_silu_1_v2.jpg': { title: '《丝路新篇》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 跨时空三段切片' },
     'assets/images/gen_ai_yegou_1.jpg': { title: '《野生狗奶》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 废墟群像喜剧' },
     'assets/images/gen_ai_dasheng_1.jpg': { title: '《灾厄战线》概念横幅（AI 视觉延展）', desc: '横幅海报为 AI 视觉延展（练习），非原画/实拍 · 16:9 宽银幕概念' }
   };
