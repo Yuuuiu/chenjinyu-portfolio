@@ -1,83 +1,69 @@
 /* ============================================================
-   黑白极简主题：全站去色（图片除外），只留 黑 / 白 / 灰
+   黑白配色覆盖（只改颜色，不改版式/字体）
+   与 theme-editorial.css 配合：宋体排版 + 黑白灰配色
    ============================================================ */
 :root {
-  --accent: #17130f;          /* 原蓝色强调色 -> 墨黑 */
-  --accent-soft: rgba(23, 19, 15, 0.08);
-  --paper: #fafafa;
+  --paper: #f7f7f5;
   --white: #ffffff;
   --ink: #111111;
-  --ink-2: #333333;
-  --gray: #6b6b6b;
-  --gray-2: #909090;
-  --line: #e2e2e0;
+  --ink-2: #2f2f2f;
+  --gray: #666666;
+  --gray-2: #8c8c8c;
+  --line: #dedede;
+  --accent: #111111;          /* 所有强调色 -> 墨黑 */
+  --accent-soft: rgba(17, 17, 17, 0.07);
 }
 
 body { background: var(--paper); color: var(--ink); }
 
-/* 按钮：黑白 */
-.btn-primary, .header-cta {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
-  border-radius: 0;
-}
-.btn-primary:hover, .header-cta:hover {
-  background: #3a3a3a;
-  border-color: #3a3a3a;
-  color: #fff;
-}
-.btn-ghost, .header-cta-ghost {
-  background: transparent;
-  border-color: var(--ink);
-  color: var(--ink);
-  border-radius: 0;
-}
-.btn-ghost:hover, .header-cta-ghost:hover {
-  background: var(--ink);
-  color: #fff;
+/* 章节数字：黑描边 */
+.sec-num {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(17, 17, 17, 0.45);
 }
 
-/* 强调色全部降为墨黑 */
-.doc-tag, .doc-open, .lb-count, .modal-index, .case-step-num, .kicker {
-  color: var(--ink) !important;
-}
-.doc-tag { border-color: var(--line); background: #f2f2f2; }
-.tags li:not(:last-child)::after { color: #c9c9c9; }
+/* 小标签统一灰黑 */
+.kicker { color: var(--ink); }
+.kicker::before { background: var(--ink); }
+.head-en { color: var(--gray); }
+
+/* 按钮 */
+.btn-primary, .header-cta { background: var(--ink); border-color: var(--ink); color: #fff; }
+.btn-primary:hover, .header-cta:hover { background: #3a3a3a; border-color: #3a3a3a; color: #fff; }
+.btn-ghost, .header-cta-ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-ghost:hover, .header-cta-ghost:hover { background: var(--ink); color: #fff; }
+
+/* 年份章、Tab 高亮、页点 */
 .year-chip { background: var(--ink); color: #fff; }
+.gallery-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
 .gallery-tab-ink { background: var(--ink); }
 .side-dots .dot.active { background: var(--ink); }
 
-/* 标题保持黑体（不用宋体），整体更“单调” */
-.hero-title, .head-title, .work-title, .g-title, .doc-title, .about-figure figcaption {
-  font-family: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+/* 标签与链接 */
+.doc-tag {
+  color: var(--ink);
+  border-color: var(--line);
+  background: #f2f2f2;
 }
-.hero-title { font-size: clamp(46px, 6.2vw, 88px); line-height: 1.08; }
-.head-title { font-size: clamp(26px, 2.6vw, 34px); }
-.work-title { font-size: 17px; }
-.g-title { font-size: 13.5px; }
-
-/* 卡片与分割线 */
-.work-card { background: transparent; border: 0; }
-.work-card .work-body { padding: 13px 0 0; }
-.doc-card, .td-card, .code-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 0;
-}
+.doc-open { color: var(--ink); }
 .doc-card:hover { border-color: var(--ink); }
+.tags li:not(:last-child)::after { color: #c8c8c8; }
+.lb-count, .modal-index, .case-step-num { color: var(--ink); }
 
-/* 导航/页脚 */
-.site-header { background: rgba(250, 250, 250, 0.94); }
-.site-nav a.active { border-bottom-color: var(--ink); }
-footer { border-top: 1px solid var(--line); }
+/* 导航 hover 下划线：黑 */
+.site-nav a:hover,
+.site-nav a.active,
+.site-nav .nav-showreel:hover,
+.site-nav .nav-more-toggle:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
 
-/* 弹窗/灯箱保持深色背景 */
+/* 页脚 */
+footer, .site-footer { border-top-color: var(--line); }
+
+/* 灯箱背景保持深黑 */
 .lightbox-backdrop { background: rgba(10, 10, 10, 0.95); }
 
-@media (max-width: 800px) {
-  .hero-title { font-size: clamp(38px, 9.6vw, 54px); }
-  .head-title { font-size: 24px; }
-}
+/* 图片保持原色（不灰度化） */
+img { filter: none; }
