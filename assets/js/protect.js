@@ -1,74 +1,45 @@
 /* ============================================================
-   PROTECT.JS — 作品保护（防下载 / 防复制 / 防打印 / 视频禁下载）
-   ⚠️ 浏览器端无法阻止 OS 级截屏/录屏，水印用于溯源。
+   PROTECT.JS — 轻量版权标识（不干扰 HR 正常浏览、分屏与打印）
+   保留：1 禁止图片/视频拖拽  2 视频禁下载/画中画  3 轻量背景溯源水印
+   放开：右键菜单、文本选择复制、Ctrl+P 打印存档、取消分屏误报弹窗
    ============================================================ */
 (function () {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('protect');
-    function canCopy(target) {
-      return target && target.closest && target.closest('input, textarea, [data-copyable]');
-    }
 
-    /* ---------- 1. 禁用右键 ---------- */
-    document.addEventListener('contextmenu', function (e) {
-      var t = e.target;
-      if (canCopy(t)) { return; }
-      e.preventDefault();
-    }, { capture: true });
-
-    /* ---------- 2. 禁止选中 / 复制 / 剪切 ---------- */
-    document.addEventListener('selectstart', function (e) {
-      var t = e.target;
-      if (canCopy(t)) { return; }
-      e.preventDefault();
-    }, { capture: true });
-    ['copy', 'cut'].forEach(function (ev) {
-      document.addEventListener(ev, function (e) {
-        var t = e.target;
-        var selection = window.getSelection();
-        var selectionNode = selection && selection.anchorNode;
-        var selectionTarget = selectionNode && (selectionNode.nodeType === 1 ? selectionNode : selectionNode.parentElement);
-        if (canCopy(t) || (canCopy(selectionTarget) && selection && canCopy(selection.focusNode && (selection.focusNode.nodeType === 1 ? selection.focusNode : selection.focusNode.parentElement)))) { return; }
-        e.preventDefault();
-      }, { capture: true });
-    });
-
-    /* ---------- 3. 禁止图片拖拽 ---------- */
+    /* ---------- 1. 禁止图片与视频拖拽 ---------- */
     document.addEventListener('dragstart', function (e) {
       if (e.target && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) {
         e.preventDefault();
       }
     }, { capture: true });
 
-    /* ---------- 4. 拦截常用保存/打印/源码快捷键 ---------- */
-    document.addEventListener('keydown', function (e) {
-      var k = (e.key || '').toLowerCase();
-      var mod = e.ctrlKey || e.metaKey;
-      if (mod && ['s', 'p', 'u', 'o'].indexOf(k) !== -1) { e.preventDefault(); e.stopPropagation(); return false; }
-      if (mod && e.shiftKey && ['i', 'j', 'c', 'k'].indexOf(k) !== -1) { e.preventDefault(); e.stopPropagation(); return false; }
-      if (k === 'f12') { e.preventDefault(); e.stopPropagation(); return false; }
-      if (mod && k === 'a') { /* 允许输入框全选 */ }
+
+    /* ---------- 1.5 仅图片/视频禁用右键（文本仍可选中复制） ---------- */
+    document.addEventListener('contextmenu', function (e) {
+      var t = e.target;
+      if (t && (t.tagName === 'IMG' || t.tagName === 'VIDEO')) {
+        e.preventDefault();
+      }
     }, { capture: true });
 
-    /* ---------- 5. 视频：禁下载 / 禁画中画 / 禁遥控播放 ---------- */
+    /* ---------- 2. 视频：隐藏下载与画中画按钮 ---------- */
     function hardenVideos() {
       var vids = document.querySelectorAll('video');
       for (var i = 0; i < vids.length; i++) {
         var v = vids[i];
-        v.setAttribute('controlslist', 'nodownload noplaybackrate noremoteplayback');
+        v.setAttribute('controlslist', 'nodownload noremoteplayback');
         v.disablePictureInPicture = true;
-        v.addEventListener('contextmenu', function (e) { e.preventDefault(); });
       }
     }
     hardenVideos();
-    /* 动态插入的视频（悬停预览等）也加固 */
     if (window.MutationObserver) {
       new MutationObserver(hardenVideos).observe(document.body, { childList: true, subtree: true });
     }
 
-    /* ---------- 6. 隐形水印（截屏/录屏可溯源） ---------- */
+    /* ---------- 3. 轻量背景水印（层级低于弹层与灯箱，不遮挡高清作品） ---------- */
     function buildWatermark() {
       var text = '陈锦育 · 作品集 · © 2026';
       var c = document.createElement('canvas');
@@ -87,21 +58,5 @@
       document.body.appendChild(layer);
     }
     buildWatermark();
-
-    /* ---------- 7. 轻量开发者工具提示（不影响正常浏览） ---------- */
-    var warn = document.createElement('div');
-    warn.className = 'dev-warn';
-    warn.textContent = '© 陈锦育 · 本站作品受版权保护，请勿下载 / 截屏 / 录屏传播';
-    document.body.appendChild(warn);
-    var warned = false;
-    setInterval(function () {
-      var open = window.outerWidth - window.innerWidth > 180 || window.outerHeight - window.innerHeight > 220;
-      if (open && !warned) {
-        warn.classList.add('show');
-        warned = true;
-        setTimeout(function () { warn.classList.remove('show'); }, 5000);
-      }
-      if (!open) { warned = false; }
-    }, 2000);
   });
 })();

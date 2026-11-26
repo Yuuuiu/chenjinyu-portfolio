@@ -645,13 +645,15 @@
     },
     ai_yangyangtang: {
       focus: 'AI 影像诗 / 东方美学视觉转译 / 国家级二等奖',
-      idea: '围绕「盐阳」东方古意展开非写实 AI 影像探索，用金色流线、蓝雾与星屑的聚散构建诗意情绪流动。',
+      idea: '围绕「盐阳」东方古意展开非写实 AI 影像探索，用金色流线、蓝雾与星屑的聚散构建诗意情绪流动。海报为 AI 视觉延展（练习），非原画/实拍。',
       steps: [
         { title: '东方意象提炼', text: '将传统水墨留白与抽象流体光影结合，避免常见 AI 画面的堆砌感，建立高辨识度色调。' },
         { title: '动态质感与连贯控制', text: '通过多轮提示词约束光影方向与粒子密度，保证镜头切换时流体形态自然过渡。' },
         { title: '音画剪辑与获奖成果', text: '配合配乐呼吸感完成节奏剪辑与调色，获中国好创意大赛应用组国家级二等奖。' }
       ],
-      images: [],
+      images: [
+        'assets/images/gen_ai_yangyangtang_1.jpg'
+      ],
       docs: []
     },
     ai_cannes: {
@@ -709,7 +711,7 @@
     },
     ai_dasheng: {
       focus: '暗黑科幻概念片 / 废墟战场大场面 / 即梦动态探索',
-      idea: '围绕「灾厄降临」世界观，探索女性战士与巨兽对峙的高反差暗黑科幻视觉与大场面镜头张力。',
+      idea: '围绕「灾厄降临」世界观，探索女性战士与巨兽对峙的高反差暗黑科幻视觉与大场面镜头张力。横幅海报为 AI 视觉延展（练习），非原画/实拍。',
       steps: [
         { title: '世界观与氛围定调', text: '确立低饱和废墟质感与巨物压迫感，统一光影方向、烟尘层次与角色装备细节。' },
         { title: '关键镜头与动态生成', text: '借助即梦等工具迭代关键帧与图生视频，控制人物动作幅度与巨兽压迫镜头的稳定性。' },
@@ -717,7 +719,8 @@
       ],
       images: [
         'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_1.jpg',
-        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_2.jpg'
+        'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/dasheng_cover_2.jpg',
+        'assets/images/gen_ai_dasheng_1.jpg'
       ],
       docs: []
     },
@@ -734,13 +737,15 @@
     },
     ai_yegou: {
       focus: '150 秒剧本改编 / 多角色动作喜剧 / 快节奏剪辑',
-      idea: '基于 150 秒喜剧剧本，在废墟场景中围绕「野生狗奶」展开五人争夺，用古装角色与现代包装制造穿越反差笑点。',
+      idea: '基于 150 秒喜剧剧本，在废墟场景中围绕「野生狗奶」展开五人争夺，用古装角色与现代包装制造穿越反差笑点。海报为 AI 视觉延展（练习），非原画/实拍。',
       steps: [
         { title: '剧本拆解与分镜节奏', text: '将 150 秒剧本拆解为紧凑的冲突段落，规划五位角色的出场顺序与喜剧包袱节点。' },
         { title: '多角色生成与反差控制', text: '通过即梦等工具生成古装人物与现代包装的混搭画面，保持多角色同场时的视觉辨识度。' },
         { title: '动作剪辑与配音合成', text: '团队协作完成快节奏卡点剪辑与配音音效配合，强化动作喜剧的观看流畅度。' }
       ],
-      images: [],
+      images: [
+        'assets/images/gen_ai_yegou_1.jpg'
+      ],
       docs: []
     },
     itd_honghua: {
@@ -790,13 +795,15 @@
     },
     film_silu: {
       focus: 'AI 生成 × 实拍混剪 / 丝绸之路主题 / 跨时空叙事',
-      idea: '结合 AI 生成画面与实拍素材，串联沙漠公路、森林、雪地、戈壁与城市高架，跨越古今呈现丝绸之路的延续与变迁。',
+      idea: '结合 AI 生成画面与实拍素材，串联沙漠公路、森林、雪地、戈壁与城市高架，跨越古今呈现丝绸之路的延续与变迁。海报为 AI 视觉延展（练习），非原画/实拍。',
       steps: [
         { title: '主题结构与场景串联', text: '按地理与时间双线索组织地貌切换，建立从古丝路到现代交通的视觉呼应。' },
         { title: 'AI 与实拍风格融合', text: '统一 AI 生成镜头与实拍镜头的色彩影调与运动速度，减少跨媒介拼接割裂感。' },
         { title: '节奏剪辑与音乐合成', text: '独立完成全片剪辑合成与调色，作为影视创作课程结课作品呈现。' }
       ],
-      images: [],
+      images: [
+        'assets/images/gen_film_silu_1.jpg'
+      ],
       docs: []
     },
     film_hucheng: {
@@ -1350,6 +1357,32 @@
   });
   PROCESS_GALLERY.forEach(function (g) {
     g.items.forEach(function (it) { photoFlat.push({ group: g.group, item: it }); });
+  });
+
+  /* 案例拆解专用附图（含 AI 视觉延展海报）注册进灯箱索引，不新建画廊分组、不影响 73 张图集计数 */
+  var CASE_IMAGE_META = {
+    'assets/images/gen_ai_yangyangtang_1.jpg': { title: '《盐阳叹》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 东方水墨流体主视觉' },
+    'assets/images/gen_film_silu_1.jpg': { title: '《丝路新篇》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 跨时空三段切片' },
+    'assets/images/gen_ai_yegou_1.jpg': { title: '《野生狗奶》视觉延展海报（AI 视觉延展）', desc: '海报为 AI 视觉延展（练习），非原画/实拍 · 废墟群像喜剧' },
+    'assets/images/gen_ai_dasheng_1.jpg': { title: '《灾厄战线》概念横幅（AI 视觉延展）', desc: '横幅海报为 AI 视觉延展（练习），非原画/实拍 · 16:9 宽银幕概念' }
+  };
+  Object.keys(PROJECT_NOTES).forEach(function (wid) {
+    var note = PROJECT_NOTES[wid];
+    var work = findWork(wid);
+    if (!note || !note.images || !note.images.length) { return; }
+    note.images.forEach(function (src, idx) {
+      var exists = false;
+      for (var i = 0; i < photoFlat.length; i++) {
+        if (photoFlat[i].item.src === src) { exists = true; break; }
+      }
+      if (!exists) {
+        var meta = CASE_IMAGE_META[src] || {
+          title: (work ? work.title : wid) + ' · 配套视觉 ' + (idx + 1),
+          desc: work ? work.title + ' 案例拆解配套视觉材料' : '案例拆解配套视觉材料'
+        };
+        photoFlat.push({ group: CASE_IMAGE_META[src] ? 'AI 视觉延展' : '案例配套材料', item: { src: src, title: meta.title, desc: meta.desc } });
+      }
+    });
   });
 
   var lbIndex = 0;

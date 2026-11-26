@@ -384,3 +384,10 @@ button:focus-visible,
   border-color: #2E7D4F;
   color: #2E7D4F;
 }
+
+/* ---------- 14. P0 体验止损：颗粒层降级 & 首屏紧凑留白 ---------- */
+.grain { z-index: 20 !important; }
+body.modal-open .grain, body.lb-open .grain { animation-play-state: paused !important; opacity: 0 !important; }
+@media (min-width: 681px) {
+  .hero { padding-top: 72px !important; padding-bottom: 32px !important; }
+}

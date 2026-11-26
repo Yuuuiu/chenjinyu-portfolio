@@ -122,7 +122,7 @@
       var id = card.getAttribute('data-id');
       if (!id || card.dataset.previewing === '1') { return; }
       card.dataset.previewing = '1';
-      /* 悬停 250ms 再加载，避免划过就下载 */
+      /* 悬停 450ms 再加载，避免快速划过触发冗余请求 */
       card._pvTimer = setTimeout(function () {
         var cover = card.querySelector('.cover');
         if (!cover) { return; }
@@ -145,7 +145,7 @@
         });
         cover.appendChild(v);
         card._pv = v;
-      }, 250);
+      }, 450);
     });
     document.addEventListener('mouseout', function (e) {
       var card = e.target.closest ? e.target.closest('.work-card') : null;
