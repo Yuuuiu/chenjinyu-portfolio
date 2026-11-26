@@ -13,6 +13,13 @@
   var IMG_BASE = 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/';
 
   /* 图片路径统一转换：本地相对路径 → OSS 直链 */
+  var FILE_BASE = LOCAL_PREVIEW ? '' : IMG_BASE;
+  function fileUrl(p) {
+    if (!p) { return p; }
+    if (/^https?:/i.test(p)) { return p; }
+    return FILE_BASE + encodeURI(p);
+  }
+
   function imgUrl(p) {
     if (!p) { return p; }
     if (p.indexOf('assets/') === 0) {
@@ -510,13 +517,13 @@
   /* 创作过程：文档（PDF 新窗口打开） */
   var PROCESS_DOCS = [
     {
-      href: 'docs/ironfire_storyboard.pdf', meta: '分镜 · 0.5 MB', tag: '分镜脚本',
+      href: fileUrl('docs/ironfire_storyboard.pdf'), meta: '分镜 · 0.5 MB', tag: '分镜脚本',
       title: '《铁火生花》分镜脚本 V1',
       desc: '打铁花非遗数字装置成片的分镜脚本：镜头、时间码与画面说明逐镜编排。',
       foot: 'DOCX 原件 · 2026.10.07'
     },
     {
-      href: 'docs/ironfire_ai_tools.pdf', meta: '参赛附件', tag: 'AI 工具说明',
+      href: fileUrl('docs/ironfire_ai_tools.pdf'), meta: '参赛附件', tag: 'AI 工具说明',
       title: '人工智能工具使用情况说明',
       desc: '参赛提交材料：全流程各环节所用 AI 工具、用途与使用方式说明。',
       foot: '第十四届全国大学生数媒竞赛 · 参赛附件'
@@ -526,7 +533,7 @@
   /* ==================== 数据（陆 · 文字与策划） ==================== */
   var WRITING_DOCS = [
     {
-      href: 'docs/daozang_worldbuilding.pdf', meta: '191 页 · 2.0 MB', tag: '世界观设定',
+      href: fileUrl('docs/daozang_worldbuilding.pdf'), meta: '191 页 · 2.0 MB', tag: '世界观设定',
       title: '《道藏三千：非遗证道录》完整设定集',
       desc: '《绣藏》世界观完整设定：非遗证道宇宙的体系、角色与力量逻辑。',
       foot: '《绣藏》AI 漫剧 · 世界观文档'
@@ -538,55 +545,55 @@
       foot: '《绣藏》AI 漫剧 · 分镜'
     },
     {
-      href: 'docs/xiuzang_script.pdf', meta: '剧本 · 0.4 MB', tag: '剧本',
+      href: fileUrl('docs/xiuzang_script.pdf'), meta: '剧本 · 0.4 MB', tag: '剧本',
       title: '《绣藏》剧本',
       desc: '非遗题材 AI 漫剧完整剧本。',
       foot: '《绣藏》AI 漫剧 · 剧本'
     },
     {
-      href: 'docs/ironfire_storyboard.pdf', meta: '分镜 · 0.5 MB', tag: '分镜脚本',
+      href: fileUrl('docs/ironfire_storyboard.pdf'), meta: '分镜 · 0.5 MB', tag: '分镜脚本',
       title: '《铁火生花》分镜脚本 V1',
       desc: '打铁花非遗数字装置成片分镜（与创作过程板块同源）。',
       foot: '数媒竞赛参赛 · 附件分镜'
     },
     {
-      href: 'docs/qiehuang_script.pdf', meta: '剧本 · 0.2 MB', tag: '剧本',
+      href: fileUrl('docs/qiehuang_script.pdf'), meta: '剧本 · 0.2 MB', tag: '剧本',
       title: '《茄皇》剧本',
       desc: '泡面品牌创意短片剧本：线性叙事与暖调视听语言设计。',
       foot: '大二 · 视听语言课程结课'
     },
     {
-      href: 'docs/zaoba_script.pdf', meta: '剧本 · 0.2 MB', tag: '剧本',
+      href: fileUrl('docs/zaoba_script.pdf'), meta: '剧本 · 0.2 MB', tag: '剧本',
       title: '《这个早八不太好上》剧本',
       desc: '校园题材短片剧本。',
       foot: '大二 · 视听语言课程'
     },
     {
-      href: 'docs/douyin_operations_report.pdf', meta: '运营报告 · 0.3 MB', tag: '运营方案',
+      href: fileUrl('docs/douyin_operations_report.pdf'), meta: '运营报告 · 0.3 MB', tag: '运营方案',
       title: '新媒体账号运营报告',
       desc: '抖音账号运营实践与复盘报告：定位、内容、数据与迭代。',
       foot: '大二 · 融媒体课程 · 小组合作'
     },
     {
-      href: 'docs/shiyun_business_plan.pdf', meta: '商业计划 · 0.5 MB', tag: '商业计划书',
+      href: fileUrl('docs/shiyun_business_plan.pdf'), meta: '商业计划 · 0.5 MB', tag: '商业计划书',
       title: '《食韵中华》商业计划书',
       desc: '互联网+ 高教主赛道参赛商业计划书：项目定位、模式与运营规划。',
       foot: '大二（上）· 综合创作课程'
     },
     {
-      href: 'docs/dunhuang_project_plan.pdf', meta: '项目章程 · 0.3 MB', tag: '项目管理',
+      href: fileUrl('docs/dunhuang_project_plan.pdf'), meta: '项目章程 · 0.3 MB', tag: '项目管理',
       title: '项目管理章程与传播方案',
       desc: '《文化挪用视角下的敦煌文化数字媒体艺术研究》项目管理章程与传播方案。',
       foot: '大四专题 · 第三组（陈锦育等）'
     },
     {
-      href: 'docs/yumeng_studio_ip_plan.pptx', meta: '提案 · 8.5 MB', tag: '品牌提案',
+      href: fileUrl('docs/yumeng_studio_ip_plan.pptx'), meta: '提案 · 8.5 MB', tag: '品牌提案',
       title: '《宇梦造物》工作室 IP 全案提案',
       desc: '工作室品牌定位、VI 基础系统、IP 吉祥物与商业短片视觉方向的全案提案（PPTX）。',
       foot: '工作室项目 · 自研提案'
     },
     {
-      href: 'docs/yumeng_jinxi_storyboard.md', meta: '分镜 · 文本', tag: '分镜与提示词',
+      href: fileUrl('docs/yumeng_jinxi_storyboard.md'), meta: '分镜 · 文本', tag: '分镜与提示词',
       title: '《锦息》分镜与提示词',
       desc: '产品概念短片的分镜规划、镜头描述与 AI 生成提示词记录。',
       foot: '商业向 AI 概念短片 · 分镜文档'
@@ -683,8 +690,8 @@
         'images/gallery/poster_xiuzang_3.jpg'
       ],
       docs: [
-        { href: 'docs/daozang_worldbuilding.pdf', label: '完整世界观设定（191 页）', kind: 'PDF' },
-        { href: 'docs/xiuzang_script.pdf', label: '完整剧本', kind: 'PDF' },
+        { href: fileUrl('docs/daozang_worldbuilding.pdf'), label: '完整世界观设定（191 页）', kind: 'PDF' },
+        { href: fileUrl('docs/xiuzang_script.pdf'), label: '完整剧本', kind: 'PDF' },
         { href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', label: 'PV 分镜原稿', kind: 'PDF' }
       ]
     },
@@ -726,10 +733,10 @@
       ],
       images: ['images/process/concept_card.jpg', 'images/process/storyboard_1.jpg', 'images/gallery/board_ironfire.jpg'],
       docs: [
-        { href: 'docs/ironfire_storyboard.pdf', label: '分镜脚本', kind: 'PDF' },
-        { href: 'docs/ironfire_ai_tools.pdf', label: 'AI 工具使用说明', kind: 'PDF' },
-        { href: 'docs/code/build_v18.ps1', label: '成片构建脚本', kind: '源码', download: true },
-        { href: 'docs/code/gen_cards.ps1', label: '批量字卡脚本', kind: '源码', download: true }
+        { href: fileUrl('docs/ironfire_storyboard.pdf'), label: '分镜脚本', kind: 'PDF' },
+        { href: fileUrl('docs/ironfire_ai_tools.pdf'), label: 'AI 工具使用说明', kind: 'PDF' },
+        { href: fileUrl('docs/code/build_v18.ps1'), label: '成片构建脚本', kind: '源码', download: true },
+        { href: fileUrl('docs/code/gen_cards.ps1'), label: '批量字卡脚本', kind: '源码', download: true }
       ]
     },
     itd_yixiu: {
@@ -752,7 +759,7 @@
         { title: '成果', text: '获中国好创意大赛学术组国家级二等奖。' }
       ],
       images: [],
-      docs: [{ href: 'docs/code/audio_visual_interaction.pde', label: '音画互动核心源码', kind: '源码', download: true }]
+      docs: [{ href: fileUrl('docs/code/audio_visual_interaction.pde'), label: '音画互动核心源码', kind: '源码', download: true }]
     },
     ai_dasheng: {
       focus: '暗黑科幻概念片 / 废墟战场大场面 / 即梦动态探索',
@@ -822,9 +829,9 @@
         'assets/images/xinmai_board_3.jpg'
       ],
       docs: [
-        { href: 'docs/xinmai_design.pdf', label: '多感官情绪互动装置设计', kind: 'PDF' },
-        { href: 'docs/xinmai_tech.pdf', label: '交互装置技术方案', kind: 'PDF' },
-        { href: 'docs/xinmai_aesthetic.pdf', label: '交互美学与情感共生方案', kind: 'PDF' }
+        { href: fileUrl('docs/xinmai_design.pdf'), label: '多感官情绪互动装置设计', kind: 'PDF' },
+        { href: fileUrl('docs/xinmai_tech.pdf'), label: '交互装置技术方案', kind: 'PDF' },
+        { href: fileUrl('docs/xinmai_aesthetic.pdf'), label: '交互美学与情感共生方案', kind: 'PDF' }
       ]
     },
     film_wusheng: {
@@ -875,7 +882,7 @@
         'images/gallery/board_qiehuang.jpg'
       ],
       docs: [
-        { href: 'docs/qiehuang_script.pdf', label: '《茄皇》完整剧本', kind: 'PDF' }
+        { href: fileUrl('docs/qiehuang_script.pdf'), label: '《茄皇》完整剧本', kind: 'PDF' }
       ]
     },
     film_zaoba: {
@@ -888,7 +895,7 @@
       ],
       images: [],
       docs: [
-        { href: 'docs/zaoba_script.pdf', label: '《这个早八不太好上》剧本', kind: 'PDF' }
+        { href: fileUrl('docs/zaoba_script.pdf'), label: '《这个早八不太好上》剧本', kind: 'PDF' }
       ]
     }
   };
