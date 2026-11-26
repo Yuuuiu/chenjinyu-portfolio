@@ -391,3 +391,31 @@ body.modal-open .grain, body.lb-open .grain { animation-play-state: paused !impo
 @media (min-width: 681px) {
   .hero { padding-top: 72px !important; padding-bottom: 32px !important; }
 }
+
+/* ---------- 13. 体检优化：锚点偏移 / 流程 Tab 桌面一行 / 跳转链接 / 复制反馈 ---------- */
+section[id] { scroll-margin-top: 84px; }
+
+@media (min-width: 801px) {
+  .gallery-tabs { flex-wrap: wrap; }
+  .gallery-tab { padding: 7px 11px; font-size: 11.5px; letter-spacing: .02em; }
+  .gallery-tab span { font-size: 10px; margin-left: 3px; }
+}
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: -60px;
+  z-index: 100000;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  transition: top .2s;
+}
+.skip-link:focus { top: 12px; }
+
+[data-copyable] { cursor: pointer; }
+[data-copyable]:hover { color: var(--ink); }
+[data-copyable] .copied-tip { color: #2E7D4F; font-size: 12px; }
+
+.gallery-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

@@ -882,7 +882,7 @@
         '<a class="dir-card reveal" href="#' + d.id + '">' +
           '<div class="dir-num">' + d.num + '</div>' +
           '<div class="dir-en">' + d.en + '</div>' +
-          '<h3 class="dir-name">' + d.name + '</h3>' +
+          '<p class="dir-name">' + d.name + '</p>' +
           '<p class="dir-tagline">' + d.tagline + '</p>' +
           '<div class="dir-count">' +
             '<span class="count-chip">' + chipText + '</span>' +
@@ -1005,7 +1005,7 @@
           '<div class="featured-cover"><img src="' + imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')) + '" alt="' + f.title + ' 作品画面" width="480" height="270" decoding="async" fetchpriority="high">' +
           '<span class="featured-play" aria-hidden="true">▶</span></div>' +
           '<div class="featured-body">' +
-          '<h3 class="featured-title">' + f.title + '</h3>' +
+          '<p class="featured-title">' + f.title + '</p>' +
           '<p class="featured-sub">' + f.sub + '</p>' +
           '<p class="featured-award">' + f.award + '</p>' +
           '<span class="featured-open">观看成片与案例拆解 ↗</span></div>' +
@@ -1333,6 +1333,34 @@
         ta.style.opacity = '0';
         document.body.appendChild(ta);
         ta.select();
+        try { document.execCommand('copy'); done(); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
+
+
+  /* ==================== 关于我：点击复制电话/邮箱/微信 ==================== */
+  function initCopyableMeta() {
+    document.addEventListener('click', function (e) {
+      var dd = e.target && e.target.closest ? e.target.closest('[data-copyable]') : null;
+      if (!dd) { return; }
+      var text = (dd.textContent || '').trim();
+      if (!text) { return; }
+      var old = dd.getAttribute('data-original') || dd.innerHTML;
+      dd.setAttribute('data-original', old);
+      function done() {
+        dd.classList.add('copied');
+        dd.innerHTML = '<span class="copied-tip">已复制 ✓</span>';
+        setTimeout(function () { dd.innerHTML = old; dd.classList.remove('copied'); }, 1500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
         try { document.execCommand('copy'); done(); } catch (err) {}
         document.body.removeChild(ta);
       }
@@ -1772,9 +1800,9 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) { return; }
-        links.forEach(function (a) { a.classList.remove('active'); });
+        links.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
         var link = map[entry.target.id];
-        if (link) { link.classList.add('active'); }
+        if (link) { link.classList.add('active'); link.setAttribute('aria-current', 'true'); }
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
 
@@ -1820,6 +1848,7 @@
   initGalleryTabs();
   initGalleryExpand();
   initCopyButtons();
+  initCopyableMeta();
   initActiveNav();
   initParticles();
 })();
