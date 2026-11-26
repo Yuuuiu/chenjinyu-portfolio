@@ -725,3 +725,20 @@ section[id] { scroll-margin-top: 84px; }
   }
   .site-nav .nav-showreel:hover { color: var(--ink); }
 }
+
+/* 证件照按真实比例显示，避免被 width/height 属性压扁 */
+.about-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+/* 页脚访问量 */
+.site-visits {
+  margin-top: 10px;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+  text-align: center;
+}
