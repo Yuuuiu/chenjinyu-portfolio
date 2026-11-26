@@ -15,9 +15,9 @@
       document.body.classList.add('loaded');
       setTimeout(function () { loader.style.display = 'none'; }, 800);
     };
-    if (document.readyState === 'complete') { setTimeout(finish, 420); }
-    else { window.addEventListener('load', function () { setTimeout(finish, 420); }); }
-    setTimeout(finish, 3500); /* 兜底 */
+    if (document.readyState === 'complete') { setTimeout(finish, 120); }
+    else { window.addEventListener('load', function () { setTimeout(finish, 120); }); }
+    setTimeout(finish, 1800); /* 兜底 */
     /* 标题兜底：动画结束后强制可见，避免任何环境停在隐藏态 */
     setTimeout(function () {
       var chs = document.querySelectorAll('.hero-title .ch');
@@ -27,7 +27,7 @@
         chs[i].style.opacity = '1';
       }
       document.body.classList.add('loaded');
-    }, 2200);
+    }, 1200);
   }
 
   /* ---------- 逐字标题 ---------- */
@@ -43,7 +43,7 @@
     }).join('');
     var all = t.querySelectorAll('.ch');
     for (var i = 0; i < all.length; i++) {
-      all[i].style.transitionDelay = (0.25 + i * 0.035) + 's';
+      all[i].style.transitionDelay = (0.06 + i * 0.02) + 's';
     }
   }
 

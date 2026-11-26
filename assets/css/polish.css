@@ -1,0 +1,128 @@
+/* ============================================================
+   POLISH — 按外部 review 的视觉/交互修正
+   ============================================================ */
+
+/* ---------- 1. 文字对比度 ---------- */
+:root {
+  --gray: #565656;
+  --gray-2: #747474;
+}
+.head-en { color: #767676; }
+.sec-num { -webkit-text-stroke: 1px #D3D1CA; }
+.hero-sub, .hero-meta li, .about-text, .work-credit, .g-desc, .doc-desc, .quote-foot {
+  color: #5A5A5A;
+}
+.footer-note, .copyright-line { color: #7A7A7A; }
+
+/* ---------- 2. 水印降到弹层之下 ---------- */
+.wm-layer { z-index: 30 !important; }
+
+/* ---------- 3. 锚点跳转强制显示（配合 JS） ---------- */
+.reveal.force-visible { opacity: 1 !important; transform: none !important; }
+
+/* ---------- 4. 顶部 CTA / 首屏 CTA ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 18px;
+  flex: 0 0 auto;
+}
+.header-cta {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 7px 14px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  transition: background .2s, color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.header-cta:hover { background: var(--ink); color: var(--paper); }
+.header-cta-ghost { border-color: var(--line); color: var(--ink-2); }
+.header-cta-ghost:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.btn-primary, .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 11px 20px;
+  min-height: 42px;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.btn-primary { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+.btn-primary:hover { background: #000; transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+
+.about-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+/* ---------- 5. 作品卡获奖/亮点行 ---------- */
+.work-award {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #A66A1E;
+  letter-spacing: 0.02em;
+  border-left: 2px solid #D9B27C;
+  padding-left: 8px;
+}
+.work-credit { margin-top: 8px; }
+
+/* ---------- 6. 文档卡片 meta（页数/大小） ---------- */
+.doc-meta {
+  font-size: 11px;
+  color: #8A8A8A;
+  margin-left: 8px;
+  letter-spacing: 0.02em;
+}
+.doc-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+
+/* ---------- 7. 画廊/过程组：折叠 + 展开按钮 ---------- */
+.gallery-group:not(.expanded) .gallery-item:nth-child(n+7) { display: none; }
+.gallery-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 18px auto 0;
+  padding: 9px 18px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: border-color .2s, background .2s;
+}
+.gallery-expand:hover { border-color: var(--ink); background: var(--white); }
+.gallery-expand-wrap { text-align: center; }
+
+/* ---------- 8. 词组不拆行 ---------- */
+.dir-tagline { word-break: keep-all; }
+.head-title, .dir-name, .work-title, .doc-title { word-break: keep-all; }
+
+/* ---------- 9. 移动端：CTA 收起为图标式小按钮 ---------- */
+@media (max-width: 1024px) {
+  .header-actions { margin-left: 10px; gap: 6px; }
+  .header-cta { padding: 6px 10px; font-size: 11px; }
+}
+@media (max-width: 800px) {
+  .header-actions { display: none; }
+  .hero-actions { gap: 8px; }
+  .btn-primary, .btn-ghost { flex: 1 1 auto; min-width: 44%; padding: 11px 12px; }
+}
+
+/* ---------- 10. 复制成功反馈 ---------- */
+.btn-ghost.copied, .about-actions .btn-ghost.copied {
+  border-color: #2E7D4F;
+  color: #2E7D4F;
+}

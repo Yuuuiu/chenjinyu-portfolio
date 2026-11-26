@@ -814,7 +814,7 @@ body.modal-open { overflow: hidden; }
 
 /* ---------------- 项目展示与制作说明 ---------------- */
 .hero-statement { margin-top: 14px; max-width: 620px; color: var(--ink-2); font-size: 13px; line-height: 1.9; }
-.featured-grid { max-width: 860px; }
+.featured-grid { max-width: none; }
 .featured-card { padding: 0; overflow: hidden; }
 .featured-cover { position: relative; aspect-ratio: 16 / 8; overflow: hidden; background: var(--line); }
 .featured-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }

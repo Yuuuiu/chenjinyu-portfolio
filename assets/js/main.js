@@ -101,49 +101,55 @@
       title: '《小奶与小美》',
       year: '2026', tags: ['AI数字人', '口播', '即梦'],
       desc: 'AI 废土科幻短片：橙色沙海中的异星生物与巨型光柱，数字人角色串联起荒芜世界里的日常对话。',
-      credit: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）· 团队协作'
+      credit: '',
+      highlight: 'AI 数字人 · 废土科幻短片'
     },
     {
       id: 'ai_cannes', dir: 'ai',
       title: '《倒退的棕榈叶》',
       year: '2026', tags: ['AI影像', '短片'],
       desc: '真实感 AI 剧情短片：疲惫的设计师驾车、伏案绘图，与白发角色的往事在镜头间交织，讲创作与时间。',
-      credit: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）· 团队协作'
+      credit: '',
+      highlight: '真实感 AI 剧情短片'
     },
     {
       id: 'ai_xiuzhang', dir: 'ai',
       title: '《绣藏》',
       year: '2026', tags: ['AI漫剧', '非遗', '国风'],
       desc: '「道藏三千：非遗证道录」AI 漫剧参赛作品：以道家符箓与非遗纹样构建世界观，完成设定集、剧本、概念设计与 PV 分镜全流程。',
-      credit: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）· 团队协作'
+      credit: '',
+      highlight: '西湖新风 AI 漫剧创作大赛 · 参赛作品'
     },
     {
       id: 'ai_yangyangtang', dir: 'ai',
       title: '《盐阳叹》',
       year: '2026', tags: ['AI影像', '文化题材'],
       desc: '水墨与流体抽象的 AI 影像诗：金色流线、蓝雾与星屑在画面中聚散，以「盐阳」古意为题呈现东方意象的情绪流动。',
-      credit: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）· 团队协作'
+      credit: '',
+      highlight: '中国好创意大赛 · 应用组国家级二等奖'
     },
     {
       id: 'ai_dasheng', dir: 'ai',
       title: '《灾厄战线》',
       year: '2026', tags: ['AI影像', '即梦', '概念片'],
       desc: '暗黑科幻 AI 短片：废墟战场上女性战士与巨兽对峙，「灾厄降临」的世界观开篇。',
-      credit: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）· 团队协作'
+      credit: '',
+      highlight: '暗黑科幻 AI 短片'
     },
     {
       id: 'ai_yegou', dir: 'ai',
       title: '《野生狗奶》',
       year: '2026', tags: ['AI影像', '剧情短片'],
       desc: '动作喜剧 AI 短片：废墟中五人争夺一箱「野生狗奶」，古装角色与现代包装碰撞出穿越式笑点（150 秒剧本改编）。',
-      credit: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）· 团队协作'
+      credit: '',
+      highlight: '动作喜剧 AI 短片 · 150 秒剧本改编'
     },
     /* ---- 贰 · 交互装置 ---- */
     {
       id: 'itd_ironfire', dir: 'interactive',
       title: '《铁火生花》IRON FIRE BLOOM',
       year: '2026', tags: ['TouchDesigner', 'GPU粒子', '手势交互', '非遗数字化'],
-      desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可被反复走进。',
+      desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可以被反复走近、反复体验。',
       credit: '独立创作 · 第十四届全国大学生数字媒体科技作品及创意竞赛参赛作品（编号 328499）'
     },
     {
@@ -164,8 +170,9 @@
       id: 'itd_shange', dir: 'interactive',
       title: '《山歌回音壁》声音与灯光互动装置',
       year: '2026', tags: ['Processing', '音画互动', '声光装置'],
-      desc: '声音与灯光交互装置：观众的声音与动作驱动灯光与画面回应，把「山歌」转译为空间中的声光回响。',
-      credit: '中国好创意大赛 · 学术组国家级二等奖'
+      poster: 'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/itd_shange_v2.jpg',
+      desc: '声音与灯光交互装置：以《文山·沉积之书》影像为呈现载体，观众的声音与动作驱动灯光与画面回应，把「山歌」转译为空间中的声光回响。',
+      credit: '独立创作 · 中国好创意大赛 · 学术组国家级二等奖'
     },
     {
       id: 'itd_xinmai', dir: 'interactive',
@@ -231,9 +238,9 @@
         { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '《青铜遗韵》文创 · 钥匙扣：青铜器造型金属挂件' },
         { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '《青铜遗韵》文创 · 钥匙扣：瑞兽纹样款' },
         { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '《青铜遗韵》文创 · 钥匙扣：青绿彩绘款' },
-        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫样机 · 一', desc: '《青铜遗韵》文创 · 鼠标垫：青铜纹样桌面衍生' },
-        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫样机 · 二', desc: '《青铜遗韵》文创 · 鼠标垫：线描纹样款' },
-        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫样机 · 三', desc: '《青铜遗韵》文创 · 鼠标垫：彩绘款' },
+        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫 · 一', desc: '《青铜遗韵》文创 · 鼠标垫：青铜纹样桌面衍生' },
+        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫 · 二', desc: '《青铜遗韵》文创 · 鼠标垫：线描纹样款' },
+        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫 · 三', desc: '《青铜遗韵》文创 · 鼠标垫：彩绘款' },
         { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '《青铜遗韵》文创 · 挂墙广告：线下展示物料，主视觉延展' },
         { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '《青铜遗韵》文创 · 挂墙广告：空间展示效果' }
       ]
@@ -294,7 +301,7 @@
     {
       group: '概念与生成', en: 'CONCEPT & GENERATION', portrait: false,
       items: [
-        { src: 'images/process/concept_card.jpg', title: '设计概念卡 T3_v2', desc: '《铁火生花》片头概念卡：定世界观与视觉基调，八层羽化色块 + 精确居中的排版' },
+        { src: 'images/process/concept_card.jpg', title: '《铁火生花》片头设计概念卡', desc: '《铁火生花》片头概念卡：定世界观与视觉基调，八层羽化色块 + 精确居中的排版' },
         { src: 'images/process/ai_gen_1.jpg', title: '即梦生成 · 4K 主视觉', desc: '即梦文生图产出的 4K 主视觉画面（2026.09）' },
         { src: 'images/process/ai_gen_2.jpg', title: 'MJ 生成 · 场景概念', desc: 'MJ 文生图产出的场景概念画面（2026.09）' },
         { src: 'images/process/ai_gen_3.jpg', title: 'AI 生成 · 分镜参考 一', desc: '即梦 / MJ 生成的分镜参考画面 · 之一' },
@@ -385,7 +392,7 @@
   /* 创作过程：文档（PDF 新窗口打开） */
   var PROCESS_DOCS = [
     {
-      href: 'docs/ironfire_storyboard.pdf', tag: '分镜脚本',
+      href: 'docs/ironfire_storyboard.pdf', meta: '分镜 · 0.5 MB', tag: '分镜脚本',
       title: '《铁火生花》分镜脚本 V1',
       desc: '打铁花非遗数字装置成片的分镜脚本：镜头、时间码与画面说明逐镜编排。',
       foot: 'DOCX 原件 · 2026.10.07'
@@ -401,19 +408,19 @@
   /* ==================== 数据（柒 · 文字与策划） ==================== */
   var WRITING_DOCS = [
     {
-      href: 'docs/daozang_worldbuilding.pdf', tag: '世界观设定',
+      href: 'docs/daozang_worldbuilding.pdf', meta: '191 页 · 2.0 MB', tag: '世界观设定',
       title: '《道藏三千：非遗证道录》完整设定集',
       desc: '《绣藏》世界观完整设定：非遗证道宇宙的体系、角色与力量逻辑。',
       foot: '《绣藏》AI 漫剧 · 世界观文档'
     },
     {
-      href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', tag: '分镜脚本',
+      href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', meta: '分镜原稿 · 71 MB', tag: '分镜脚本',
       title: '《绣藏》PV 分镜',
       desc: 'AI 漫剧 PV 的镜头级分镜：画面、运镜与节奏设计。',
       foot: '《绣藏》AI 漫剧 · 分镜'
     },
     {
-      href: 'docs/xiuzang_script.pdf', tag: '剧本',
+      href: 'docs/xiuzang_script.pdf', meta: '剧本 · 0.4 MB', tag: '剧本',
       title: '《绣藏》剧本',
       desc: '非遗题材 AI 漫剧完整剧本。',
       foot: '《绣藏》AI 漫剧 · 剧本'
@@ -425,31 +432,31 @@
       foot: '数媒竞赛参赛 · 附件分镜'
     },
     {
-      href: 'docs/qiehuang_script.pdf', tag: '剧本',
+      href: 'docs/qiehuang_script.pdf', meta: '剧本 · 0.2 MB', tag: '剧本',
       title: '《茄皇》剧本',
       desc: '泡面品牌创意短片剧本：线性叙事与暖调视听语言设计。',
       foot: '大二 · 视听语言课程结课'
     },
     {
-      href: 'docs/zaoba_script.pdf', tag: '剧本',
+      href: 'docs/zaoba_script.pdf', meta: '剧本 · 0.2 MB', tag: '剧本',
       title: '《这个早八不太好上》剧本',
       desc: '校园题材短片剧本。',
       foot: '大二 · 视听语言课程'
     },
     {
-      href: 'docs/douyin_operations_report.pdf', tag: '运营方案',
+      href: 'docs/douyin_operations_report.pdf', meta: '运营报告 · 0.3 MB', tag: '运营方案',
       title: '新媒体账号运营报告',
       desc: '抖音账号运营实践与复盘报告：定位、内容、数据与迭代。',
-      foot: '大二 · 融媒体（抖音）课程 · 第八组：焦星宇、陈锦育、党成坤'
+      foot: '大二 · 融媒体（抖音）课程 · 小组合作'
     },
     {
-      href: 'docs/shiyun_business_plan.pdf', tag: '商业计划书',
+      href: 'docs/shiyun_business_plan.pdf', meta: '商业计划 · 0.5 MB', tag: '商业计划书',
       title: '《食韵中华》商业计划书',
       desc: '互联网+ 高教主赛道参赛商业计划书：项目定位、模式与运营规划。',
       foot: '大二（上）· 综合创作课程'
     },
     {
-      href: 'docs/dunhuang_project_plan.pdf', tag: '项目管理',
+      href: 'docs/dunhuang_project_plan.pdf', meta: '项目章程 · 0.3 MB', tag: '项目管理',
       title: '项目管理章程与传播方案',
       desc: '《文化挪用视角下的敦煌文化数字媒体艺术研究》项目管理章程与传播方案。',
       foot: '大四 · 专题课程 · 第三组：陈锦育、吴灿、陆建民'
@@ -487,20 +494,20 @@
   /* TD 工程清单（.toe 过大不拷贝，仅文本说明） */
   var TD_PROJECTS = [
     {
-      title: '《铁火生花》TD 工程（参赛源文件）',
-      path: '比赛提交（铁火生花）\\…\\10_提交压缩包\\《铁火生花》\\作品及成果文件\\TD工程文件\\',
-      note: '.toe 工程过大，此处仅列清单；如需源文件请直接联系本人。',
+      title: '《铁火生花》触碰交互工程（参赛源文件）',
+      path: '参赛提交包 · TD 工程文件（.toe 源文件）',
+      note: '.toe 工程体积较大，未随网站上传；如需源文件可联系本人。',
       groups: [
-        { name: 'TD效果技术 · 图像粒子跟随鼠标交互移动', items: ['钟楼粒子2跟随鼠标.toe', '钟楼粒子2跟随鼠标.5.toe（版本）'] },
-        { name: 'TD效果技术 · 图片转湍流粒子效果', items: ['图片转粒子效果.toe', '图片转粒子效果.1.toe（版本）'] },
-        { name: 'TD空间交互源文件 · 沉浸式互动空间', items: ['NewProject.toe', 'NewProject.4.toe（版本）'] },
-        { name: 'TD空间交互源文件 · 粒子拉线', items: ['粒子拉线.toe', '粒子拉线.3.toe（版本）'] }
+        { name: '图像粒子跟随鼠标交互', items: ['主工程文件', '版本迭代文件'] },
+        { name: '图片转湍流粒子效果', items: ['主工程文件', '版本迭代文件'] },
+        { name: '沉浸式互动空间', items: ['主工程文件', '版本迭代文件'] },
+        { name: '粒子拉线交互', items: ['主工程文件', '版本迭代文件'] }
       ]
     },
     {
-      title: '沉浸式交互空间（课程作业）',
-      path: '大三（下）· 数字媒体技术4 · 沉浸式交互空间2\\沉浸式交互空间.toe',
-      note: '课程交互空间工程（32 KB），同样仅列清单。',
+      title: '沉浸式交互空间 · 课程练习工程',
+      path: '大三（下）· 数字媒体技术4 · 课程作业',
+      note: '小型交互空间练习工程（.toe，32 KB），仅列清单。',
       groups: []
     }
   ];
@@ -635,7 +642,7 @@
             (w.videoFile ? ' data-video="' + w.videoFile + '"' : '') +
             ' aria-label="播放 ' + w.title + '">' +
             '<div class="cover">' +
-              '<img class="work-poster" src="' + imgUrl('images/posters/' + w.id + '.jpg') + '"' +
+              '<img class="work-poster" src="' + imgUrl(w.poster || ('images/posters/' + w.id + '.jpg')) + '"' +
                 ' alt="' + w.title + ' 封面" loading="lazy">' +
               '<div class="cover-overlay">' +
                 '<div class="play-wrap">' +
@@ -651,7 +658,8 @@
                 w.tags.map(function (t) { return '<li>' + t + '</li>'; }).join('') +
               '</ul>' +
               '<p class="work-desc">' + w.desc + '</p>' +
-              '<p class="work-credit">' + w.credit + '</p>' +
+              (w.highlight ? '<p class="work-award">' + w.highlight + '</p>' : '') +
+              (w.credit ? '<p class="work-credit">' + w.credit + '</p>' : '') +
             '</div>' +
           '</article>';
       }).join('');
@@ -692,6 +700,7 @@
                 '</figure>';
             }).join('') +
           '</div>' +
+          (g.items.length > 6 ? '<div class="gallery-expand-wrap"><button class="gallery-expand" type="button" data-total="' + g.items.length + '">展开全部 ' + g.items.length + ' 件 ＋</button></div>' : '') +
         '</div>';
     }).join('');
   }
@@ -730,7 +739,7 @@
       var work = findWork(f.href.replace('#work-', ''));
       return '' +
         '<a class="featured-card reveal" href="' + f.href + '" data-open-work="' + work.id + '">' +
-          '<div class="featured-cover"><img src="' + imgUrl('images/posters/' + work.id + '.jpg') + '" alt="' + f.title + ' 作品画面" width="480" height="270">' +
+          '<div class="featured-cover"><img src="' + imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')) + '" alt="' + f.title + ' 作品画面" width="480" height="270">' +
           '<span class="featured-play" aria-hidden="true">▶</span></div>' +
           '<div class="featured-body">' +
           '<h3 class="featured-title">' + f.title + '</h3>' +
@@ -784,6 +793,7 @@
                 '</figure>';
             }).join('') +
           '</div>' +
+          (g.items.length > 6 ? '<div class="gallery-expand-wrap"><button class="gallery-expand" type="button" data-total="' + g.items.length + '">展开全部 ' + g.items.length + ' 件 ＋</button></div>' : '') +
         '</div>';
     }).join('');
 
@@ -833,7 +843,7 @@
           '</div>' +
           '<h3 class="doc-title">' + d.title + '</h3>' +
           '<p class="doc-desc">' + d.desc + '</p>' +
-          '<p class="doc-foot">' + d.foot + '<span class="doc-open">查看 PDF</span></p>' +
+          '<p class="doc-foot">' + d.foot + (d.meta ? '<span class="doc-meta">' + d.meta + '</span>' : '') + '<span class="doc-open">查看 PDF ↗</span></p>' +
         '</a>';
     }).join('');
   }
@@ -900,6 +910,50 @@
         '</div>' +
         '<div class="td-wrap">' + tdHtml + '</div>' +
       '</div>';
+  }
+
+
+  /* ==================== 画廊折叠 / 复制按钮 ==================== */
+  function initGalleryExpand() {
+    document.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('.gallery-expand') : null;
+      if (!btn) { return; }
+      var group = btn.closest('.gallery-group');
+      if (!group) { return; }
+      var expanded = group.classList.toggle('expanded');
+      var total = btn.getAttribute('data-total') || '';
+      btn.textContent = expanded ? '收起 －' : ('展开全部 ' + total + ' 件 ＋');
+      if (!expanded) {
+        group.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  function initCopyButtons() {
+    document.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('[data-copy-text]') : null;
+      if (!btn) { return; }
+      var text = btn.getAttribute('data-copy-text') || '';
+      function done() {
+        var old = btn.textContent;
+        btn.textContent = '已复制 ✓';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = old; btn.classList.remove('copied'); }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+    });
   }
 
   /* ==================== 图片灯箱查看器（画廊 + 创作过程共用） ==================== */
@@ -1056,7 +1110,7 @@
       if (wrap) { wrap.classList.remove('bili-mode'); }
       if (bili) { bili.classList.remove('active'); bili.innerHTML = ''; }
       modalVideo.setAttribute('src', VIDEO_BASE + ((!LOCAL_PREVIEW && work.videoFile) || (work.id + '.mp4')));
-      modalVideo.setAttribute('poster', imgUrl('images/posters/' + work.id + '.jpg'));
+      modalVideo.setAttribute('poster', imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')));
       modalVideo.autoplay = true;
     }
 
@@ -1184,8 +1238,34 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
     els.forEach(function (el) { io.observe(el); });
+  }
+
+
+  /* ==================== 锚点跳转：强制显示目标区域 ==================== */
+  function initAnchorReveal() {
+    function revealSection(id) {
+      var sec = byId(id);
+      if (!sec) { return; }
+      var els = sec.querySelectorAll('.reveal');
+      for (var i = 0; i < els.length; i++) {
+        els[i].classList.add('visible', 'force-visible');
+      }
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a) { return; }
+      var id = a.getAttribute('href').slice(1);
+      if (!id) { return; }
+      setTimeout(function () { revealSection(id); }, 300);
+    });
+    window.addEventListener('hashchange', function () {
+      setTimeout(function () { revealSection(location.hash.slice(1)); }, 300);
+    });
+    if (location.hash.length > 1) {
+      setTimeout(function () { revealSection(location.hash.slice(1)); }, 400);
+    }
   }
 
   /* ==================== 当前区块导航高亮 ==================== */
@@ -1249,6 +1329,9 @@
   renderWriting();
   renderCode();
   initReveal();
+  initAnchorReveal();
+  initGalleryExpand();
+  initCopyButtons();
   initActiveNav();
   initParticles();
 })();
