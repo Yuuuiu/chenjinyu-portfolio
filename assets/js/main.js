@@ -322,7 +322,7 @@
     {
       slug: 'poster',
       group: '海报设计', en: 'POSTER DESIGN', portrait: true,
-      intro: '《绣藏》《倒退的棕榈叶》等 AI 影像与影视短片的主海报、角色海报及场景视觉延展。',
+      intro: '《绣藏》《倒退的棕榈叶》等 AI 影像与影视短片主海报，以及《盐阳叹》《灾厄战线》《野生狗奶》《丝路新篇》的 AI 视觉延展海报（标注非原画/实拍）。',
       items: [
         { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》主海报', desc: '西湖新风 AI 漫剧大赛 · 角色冲突主视觉' },
         { src: 'images/gallery/poster_xiuzang_1.jpg', title: '《绣藏》人物海报', desc: '西湖新风 AI 漫剧大赛 · 角色形象主视觉' },
@@ -332,7 +332,13 @@
         { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》场景海报', desc: 'AI 影像概念场景延展' },
         { src: 'images/gallery/poster_qingtong.jpg', title: '《青铜遗韵》海报', desc: '观察与表现课程 · 组队比赛' },
         { src: 'images/gallery/poster_hucheng_1.jpg', title: '《湖城烟雨》海报', desc: '综合创作课程 · 与焦星宇合作' },
-        { src: 'images/gallery/poster_qiehuang.jpg', title: '《茄香味俱全》海报', desc: '视听语言课程结课' }
+        { src: 'images/gallery/poster_qiehuang.jpg', title: '《茄香味俱全》海报', desc: '视听语言课程结课' },
+        { src: 'assets/images/gen_ai_yangyangtang_1.jpg', title: '《盐阳叹》视觉延展海报', desc: 'AI 视觉延展（练习）· 东方水墨流体主视觉，非原画/实拍' },
+        { src: 'assets/images/gen_ai_dasheng_1.jpg', title: '《灾厄战线》概念横幅', desc: 'AI 视觉延展（练习）· 16:9 宽银幕概念，非原画/实拍' },
+        { src: 'assets/images/gen_ai_yegou_1.jpg', title: '《野生狗奶》视觉延展海报', desc: 'AI 视觉延展（练习）· 废墟群像喜剧，非原画/实拍' },
+        { src: 'assets/images/gen_film_silu_1_v2.jpg', title: '《丝路新篇》视觉延展海报', desc: 'AI 视觉延展（练习）· 跨时空三段切片，非原画/实拍' },
+        { src: 'assets/images/yumeng_vi_identity.jpg', title: '《宇梦造物》工作室 VI 视觉', desc: '工作室品牌视觉提案：标志、名片与印刷物料' },
+        { src: 'assets/images/jinxi_keyframe_02_bottle.jpg', title: '《锦息》产品概念海报', desc: '工作室商业向 AI 概念短片 · 产品主视觉' }
       ]
     },
     {
