@@ -1,8 +1,7 @@
 /* =====================================================================
    陈锦育 · 个人作品集 —— 前端脚本
-   数据源：本文件内维护（与 _build/build_manifest.json 一致的 works 部分 +
-   新增 创作过程 / 文字策划 / 技术代码 三个板块数据）
-   纯原生 JS，无任何外部依赖
+   数据源：本文件内维护（纯原生 JS，无任何外部依赖）
+   AI 实习导向优化版：强化 AIGC 案例拆解、Tab 分类精简长画廊、即时锚点显现
    ===================================================================== */
 (function () {
   'use strict';
@@ -22,150 +21,120 @@
     return IMG_BASE + p.replace(/^\.?\//, '');
   }
 
-  /* ==================== 数据：方向（八个内容方向） ==================== */
+  /* ==================== 数据：方向（七个内容方向，聚焦 AI 主线） ==================== */
   var DIRECTIONS = [
     {
       id: 'ai',
       num: '壹',
-      name: 'AI 影像 · AIGC 创作',
-      en: 'AI VIDEO',
-      tagline: '文生图 · 图生视频 · AI 数字人 · 全流程生成',
-      desc: '以即梦等 AIGC 工具完成从世界观设定、分镜脚本到视频生成的完整创作管线'
+      name: 'AI 影像 · AIGC 全流程',
+      en: 'AI VIDEO & AIGC',
+      tagline: 'AI 漫剧 · 角色一致性 · 分镜生成 · 全流程成片',
+      desc: '以即梦 / Midjourney 等 AIGC 工具完成从世界观设定、分镜脚本到视频生成的完整创作管线'
     },
     {
       id: 'interactive',
       num: '贰',
       name: '交互装置 · 新媒体艺术',
       en: 'INTERACTIVE ART',
-      tagline: 'TouchDesigner · 手势识别 · 粒子系统 · 沉浸空间',
-      desc: '围绕非遗数字化与情绪可视化的实时交互探索，涵盖国家级获奖作品'
+      tagline: 'TouchDesigner · 手势识别 · 粒子系统 · 获奖背书',
+      desc: '围绕非遗数字化与情绪可视化的实时交互探索，涵盖多部国家级获奖作品'
     },
     {
       id: 'film',
       num: '叁',
       name: '影视创作 · 动态影像',
       en: 'FILM & MOTION',
-      tagline: '拍摄 · 剪辑 · 调色 · After Effects',
-      desc: '从剧本策划、实地拍摄到剪辑调色的完整短片创作'
-    },
-    {
-      id: 'ipdesign',
-      num: '肆',
-      name: '平面 IP 设计',
-      en: '2D IP DESIGN',
-      tagline: '角色 IP · 文物拟人 · 品牌视觉 · 衍生延展',
-      desc: '角色形象与品牌 IP 的平面设计：红仓/江仓文旅 IP、古器争鸣文物拟人、AD钙奶品牌 IP、游戏角色与文创延展',
-      countLabel: '作品 7 件'
+      tagline: '视听语言 · 拍摄剪辑 · 调色 · After Effects',
+      desc: '从剧本策划、实地拍摄到剪辑调色的完整短片创作，支撑 AI 影像叙事与剪辑'
     },
     {
       id: 'gallery',
-      num: '伍',
-      name: '视觉设计 · 展板与衍生品',
-      en: 'DESIGN & ARTWORK',
-      tagline: '展板 · 海报 · 文创衍生品',
-      desc: '竞赛展板、课程海报与「青铜遗韵」系列文创衍生品等静态视觉设计'
+      num: '肆',
+      name: '平面 IP 与视觉设计',
+      en: 'IP & VISUAL DESIGN',
+      tagline: '角色 IP · AI 海报 · 竞赛展板 · 文创衍生',
+      desc: '合并呈现文旅/文物拟人 IP、AI 影像主视觉海报、竞赛展板与「青铜遗韵」文创衍生品'
     },
     {
       id: 'process',
-      num: '陆',
+      num: '伍',
       name: '创作过程 · 工作流',
       en: 'PROCESS & WORKFLOW',
-      tagline: '概念 · 分镜 · AI 生成 · 技术实现',
-      desc: '从概念卡、分镜脚本到即梦生成与 TouchDesigner 实现的完整创作工作流',
+      tagline: '三视图锚定 · 提示词记录 · 概念分镜 · TD 节点',
+      desc: '展开 AI 角色三视图、提示词迭代、分镜原画与 TouchDesigner 实现的完整工作流',
       countLabel: '过程图 32 张'
     },
     {
       id: 'writing',
-      num: '柒',
+      num: '陆',
       name: '文字与策划',
       en: 'WRITING & PLANNING',
       tagline: '世界观设定 · 剧本 · 分镜 · 运营方案',
-      desc: '世界观、剧本分镜与商业策划类文档，覆盖新媒体策划全流程',
+      desc: '世界观、剧本分镜与商业策划类文档，覆盖新媒体与 AI 漫剧前期全流程',
       countLabel: '文档 9 份'
     },
     {
       id: 'code',
-      num: '捌',
-      name: '技术代码',
+      num: '柒',
+      name: '技术代码 · 提效脚本',
       en: 'CODE & TOOLS',
-      tagline: 'Processing · PowerShell · TD 工程',
-      desc: '音画互动源码与成片构建脚本，展示工程化实现能力',
-      countLabel: '代码 4 项'
+      tagline: 'ffmpeg 自动化 · PowerShell · Processing · TD',
+      desc: '成片自动化构建脚本与音画互动源码，展示工程化提效与实时实现能力',
+      countLabel: '源码 4 项'
     }
   ];
 
   var WORKS = [
-    /* ---- 壹 · AI 影像 ---- */
-    {
-      id: 'ai_doubao', dir: 'ai',
-      title: '《小奶与小美》',
-      year: '2026', tags: ['AI数字人', '口播', '即梦'],
-      desc: 'AI 废土科幻短片：橙色沙海中的异星生物与巨型光柱，数字人角色串联起荒芜世界里的日常对话。',
-      credit: '',
-      highlight: 'AI 数字人 · 废土科幻短片'
-    },
-    {
-      id: 'ai_cannes', dir: 'ai',
-      title: '《倒退的棕榈叶》',
-      year: '2026', tags: ['AI影像', '短片'],
-      desc: '真实感 AI 剧情短片：疲惫的设计师驾车、伏案绘图，与白发角色的往事在镜头间交织，讲创作与时间。',
-      credit: '',
-      highlight: '真实感 AI 剧情短片'
-    },
+    /* ---- 壹 · AI 影像（优先排布核心代表作） ---- */
     {
       id: 'ai_xiuzhang', dir: 'ai',
       title: '《绣藏》',
-      year: '2026', tags: ['AI漫剧', '非遗', '国风'],
-      desc: '「道藏三千：非遗证道录」AI 漫剧参赛作品：以道家符箓与非遗纹样构建世界观，完成设定集、剧本、概念设计与 PV 分镜全流程。',
+      year: '2026', tags: ['AI漫剧', '全流程管线', '非遗国风'],
+      desc: '「道藏三千：非遗证道录」AI 漫剧参赛作品：以道家符箓与非遗纹样构建世界观，主创推进设定集、剧本、概念设计与 PV 分镜全流程。',
       credit: '',
-      highlight: '西湖新风 AI 漫剧创作大赛 · 参赛作品'
+      highlight: '西湖新风 AI 漫剧创作大赛 · 全流程含设定集与 PV 分镜'
     },
     {
       id: 'ai_yangyangtang', dir: 'ai',
       title: '《盐阳叹》',
-      year: '2026', tags: ['AI影像', '文化题材'],
+      year: '2026', tags: ['AI影像诗', '水墨流体', '文化题材'],
       desc: '水墨与流体抽象的 AI 影像诗：金色流线、蓝雾与星屑在画面中聚散，以「盐阳」古意为题呈现东方意象的情绪流动。',
       credit: '',
       highlight: '中国好创意大赛 · 应用组国家级二等奖'
     },
     {
+      id: 'ai_cannes', dir: 'ai',
+      title: '《倒退的棕榈叶》',
+      year: '2026', tags: ['AI剧情短片', '电影感', '情绪叙事'],
+      desc: '真实感 AI 剧情短片：疲惫的设计师驾车、伏案绘图，与白发角色的往事在镜头间交织，探讨创作与时间。',
+      credit: '',
+      highlight: '电影感真实系 AI 剧情短片 · 含主视觉海报系列'
+    },
+    {
       id: 'ai_dasheng', dir: 'ai',
       title: '《灾厄战线》',
-      year: '2026', tags: ['AI影像', '即梦', '概念片'],
-      desc: '暗黑科幻 AI 短片：废墟战场上女性战士与巨兽对峙，「灾厄降临」的世界观开篇。',
+      year: '2026', tags: ['AI概念片', '暗黑科幻', '即梦'],
+      desc: '暗黑科幻 AI 概念短片：废墟战场上女性战士与巨兽对峙，「灾厄降临」世界观的大场面动态探索。',
       credit: '',
-      highlight: '暗黑科幻 AI 短片'
+      highlight: '暗黑科幻大场面 · 概念预告片视觉探索'
+    },
+    {
+      id: 'ai_doubao', dir: 'ai',
+      title: '《小奶与小美》',
+      year: '2026', tags: ['AI数字人', '口播叙事', '废土科幻'],
+      desc: 'AI 废土科幻短片：橙色沙海中的异星生物与巨型光柱，数字人角色串联起荒芜世界里的日常对话。',
+      credit: '',
+      highlight: 'AI 数字人口播 × 废土科幻场景融合'
     },
     {
       id: 'ai_yegou', dir: 'ai',
       title: '《野生狗奶》',
-      year: '2026', tags: ['AI影像', '剧情短片'],
+      year: '2026', tags: ['AI喜剧短片', '多角色动作', '剧本改编'],
       desc: '动作喜剧 AI 短片：废墟中五人争夺一箱「野生狗奶」，古装角色与现代包装碰撞出穿越式笑点（150 秒剧本改编）。',
       credit: '',
-      highlight: '动作喜剧 AI 短片 · 150 秒剧本改编'
+      highlight: '多角色快节奏动作喜剧 · 150 秒剧本改编'
     },
     /* ---- 贰 · 交互装置 ---- */
-    {
-      id: 'itd_ironfire', dir: 'interactive',
-      title: '《铁火生花》IRON FIRE BLOOM',
-      year: '2026', tags: ['TouchDesigner', 'GPU粒子', '手势交互', '非遗数字化'],
-      desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可以被反复走近、反复体验。',
-      credit: '独立创作 · 第十四届全国大学生数字媒体科技作品及创意竞赛参赛作品（编号 328499）'
-    },
-    {
-      id: 'itd_yixiu', dir: 'interactive',
-      title: '《一绣成祥》',
-      year: '2026', tags: ['TouchDesigner', '粒子系统', '手势识别', '壮锦'],
-      desc: '壮锦·绣球非遗数字交互装置：蛙纹、花卉、祥云纹样转译为粒子，观众以自然手势操控纹样汇聚生长与解构重组。',
-      credit: '独立创作 · 队长 · 米兰设计周国家级三等奖（指导教师：李紫阳、程思、刘琼）'
-    },
-    {
-      id: 'itd_honghua', dir: 'interactive', videoFile: 'itd_honghua-v2.mp4',
-      title: '《红花峰林十六点·互动地图》',
-      year: '2026', tags: ['TouchDesigner', '文旅', '互动地图'],
-      desc: '恩施文旅融合创新计时赛作品，中国好创意大赛国家级三等奖。红花峰林景区十六景点交互游览地图。',
-      credit: '中国好创意大赛 · 国家级三等奖（“跃动峡谷，潮玩清江”文旅融合与创新计时赛）'
-    },
     {
       id: 'itd_shange', dir: 'interactive',
       title: '《山歌回音壁》声音与灯光互动装置',
@@ -175,6 +144,27 @@
       credit: '独立创作 · 中国好创意大赛 · 学术组国家级二等奖'
     },
     {
+      id: 'itd_yixiu', dir: 'interactive',
+      title: '《一绣成祥》',
+      year: '2026', tags: ['TouchDesigner', '粒子系统', '手势识别', '壮锦'],
+      desc: '壮锦·绣球非遗数字交互装置：蛙纹、花卉、祥云纹样转译为粒子，观众以自然手势操控纹样汇聚生长与解构重组。',
+      credit: '独立创作 · 队长 · 米兰设计周国家级三等奖（指导教师：李紫阳、程思、刘琼）'
+    },
+    {
+      id: 'itd_ironfire', dir: 'interactive',
+      title: '《铁火生花》IRON FIRE BLOOM',
+      year: '2026', tags: ['TouchDesigner', 'GPU粒子', '手势交互', '非遗数字化'],
+      desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可以被反复走近、反复体验。',
+      credit: '独立创作 · 第十四届全国大学生数字媒体科技作品及创意竞赛参赛作品（编号 328499）'
+    },
+    {
+      id: 'itd_honghua', dir: 'interactive', videoFile: 'itd_honghua-v2.mp4',
+      title: '《红花峰林十六点·互动地图》',
+      year: '2026', tags: ['TouchDesigner', '文旅', '互动地图'],
+      desc: '恩施文旅融合创新计时赛作品，中国好创意大赛国家级三等奖。红花峰林景区十六景点交互游览地图。',
+      credit: '中国好创意大赛 · 国家级三等奖（“跃动峡谷，潮玩清江”文旅融合与创新计时赛）'
+    },
+    {
       id: 'itd_xinmai', dir: 'interactive',
       title: '《心脉·花影》情绪交互装置',
       year: '2025', tags: ['TouchDesigner', '心率传感', 'MediaPipe', '情绪可视化'],
@@ -182,6 +172,20 @@
       credit: '组长（第九组）· 交互装置设计课程'
     },
     /* ---- 叁 · 影视创作 ---- */
+    {
+      id: 'film_wusheng', dir: 'film',
+      title: '《无声暗涌》',
+      year: '2025', tags: ['After Effects', '动态影像', '情绪'],
+      desc: '情绪物质化实验影像：缓慢流动的粘稠液体、机械与生物组织的碰撞、闪烁噪点，把难以宣泄的压抑转成视觉系统。',
+      credit: '独立创作'
+    },
+    {
+      id: 'film_silu', dir: 'film',
+      title: '《丝路新篇》',
+      year: '2025', tags: ['AI生成', '实拍', '剪辑合成'],
+      desc: '丝绸之路主题影像：融合 AI 生成与实拍画面，从沙漠公路到森林、雪地、戈壁与城市高架，跨越古今讲述丝路传承。',
+      credit: '独立创作 · 影视创作课程'
+    },
     {
       id: 'film_hucheng', dir: 'film',
       title: '《湖城烟雨》',
@@ -202,77 +206,13 @@
       year: '2025', tags: ['短片', '剧本', '视听语言'],
       desc: '视听语言课程短片：以暗调光影与手持镜头记录「早八」前后的宿舍深夜，把起床的挣扎拍成一场小型战役。',
       credit: '独立创作 · 视听语言课程'
-    },
-    {
-      id: 'film_wusheng', dir: 'film',
-      title: '《无声暗涌》',
-      year: '2025', tags: ['After Effects', '动态影像', '情绪'],
-      desc: '情绪物质化实验影像：缓慢流动的粘稠液体、机械与生物组织的碰撞、闪烁噪点，把难以宣泄的压抑转成视觉系统。',
-      credit: '独立创作'
-    },
-    {
-      id: 'film_silu', dir: 'film',
-      title: '《丝路新篇》',
-      year: '2025', tags: ['AI生成', '实拍', '剪辑合成'],
-      desc: '丝绸之路主题影像：从沙漠公路到森林、雪地、戈壁与城市高架，跨越古今讲述丝路的传承与发展。',
-      credit: '独立创作 · 影视创作课程'
-    },
+    }
   ];
 
-  /* ==================== 数据（视觉设计画廊） ==================== */
+  /* ==================== 数据（平面 IP 与视觉设计画廊 · 合并 Tab 切换） ==================== */
   var GALLERY = [
     {
-      group: '文创衍生品', en: 'CULTURAL & CREATIVE PRODUCTS', portrait: false,
-      items: [
-        { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '《青铜遗韵》文创 · 折扇：青铜云雷纹与兽面纹转译到扇面，国风便携衍生' },
-        { src: 'images/gallery/fan_2.jpg', title: '折扇 · 设计二', desc: '《青铜遗韵》文创 · 折扇：线描青铜纹样版本，素雅黑白' },
-        { src: 'images/gallery/fan_3.jpg', title: '折扇 · 设计三', desc: '《青铜遗韵》文创 · 折扇：青绿山水与青铜器组合的彩绘版本' },
-        { src: 'images/gallery/coaster.jpg', title: '杯垫', desc: '《青铜遗韵》文创 · 杯垫：青铜器纹样圆形排版，日常器物衍生' },
-        { src: 'images/gallery/pillow.jpg', title: '抱枕', desc: '《青铜遗韵》文创 · 抱枕：青铜纹样满版印花的家居衍生' },
-        { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '《青铜遗韵》文创 · 金属徽章：青绿色青铜器造型珐琅徽章' },
-        { src: 'images/gallery/badge_2.jpg', title: '金属徽章 · 款式二', desc: '《青铜遗韵》文创 · 金属徽章：鼎器纹样款' },
-        { src: 'images/gallery/badge_3.jpg', title: '金属徽章 · 款式三', desc: '《青铜遗韵》文创 · 金属徽章：线描纹样款' },
-        { src: 'images/gallery/bag_1.jpg', title: '手提纸袋 · 设计一', desc: '《青铜遗韵》文创 · 手提纸袋：主视觉款，包装延展设计' },
-        { src: 'images/gallery/bag_2.jpg', title: '手提纸袋 · 设计二', desc: '《青铜遗韵》文创 · 手提纸袋：线描款包装' },
-        { src: 'images/gallery/bag_3.jpg', title: '手提纸袋 · 设计三', desc: '《青铜遗韵》文创 · 手提纸袋：青绿款包装' },
-        { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '《青铜遗韵》文创 · 钥匙扣：青铜器造型金属挂件' },
-        { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '《青铜遗韵》文创 · 钥匙扣：瑞兽纹样款' },
-        { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '《青铜遗韵》文创 · 钥匙扣：青绿彩绘款' },
-        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫 · 一', desc: '《青铜遗韵》文创 · 鼠标垫：青铜纹样桌面衍生' },
-        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫 · 二', desc: '《青铜遗韵》文创 · 鼠标垫：线描纹样款' },
-        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫 · 三', desc: '《青铜遗韵》文创 · 鼠标垫：彩绘款' },
-        { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '《青铜遗韵》文创 · 挂墙广告：线下展示物料，主视觉延展' },
-        { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '《青铜遗韵》文创 · 挂墙广告：空间展示效果' }
-      ]
-    },
-    {
-      group: '展板设计', en: 'EXHIBITION BOARDS', portrait: true,
-      items: [
-        { src: 'images/gallery/board_ironfire.jpg', title: '《铁火生花》展板', desc: '非遗打铁花数字交互装置 · 数媒竞赛' },
-        { src: 'images/gallery/board_yixiu.jpg', title: '《一绣成祥》展板', desc: '壮锦绣球非遗数字交互 · 米兰设计周' },
-        { src: 'images/gallery/board_qiehuang.jpg', title: '《茄香味俱全》展板', desc: '视听语言课程结课' },
-        { src: 'images/gallery/board_wusheng.jpg', title: '《无声暗涌》展板', desc: '情绪物质化动态影像 · Ae 结课' },
-        { src: 'images/gallery/board_guhuai.jpg', title: '《孤怀楚殇》前期内容展板', desc: '屈原文化数字创作 · 综合创作5（第十组）' },
-        { src: 'images/gallery/board_enshi.jpg', title: '恩施文旅展板', desc: '文旅融合创新计时赛' }
-      ]
-    },
-    {
-      group: '海报设计', en: 'POSTER DESIGN', portrait: true,
-      items: [
-        { src: 'images/gallery/poster_qiehuang.jpg', title: '《茄香味俱全》海报', desc: '视听语言课程结课' },
-        { src: 'images/gallery/poster_qingtong.jpg', title: '《青铜遗韵》海报', desc: '观察与表现课程 · 组队比赛' },
-        { src: 'images/gallery/poster_xiuzang_1.jpg', title: '《绣藏》人物海报', desc: '西湖新风 AI 漫剧大赛 · 角色形象主视觉' },
-        { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》主海报', desc: '西湖新风 AI 漫剧大赛 · 角色冲突主视觉' },
-        { src: 'images/gallery/poster_xiuzang_3.jpg', title: '《绣藏》场景海报', desc: '西湖新风 AI 漫剧大赛 · 世界观场景延展' },
-        { src: 'images/gallery/poster_hucheng_1.jpg', title: '《湖城烟雨》海报', desc: '综合创作课程 · 与焦星宇合作' },
-        { src: 'images/gallery/poster_bear_2.jpg', title: '《倒退的棕榈叶》主海报', desc: '小熊 IP · AI 影像概念主视觉' },
-        { src: 'images/gallery/poster_bear_3.jpg', title: '《倒退的棕榈叶》人物海报', desc: '小熊 IP · AI 影像概念角色延展' },
-        { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》场景海报', desc: '小熊 IP · AI 影像概念场景延展' }
-      ]
-    },
-    {
-      /* 平面 IP 设计板块专用：不在「视觉设计」画廊中重复展示 */
-      group: '平面 IP 设计', en: '2D IP DESIGN', portrait: true, hidden: true,
+      group: '平面 IP 设计', en: '2D IP DESIGN', portrait: true,
       items: [
         { src: 'images/gallery/board_hongcang_v2.jpg', title: '《红仓》「山仓之灵」IP 设计', desc: '红花峰林文旅 IP · 三视图 / 表情 / 标准色 / 延展服饰与动作（恩施土家族文化）' },
         { src: 'images/gallery/ip_jiangcang_v2.jpg', title: '《江仓》「水仓之灵」IP 设计', desc: '清江文旅 IP · 三视图 / 表情 / 标准色 / 延展动作（与红仓为兄妹角色）' },
@@ -282,38 +222,101 @@
         { src: 'images/gallery/board_designbasics.jpg', title: '《三月三的起源与流传》游戏角色 IP', desc: '设计基础课程 · 民族文化角色设定与游戏界面延展' },
         { src: 'images/gallery/ip_wenchuang.jpg', title: 'IP 文创衍生设计', desc: '体验设计课程 · IP 衍生品设计方案' }
       ]
+    },
+    {
+      group: '海报设计', en: 'POSTER DESIGN', portrait: true,
+      items: [
+        { src: 'images/gallery/poster_xiuzang_2.jpg', title: '《绣藏》主海报', desc: '西湖新风 AI 漫剧大赛 · 角色冲突主视觉' },
+        { src: 'images/gallery/poster_xiuzang_1.jpg', title: '《绣藏》人物海报', desc: '西湖新风 AI 漫剧大赛 · 角色形象主视觉' },
+        { src: 'images/gallery/poster_xiuzang_3.jpg', title: '《绣藏》场景海报', desc: '西湖新风 AI 漫剧大赛 · 世界观场景延展' },
+        { src: 'images/gallery/poster_bear_2.jpg', title: '《倒退的棕榈叶》主海报', desc: 'AI 影像概念主视觉' },
+        { src: 'images/gallery/poster_bear_3.jpg', title: '《倒退的棕榈叶》人物海报', desc: 'AI 影像概念角色延展' },
+        { src: 'images/gallery/poster_bear_5.jpg', title: '《倒退的棕榈叶》场景海报', desc: 'AI 影像概念场景延展' },
+        { src: 'images/gallery/poster_qingtong.jpg', title: '《青铜遗韵》海报', desc: '观察与表现课程 · 组队比赛' },
+        { src: 'images/gallery/poster_hucheng_1.jpg', title: '《湖城烟雨》海报', desc: '综合创作课程 · 与焦星宇合作' },
+        { src: 'images/gallery/poster_qiehuang.jpg', title: '《茄香味俱全》海报', desc: '视听语言课程结课' }
+      ]
+    },
+    {
+      group: '展板设计', en: 'EXHIBITION BOARDS', portrait: true,
+      items: [
+        { src: 'images/gallery/board_ironfire.jpg', title: '《铁火生花》展板', desc: '非遗打铁花数字交互装置 · 数媒竞赛' },
+        { src: 'images/gallery/board_yixiu.jpg', title: '《一绣成祥》展板', desc: '壮锦绣球非遗数字交互 · 米兰设计周' },
+        { src: 'images/gallery/board_enshi.jpg', title: '恩施文旅展板', desc: '文旅融合创新计时赛' },
+        { src: 'images/gallery/board_wusheng.jpg', title: '《无声暗涌》展板', desc: '情绪物质化动态影像 · Ae 结课' },
+        { src: 'images/gallery/board_guhuai.jpg', title: '《孤怀楚殇》前期内容展板', desc: '屈原文化数字创作 · 综合创作5（第十组）' },
+        { src: 'images/gallery/board_qiehuang.jpg', title: '《茄香味俱全》展板', desc: '视听语言课程结课' }
+      ]
+    },
+    {
+      group: '文创衍生品', en: 'CULTURAL & CREATIVE PRODUCTS', portrait: false,
+      items: [
+        { src: 'images/gallery/fan_1.jpg', title: '折扇 · 设计一', desc: '《青铜遗韵》文创 · 折扇：青铜云雷纹与兽面纹转译到扇面，国风便携衍生' },
+        { src: 'images/gallery/badge_1.jpg', title: '金属徽章 · 款式一', desc: '《青铜遗韵》文创 · 金属徽章：青绿色青铜器造型珐琅徽章' },
+        { src: 'images/gallery/bag_1.jpg', title: '手提纸袋 · 设计一', desc: '《青铜遗韵》文创 · 手提纸袋：主视觉款，包装延展设计' },
+        { src: 'images/gallery/coaster.jpg', title: '杯垫', desc: '《青铜遗韵》文创 · 杯垫：青铜器纹样圆形排版，日常器物衍生' },
+        { src: 'images/gallery/pillow.jpg', title: '抱枕', desc: '《青铜遗韵》文创 · 抱枕：青铜纹样满版印花的家居衍生' },
+        { src: 'images/gallery/wall_ad_1.jpg', title: '挂墙广告 · 一', desc: '《青铜遗韵》文创 · 挂墙广告：线下展示物料，主视觉延展' },
+        { src: 'images/gallery/fan_2.jpg', title: '折扇 · 设计二', desc: '《青铜遗韵》文创 · 折扇：线描青铜纹样版本，素雅黑白' },
+        { src: 'images/gallery/fan_3.jpg', title: '折扇 · 设计三', desc: '《青铜遗韵》文创 · 折扇：青绿山水与青铜器组合的彩绘版本' },
+        { src: 'images/gallery/badge_2.jpg', title: '金属徽章 · 款式二', desc: '《青铜遗韵》文创 · 金属徽章：鼎器纹样款' },
+        { src: 'images/gallery/badge_3.jpg', title: '金属徽章 · 款式三', desc: '《青铜遗韵》文创 · 金属徽章：线描纹样款' },
+        { src: 'images/gallery/bag_2.jpg', title: '手提纸袋 · 设计二', desc: '《青铜遗韵》文创 · 手提纸袋：线描款包装' },
+        { src: 'images/gallery/bag_3.jpg', title: '手提纸袋 · 设计三', desc: '《青铜遗韵》文创 · 手提纸袋：青绿款包装' },
+        { src: 'images/gallery/keychain_1.jpg', title: '钥匙扣 · 款式一', desc: '《青铜遗韵》文创 · 钥匙扣：青铜器造型金属挂件' },
+        { src: 'images/gallery/keychain_2.jpg', title: '钥匙扣 · 款式二', desc: '《青铜遗韵》文创 · 钥匙扣：瑞兽纹样款' },
+        { src: 'images/gallery/keychain_3.jpg', title: '钥匙扣 · 款式三', desc: '《青铜遗韵》文创 · 钥匙扣：青绿彩绘款' },
+        { src: 'images/gallery/mousepad_1.jpg', title: '鼠标垫 · 一', desc: '《青铜遗韵》文创 · 鼠标垫：青铜纹样桌面衍生' },
+        { src: 'images/gallery/mousepad_2.jpg', title: '鼠标垫 · 二', desc: '《青铜遗韵》文创 · 鼠标垫：线描纹样款' },
+        { src: 'images/gallery/mousepad_3.jpg', title: '鼠标垫 · 三', desc: '《青铜遗韵》文创 · 鼠标垫：彩绘款' },
+        { src: 'images/gallery/wall_ad_2.jpg', title: '挂墙广告 · 二', desc: '《青铜遗韵》文创 · 挂墙广告：空间展示效果' }
+      ]
     }
   ];
 
-  /* ==================== 数据（陆 · 创作过程 / 工作流） ==================== */
-
-  /* 创作流程五步 */
+  /* ==================== 数据（伍 · 创作过程 / 工作流） ==================== */
   var PROCESS_STEPS = [
     { num: '01', name: '概念与叙事', desc: '以文化主题组织世界观、视觉方向与创作立意' },
-    { num: '02', name: '分镜与设计', desc: '将叙事拆为镜头、时间与音画关系' },
-    { num: '03', name: '生成与制作', desc: '按项目选择 AIGC 生成、实拍或数字视觉制作' },
+    { num: '02', name: '分镜与定妆', desc: '将叙事拆为镜头与角色三视图，锚定画风一致性' },
+    { num: '03', name: 'AIGC 生成', desc: '即梦 / MJ 提示词迭代产出高精画面与动态镜头' },
     { num: '04', name: '实时交互', desc: '交互作品通过 TD / Processing 建立输入与视觉反馈' },
-    { num: '05', name: '成片与延展', desc: '完成剪辑合成，并延展为展板、海报与文创' }
+    { num: '05', name: '剪辑与脚本', desc: '完成剪辑合成与 ffmpeg 脚本批处理，延展海报与展板' }
   ];
 
-  /* 创作过程图片组（复用画廊与灯箱逻辑） */
+  /* 创作过程图片组（AI 强相关分组置顶，支持 Tab 切换） */
   var PROCESS_GALLERY = [
     {
-      group: '概念与生成', en: 'CONCEPT & GENERATION', portrait: false,
+      group: 'AI 概念与分镜', en: 'AI CONCEPT & STORYBOARD', portrait: false,
       items: [
-        { src: 'images/process/concept_card.jpg', title: '《铁火生花》片头设计概念卡', desc: '《铁火生花》片头概念卡：定世界观与视觉基调，八层羽化色块 + 精确居中的排版' },
+        { src: 'images/process/concept_xiuzang_1.jpg', title: '《绣藏》概念设计 · 第一页', desc: 'AI 漫剧参赛作品的概念设计文档（世界观 / 角色 / 视觉基调）' },
+        { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' },
+        { src: 'images/process/xiuzang_frame_beast_1.jpg', title: '《绣藏》分镜原画 · 神兽一', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
+        { src: 'images/process/xiuzang_frame_catastrophe_1.jpg', title: '《绣藏》分镜原画 · 灾厄战线一', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
         { src: 'images/process/ai_gen_1.jpg', title: '即梦生成 · 4K 主视觉', desc: '即梦文生图产出的 4K 主视觉画面（2026.09）' },
         { src: 'images/process/ai_gen_2.jpg', title: 'MJ 生成 · 场景概念', desc: 'MJ 文生图产出的场景概念画面（2026.09）' },
         { src: 'images/process/ai_gen_3.jpg', title: 'AI 生成 · 分镜参考 一', desc: '即梦 / MJ 生成的分镜参考画面 · 之一' },
         { src: 'images/process/ai_gen_4.jpg', title: 'AI 生成 · 分镜参考 二', desc: '即梦 / MJ 生成的分镜参考画面 · 之二' },
-        { src: 'images/process/concept_xiuzang_1.jpg', title: '《绣藏》概念设计 · 第一页', desc: 'AI 漫剧参赛作品的概念设计文档（世界观 / 角色 / 视觉基调）' },
-        { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' },
-        { src: 'images/process/xiuzang_frame_beast_1.jpg', title: '《绣藏》分镜原画 · 神兽一', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
         { src: 'images/process/xiuzang_frame_beast_2.jpg', title: '《绣藏》分镜原画 · 神兽二', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
         { src: 'images/process/xiuzang_frame_beast_3.jpg', title: '《绣藏》分镜原画 · 神兽三', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
-        { src: 'images/process/xiuzang_frame_catastrophe_1.jpg', title: '《绣藏》分镜原画 · 灾厄战线一', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
         { src: 'images/process/xiuzang_frame_catastrophe_2.jpg', title: '《绣藏》分镜原画 · 灾厄战线二', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
-        { src: 'images/process/xiuzang_frame_catastrophe_3.jpg', title: '《绣藏》分镜原画 · 灾厄战线三', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' }
+        { src: 'images/process/xiuzang_frame_catastrophe_3.jpg', title: '《绣藏》分镜原画 · 灾厄战线三', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
+        { src: 'images/process/concept_card.jpg', title: '《铁火生花》片头设计概念卡', desc: '《铁火生花》片头概念卡：定世界观与视觉基调，八层羽化色块 + 精确居中的排版' }
+      ]
+    },
+    {
+      group: 'AI 角色三视图', en: 'CHARACTER CONSISTENCY', portrait: true,
+      items: [
+        { src: 'images/process/charsheet_girl_1.jpg', title: '少女角色三视图 · 无头正面版', desc: 'AI 短剧角色定妆：左侧面部特写 + 正面无头身体 / 侧背全身，保证角色一致性' },
+        { src: 'images/process/charsheet_girl_2.jpg', title: '少女角色三视图 · 经典版', desc: '同一角色的面部特写 + 正 / 侧 / 背三视图（同一张脸、同一服装）' },
+        { src: 'images/process/charsheet_boy_1.jpg', title: '男性角色定妆三视图', desc: '写实国漫风角色定妆：服装与比例三视图，用于短剧分镜前的角色锚定' },
+        { src: 'images/process/charsheet_boy_2.jpg', title: '男性角色换装三视图', desc: '「图一人物 + 图二服装」换装提示词测试：保持人物不变、仅替换服装' }
+      ]
+    },
+    {
+      group: '提示词与生成记录', en: 'PROMPTS & GENERATION LOG', portrait: false,
+      items: [
+        { src: 'images/process/prompt_1.jpg', title: '即梦生成记录 · 提示词（一）', desc: '提示词 ↔ 产出画面一一对应：镜头空间、摄影机位置、光影设定' },
+        { src: 'images/process/prompt_2.jpg', title: '即梦生成记录 · 提示词（二）', desc: '提示词 ↔ 产出画面一一对应：继续迭代的场景与角色镜头' }
       ]
     },
     {
@@ -335,23 +338,7 @@
       ]
     },
     {
-      group: '提示词与生成记录', en: 'PROMPTS & GENERATION LOG', portrait: false,
-      items: [
-        { src: 'images/process/prompt_1.jpg', title: '即梦生成记录 · 提示词（一）', desc: '提示词 ↔ 产出画面一一对应：镜头空间、摄影机位置、光影设定' },
-        { src: 'images/process/prompt_2.jpg', title: '即梦生成记录 · 提示词（二）', desc: '提示词 ↔ 产出画面一一对应：继续迭代的场景与角色镜头' }
-      ]
-    },
-    {
-      group: 'AI 角色设定 · 三视图', en: 'CHARACTER SHEETS', portrait: true,
-      items: [
-        { src: 'images/process/charsheet_girl_1.jpg', title: '少女角色三视图 · 无头正面版', desc: 'AI 短剧角色定妆：左侧面部特写 + 正面无头身体 / 侧背全身，保证角色一致性' },
-        { src: 'images/process/charsheet_girl_2.jpg', title: '少女角色三视图 · 经典版', desc: '同一角色的面部特写 + 正 / 侧 / 背三视图（同一张脸、同一服装）' },
-        { src: 'images/process/charsheet_boy_1.jpg', title: '男性角色定妆三视图', desc: '写实国漫风角色定妆：服装与比例三视图，用于短剧分镜前的角色锚定' },
-        { src: 'images/process/charsheet_boy_2.jpg', title: '男性角色换装三视图', desc: '「图一人物 + 图二服装」换装提示词测试：保持人物不变、仅替换服装' }
-      ]
-    },
-    {
-      group: 'AI 二创海报（练习 · 非商用）', en: 'FAN-ART POSTERS (PRACTICE)', portrait: false,
+      group: 'AI 二创海报（练习）', en: 'FAN-ART POSTERS (PRACTICE)', portrait: false,
       items: [
         { src: 'images/process/ultra_poster_1.jpg', title: '《GALAXY GUARDIANS》二创海报', desc: 'AI 二创练习 · 非商用：战队式群像海报，字体与人物层次排版' },
         { src: 'images/process/ultra_poster_2.jpg', title: '《ULTRAAX》二创海报', desc: 'AI 二创练习 · 非商用：大标题压字与英雄群像构图' },
@@ -367,25 +354,25 @@
     }
   ];
 
-  /* 创作过程：文案摘录（来源 md，截取核心段落） */
+  /* 创作过程：文案摘录 */
   var PROCESS_QUOTES = [
     {
       title: '创作灵感 · 创意来源',
-      src: '01_铁火生花（打铁花非遗数字作品）· 创作灵感_创意来源.md',
+      src: '《铁火生花》创作阐述',
       text: '第一次看打铁花，是屏幕上一段影像：1600℃ 的铁水被木棒击向夜空，半秒里炸成漫天星雨……铁是硬的、滚烫的、会冷却的；花是柔的、静的、会再开的。我们想把这个矛盾收进一个词，于是有了《铁火生花》——不写铁花如何熄灭，而写它如何生花。',
       foot: '技术上以 TouchDesigner 实时生成为核心：火花、锤打、涟漪、莲火四种视觉元素被转译为 GPU 粒子与图像粒子；观众的手势与位置实时驱动画面——靠近，星火聚拢；挥手，铁花迸发；伸手，莲在掌中绽开。'
     },
     {
-      title: '技术展示 · 段落说明',
-      src: '01_铁火生花（打铁花非遗数字作品）· 技术展示段落说明.md',
+      title: '技术展示 · 工程化选片说明',
+      src: '《铁火生花》成片自动化说明',
       text: '技术展示段由 4 条录屏各出一条：选片不是凭感觉——把候选片段的平均 R/G/B、亮度、边缘能量算成特征向量，再按「最大最小距离」挑一组彼此差最远的，保证四个画面真的不同。',
       foot: '入点同样量化：先做逐秒亮度 / 细节曲线，再取每条曲线里效果最饱满、且不跨越录屏内部跳变点的 6 秒；源 2496×1440 只裁底部 36px 成 16:9，Lanczos 缩放到 1080p，单次 h264_nvenc 编码。'
     },
     {
-      title: '剪辑文案 · 建议与拆解',
-      src: '02_10月5日视频提取与文案建议· 剪辑文案建议.md',
+      title: '剪辑文案 · 叙事拆解',
+      src: '东方美学视觉剪辑笔记',
       text: '全片 100% 是 CG / 数字粒子特效，叙事弧线非常清楚：火 → 打铁花 → 金莲 → 落水。天然的「淬炼—碎裂—重生/开花」三段式隐喻，文案不是「提炼」而是「赋予」。',
-      foot: '发布文案方向 A（东方美学 · 治愈向）：「一束火落下来，是开端。被击碎的那一刻，万点金光散成星辰。而后它们沉进水面，开成了莲。」'
+      foot: '发布文案方向（东方美学 · 治愈向）：「一束火落下来，是开端。被击碎的那一刻，万点金光散成星辰。而后它们沉进水面，开成了莲。」'
     }
   ];
 
@@ -398,14 +385,14 @@
       foot: 'DOCX 原件 · 2026.10.07'
     },
     {
-      href: 'docs/ironfire_ai_tools.pdf', tag: 'AI 工具说明',
+      href: 'docs/ironfire_ai_tools.pdf', meta: '参赛附件', tag: 'AI 工具说明',
       title: '人工智能工具使用情况说明',
       desc: '参赛提交材料：全流程各环节所用 AI 工具、用途与使用方式说明。',
       foot: '第十四届全国大学生数媒竞赛 · 参赛附件'
     }
   ];
 
-  /* ==================== 数据（柒 · 文字与策划） ==================== */
+  /* ==================== 数据（陆 · 文字与策划） ==================== */
   var WRITING_DOCS = [
     {
       href: 'docs/daozang_worldbuilding.pdf', meta: '191 页 · 2.0 MB', tag: '世界观设定',
@@ -426,7 +413,7 @@
       foot: '《绣藏》AI 漫剧 · 剧本'
     },
     {
-      href: 'docs/ironfire_storyboard.pdf', tag: '分镜脚本',
+      href: 'docs/ironfire_storyboard.pdf', meta: '分镜 · 0.5 MB', tag: '分镜脚本',
       title: '《铁火生花》分镜脚本 V1',
       desc: '打铁花非遗数字装置成片分镜（与创作过程板块同源）。',
       foot: '数媒竞赛参赛 · 附件分镜'
@@ -447,7 +434,7 @@
       href: 'docs/douyin_operations_report.pdf', meta: '运营报告 · 0.3 MB', tag: '运营方案',
       title: '新媒体账号运营报告',
       desc: '抖音账号运营实践与复盘报告：定位、内容、数据与迭代。',
-      foot: '大二 · 融媒体（抖音）课程 · 小组合作'
+      foot: '大二 · 融媒体课程 · 小组合作'
     },
     {
       href: 'docs/shiyun_business_plan.pdf', meta: '商业计划 · 0.5 MB', tag: '商业计划书',
@@ -459,12 +446,24 @@
       href: 'docs/dunhuang_project_plan.pdf', meta: '项目章程 · 0.3 MB', tag: '项目管理',
       title: '项目管理章程与传播方案',
       desc: '《文化挪用视角下的敦煌文化数字媒体艺术研究》项目管理章程与传播方案。',
-      foot: '大四 · 专题课程 · 第三组：陈锦育、吴灿、陆建民'
+      foot: '大四专题 · 第三组（陈锦育等）'
     }
   ];
 
-  /* ==================== 数据（捌 · 技术代码） ==================== */
+  /* ==================== 数据（柒 · 技术代码） ==================== */
   var CODES = [
+    {
+      file: 'docs/code/build_v18.ps1', lang: 'PowerShell / ffmpeg',
+      name: 'build_v18.ps1',
+      title: '《铁火生花》成片自动化构建脚本',
+      desc: 'ffmpeg 工程化脚本：分段剪接、滤镜图、字幕卡叠加与单次硬件编码，一键产出 2′44″ 成片。'
+    },
+    {
+      file: 'docs/code/gen_cards.ps1', lang: 'PowerShell',
+      name: 'gen_cards.ps1',
+      title: '概念卡 / 字幕卡批量生成脚本',
+      desc: '自动化批量制卡脚本：统一全片字卡排版与配色规范，显著提升视频后期出片效率。'
+    },
     {
       file: 'docs/code/audio_visual_interaction.pde', lang: 'Processing',
       name: 'audio_visual_interaction.pde',
@@ -476,18 +475,6 @@
       name: 'realtime_interactive.pde',
       title: '实时互动展示 · Processing 源文件',
       desc: '实时互动展示作业源码：交互式实时视觉（数字媒体技术3 课程）。'
-    },
-    {
-      file: 'docs/code/build_v18.ps1', lang: 'PowerShell',
-      name: 'build_v18.ps1',
-      title: '《铁火生花》成片构建脚本 v18',
-      desc: 'ffmpeg 工程化脚本：分段剪接、滤镜图、字幕卡叠加与单次编码，一键产出 2′44″ 成片。'
-    },
-    {
-      file: 'docs/code/gen_cards.ps1', lang: 'PowerShell',
-      name: 'gen_cards.ps1',
-      title: '卡片批量生成脚本',
-      desc: '概念卡 / 字幕卡批量生成脚本：自动化制卡，保证全片字卡风格统一。'
     }
   ];
 
@@ -496,7 +483,7 @@
     {
       title: '《铁火生花》触碰交互工程（参赛源文件）',
       path: '参赛提交包 · TD 工程文件（.toe 源文件）',
-      note: '.toe 工程体积较大，未随网站上传；如需源文件可联系本人。',
+      note: '.toe 工程体积较大未直接托管；如需源文件请联系本人。',
       groups: [
         { name: '图像粒子跟随鼠标交互', items: ['主工程文件', '版本迭代文件'] },
         { name: '图片转湍流粒子效果', items: ['主工程文件', '版本迭代文件'] },
@@ -507,48 +494,97 @@
     {
       title: '沉浸式交互空间 · 课程练习工程',
       path: '大三（下）· 数字媒体技术4 · 课程作业',
-      note: '小型交互空间练习工程（.toe，32 KB），仅列清单。',
+      note: 'TouchDesigner 交互空间练习工程，按需提供源文件。',
       groups: []
     }
   ];
 
-  /* ==================== 数据（hero 精选作品快捷入口） ==================== */
+  /* ==================== 数据（hero 精选作品快捷入口：2 AI + 1 获奖交互） ==================== */
   var FEATURED = [
+    {
+      href: '#work-ai_xiuzhang',
+      title: '《绣藏》',
+      sub: 'AI 漫剧 · 全流程管线',
+      award: '西湖新风 AI 漫剧大赛 · 含设定集与分镜拆解'
+    },
+    {
+      href: '#work-ai_yangyangtang',
+      title: '《盐阳叹》',
+      sub: 'AI 影像诗 · 东方流体视觉',
+      award: '中国好创意大赛 · 应用组国家级二等奖'
+    },
     {
       href: '#work-itd_shange',
       title: '《山歌回音壁》',
       sub: '声光互动装置',
-      award: '中国好创意 · 国家级二等奖'
-    },
-    {
-      href: '#work-itd_yixiu',
-      title: '《一绣成祥》',
-      sub: '非遗 AIGC 交互装置',
-      award: '米兰设计周 · 国家级三等奖 · 队长'
-    },
-    {
-      href: '#work-ai_xiuzhang',
-      title: '《绣藏》',
-      sub: 'AI 漫剧',
-      award: '西湖新风 AI 漫剧创作大赛'
+      award: '中国好创意大赛 · 学术组国家级二等奖'
     }
   ];
 
   /* 项目说明只关联已能确认归属的材料；通用生成练习保留在过程区。 */
   var PROJECT_NOTES = {
+    ai_xiuzhang: {
+      focus: '世界观设定 / 角色与分镜管线 / AI 漫剧全流程',
+      idea: '从 191 页《道藏三千：非遗证道录》世界观出发，将道家符箓与非遗纹样转译为可落地生产的 AI 漫剧角色、场景与 PV 镜头叙事。',
+      steps: [
+        { title: '世界观与剧本', text: '先搭建完整非遗证道体系与角色设定，再输出完整剧本文本，确保长线叙事逻辑自洽。' },
+        { title: '概念与 PV 分镜', text: '完成两版概念设计定调视觉基调，逐镜绘制神兽与灾厄战线 PV 分镜原画，锚定构图与运镜。' },
+        { title: 'AI 生成与成片交付', text: '结合即梦等 AIGC 工具完成画面与动态生成，配合后期剪辑与主视觉海报延展，完成西湖新风 AI 漫剧创作大赛提交。' }
+      ],
+      images: [
+        'images/process/concept_xiuzang_1.jpg',
+        'images/process/concept_xiuzang_2.jpg',
+        'images/process/xiuzang_frame_beast_1.jpg',
+        'images/process/xiuzang_frame_catastrophe_1.jpg',
+        'images/gallery/poster_xiuzang_2.jpg',
+        'images/gallery/poster_xiuzang_3.jpg'
+      ],
+      docs: [
+        { href: 'docs/daozang_worldbuilding.pdf', label: '完整世界观设定（191 页）', kind: 'PDF' },
+        { href: 'docs/xiuzang_script.pdf', label: '完整剧本', kind: 'PDF' },
+        { href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', label: 'PV 分镜原稿', kind: 'PDF' }
+      ]
+    },
+    ai_yangyangtang: {
+      focus: 'AI 影像诗 / 东方美学视觉转译 / 国家级二等奖',
+      idea: '围绕「盐阳」东方古意展开非写实 AI 影像探索，用金色流线、蓝雾与星屑的聚散构建诗意情绪流动。',
+      steps: [
+        { title: '东方意象提炼', text: '将传统水墨留白与抽象流体光影结合，避免常见 AI 画面的堆砌感，建立高辨识度色调。' },
+        { title: '动态质感与连贯控制', text: '通过多轮提示词约束光影方向与粒子密度，保证镜头切换时流体形态自然过渡。' },
+        { title: '音画剪辑与获奖成果', text: '配合配乐呼吸感完成节奏剪辑与调色，获中国好创意大赛应用组国家级二等奖。' }
+      ],
+      images: [],
+      docs: []
+    },
+    ai_cannes: {
+      focus: '电影感 AI 剧情短片 / 角色情绪叙事 / 系列主视觉',
+      idea: '聚焦创作者与时间的关系，用写实电影光影表现设计师伏案与回忆交织的细腻情绪。',
+      steps: [
+        { title: '情绪剧本与镜头设计', text: '以驾车、夜灯、伏案绘图等生活化场景串联回忆线，强调电影景深与低饱和氛围。' },
+        { title: '真实感角色与场景生成', text: '迭代人物神态与环境光影，兼顾主角色与白发回忆角色在不同景别下的一致性。' },
+        { title: '成片剪辑与海报延展', text: '完成短片剪辑调色，并同步输出主海报、人物海报与场景海报三联视觉方案。' }
+      ],
+      images: [
+        'images/gallery/poster_bear_2.jpg',
+        'images/gallery/poster_bear_3.jpg',
+        'images/gallery/poster_bear_5.jpg'
+      ],
+      docs: []
+    },
     itd_ironfire: {
-      focus: '非遗视觉转译 / 实时粒子 / 成片自动化',
-      idea: '将打铁花的火光、迸发与绽放转译为数字粒子，以交互视觉延续这一非遗主题的观看体验。',
+      focus: '非遗视觉转译 / 实时粒子 / ffmpeg 成片自动化',
+      idea: '将打铁花的火光、迸发与绽放转译为数字粒子，以交互视觉延续这一非遗主题的观看体验，并用脚本实现成片工程化构建。',
       steps: [
         { title: '概念与镜头', text: '概念卡确定黑金视觉基调，分镜脚本编排镜头、时长与声音。' },
         { title: '交互与视觉', text: '使用 TouchDesigner 制作粒子视觉，工程清单包含图像粒子跟随、湍流与沉浸式空间。' },
-        { title: '成片与工具', text: '通过 ffmpeg 构建脚本组织分段剪接、字幕卡叠加与编码，保留制作工具与作品展示视频。' }
+        { title: '成片自动化工具', text: '编写 PowerShell + ffmpeg 构建脚本与批量字卡脚本，自动完成分段剪接、字卡叠加与硬件编码。' }
       ],
       images: ['images/process/concept_card.jpg', 'images/process/storyboard_1.jpg', 'images/gallery/board_ironfire.jpg'],
       docs: [
         { href: 'docs/ironfire_storyboard.pdf', label: '分镜脚本', kind: 'PDF' },
         { href: 'docs/ironfire_ai_tools.pdf', label: 'AI 工具使用说明', kind: 'PDF' },
-        { href: 'docs/code/build_v18.ps1', label: '成片构建脚本', kind: '源码', download: true }
+        { href: 'docs/code/build_v18.ps1', label: '成片构建脚本', kind: '源码', download: true },
+        { href: 'docs/code/gen_cards.ps1', label: '批量字卡脚本', kind: '源码', download: true }
       ]
     },
     itd_yixiu: {
@@ -561,21 +597,6 @@
       ],
       images: ['images/gallery/board_yixiu.jpg'],
       docs: []
-    },
-    ai_xiuzhang: {
-      focus: '世界观设定 / AI 漫剧 / 镜头叙事',
-      idea: '从「道藏三千：非遗证道录」的世界观出发，将道家符箓与非遗纹样转化为角色、场景与镜头叙事。',
-      steps: [
-        { title: '设定与剧本', text: '以设定集组织角色与力量体系，通过剧本展开非遗题材的故事。' },
-        { title: '概念与分镜', text: '概念设计确定视觉方向，PV 分镜安排画面、运镜与节奏。' },
-        { title: '影像呈现', text: '团队完成 AI 漫剧影像创作，作为西湖新风 AI 漫剧创作大赛参赛作品提交。' }
-      ],
-      images: ['images/process/concept_xiuzang_1.jpg', 'images/process/concept_xiuzang_2.jpg', 'images/gallery/poster_xiuzang_2.jpg'],
-      docs: [
-        { href: 'docs/daozang_worldbuilding.pdf', label: '完整世界观设定', kind: 'PDF' },
-        { href: 'docs/xiuzang_script.pdf', label: '剧本', kind: 'PDF' },
-        { href: 'https://chenjinyu-portfolio.oss-cn-shanghai.aliyuncs.com/docs/xiuzang_pv_storyboard.pdf', label: 'PV 分镜', kind: 'PDF' }
-      ]
     },
     itd_shange: {
       focus: 'Processing / 音画互动 / 声光表达',
@@ -605,15 +626,17 @@
     if (!grid) { return; }
     var counts = {};
     WORKS.forEach(function (w) { counts[w.dir] = (counts[w.dir] || 0) + 1; });
-    counts.gallery = GALLERY.reduce(function (n, g) { return n + (g.hidden ? 0 : g.items.length); }, 0);
+    counts.gallery = GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0);
     counts.process = PROCESS_GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0);
-    byId('videoCount').textContent = WORKS.length;
-    byId('photoCount').textContent = GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0) + counts.process;
-    byId('writingCount').textContent = WRITING_DOCS.length;
+    if (byId('aiCount')) { byId('aiCount').textContent = counts.ai || 0; }
+    if (byId('videoCount')) { byId('videoCount').textContent = WORKS.length; }
+    if (byId('photoCount')) { byId('photoCount').textContent = counts.gallery + counts.process; }
+    if (byId('writingCount')) { byId('writingCount').textContent = WRITING_DOCS.length; }
 
     grid.innerHTML = DIRECTIONS.map(function (d) {
       var chipText = d.id === 'process' ? ('过程图 ' + counts.process + ' 张') :
-        (d.countLabel || ('作品 ' + (counts[d.id] || 0) + ' 件'));
+        (d.id === 'gallery' ? ('4 类 · ' + counts.gallery + ' 件') :
+          (d.countLabel || ('作品 ' + (counts[d.id] || 0) + ' 件')));
       return '' +
         '<a class="dir-card reveal" href="#' + d.id + '">' +
           '<div class="dir-num">' + d.num + '</div>' +
@@ -636,6 +659,7 @@
       if (!grid || !list.length) { return; }
 
       grid.innerHTML = list.map(function (w) {
+        var hasCase = !!PROJECT_NOTES[w.id];
         return '' +
           '<article class="work-card reveal" role="button" tabindex="0"' +
             ' id="work-' + w.id + '" data-id="' + w.id + '"' +
@@ -647,9 +671,10 @@
               '<div class="cover-overlay">' +
                 '<div class="play-wrap">' +
                   '<span class="play-btn"><span class="play-tri"></span></span>' +
-                  '<span class="play-hint">播放</span>' +
+                  '<span class="play-hint">' + (hasCase ? '播放 · 看拆解' : '播放') + '</span>' +
                 '</div>' +
               '</div>' +
+              (hasCase ? '<span class="case-badge">含案例拆解</span>' : '') +
               '<span class="year-chip">' + w.year + '</span>' +
             '</div>' +
             '<div class="work-body">' +
@@ -666,21 +691,29 @@
     });
   }
 
-  /* ==================== 渲染：视觉设计画廊 ==================== */
+  /* ==================== 渲染：平面 IP 与视觉设计（Tab 切换 + 折叠） ==================== */
   function renderGallery() {
     var wrap = byId('galleryWrap');
     if (!wrap) { return; }
     var idx0 = 0;
-    wrap.innerHTML = GALLERY.map(function (g) {
+
+    var tabsHtml = '<div class="gallery-tabs reveal" role="tablist" aria-label="视觉设计分类">' +
+      GALLERY.map(function (g, gi) {
+        return '<button class="gallery-tab' + (gi === 0 ? ' active' : '') + '" type="button" role="tab"' +
+          ' aria-selected="' + (gi === 0 ? 'true' : 'false') + '" data-tab-scope="gallery" data-tab-idx="' + gi + '">' +
+          g.group + '<span>' + g.items.length + '</span></button>';
+      }).join('') +
+    '</div>';
+
+    var panelsHtml = GALLERY.map(function (g, gi) {
       var base = idx0;
       idx0 += g.items.length;
-      if (g.hidden) { return ''; }   /* 平面 IP 设计组在独立板块展示 */
       return '' +
-        '<div class="gallery-group reveal">' +
+        '<div class="gallery-group tab-panel reveal' + (gi === 0 ? ' active' : '') + '" data-panel-scope="gallery" data-panel-idx="' + gi + '">' +
           '<div class="gallery-group-head">' +
             '<span class="g-group-name">' + g.group + '</span>' +
             '<span class="g-group-en">' + g.en + '</span>' +
-            '<span class="g-group-count">' + g.items.length + ' 件</span>' +
+            '<span class="g-group-count">' + g.items.length + ' 件 · 点击查看大图</span>' +
           '</div>' +
           '<div class="gallery-grid">' +
             g.items.map(function (it, i) {
@@ -700,35 +733,11 @@
                 '</figure>';
             }).join('') +
           '</div>' +
-          (g.items.length > 6 ? '<div class="gallery-expand-wrap"><button class="gallery-expand" type="button" data-total="' + g.items.length + '">展开全部 ' + g.items.length + ' 件 ＋</button></div>' : '') +
+          (g.items.length > 8 ? '<div class="gallery-expand-wrap"><button class="gallery-expand" type="button" data-total="' + g.items.length + '">展开全部 ' + g.items.length + ' 件 ＋</button></div>' : '') +
         '</div>';
     }).join('');
-  }
 
-  /* ==================== 渲染：肆 · 平面 IP 设计 ==================== */
-  function renderIPDesign() {
-    var wrap = byId('ipWrap');
-    if (!wrap) { return; }
-    var base = 0, target = null;
-    for (var i = 0; i < GALLERY.length; i++) {
-      if (GALLERY[i].group === '平面 IP 设计') { target = GALLERY[i]; break; }
-      base += GALLERY[i].items.length;
-    }
-    if (!target) { return; }
-    wrap.innerHTML = target.items.map(function (it, n) {
-      return '' +
-        '<figure class="gallery-item g-portrait" role="button" tabindex="0"' +
-          ' data-index="' + (base + n) + '" aria-label="查看 ' + it.title + '">' +
-          '<div class="g-thumb">' +
-            '<img src="' + imgUrl(it.src) + '" alt="' + it.title + ' · 平面 IP 设计" loading="lazy">' +
-            '<span class="g-zoom" aria-hidden="true">＋</span>' +
-          '</div>' +
-          '<figcaption>' +
-            '<span class="g-title">' + it.title + '</span>' +
-            '<span class="g-desc">' + it.desc + '</span>' +
-          '</figcaption>' +
-        '</figure>';
-    }).join('');
+    wrap.innerHTML = tabsHtml + panelsHtml;
   }
 
   /* ==================== 渲染：hero 精选作品快捷入口 ==================== */
@@ -737,20 +746,21 @@
     if (!grid) { return; }
     grid.innerHTML = FEATURED.map(function (f) {
       var work = findWork(f.href.replace('#work-', ''));
+      if (!work) { return ''; }
       return '' +
-        '<a class="featured-card reveal" href="' + f.href + '" data-open-work="' + work.id + '">' +
+        '<a class="featured-card reveal visible" href="' + f.href + '" data-open-work="' + work.id + '">' +
           '<div class="featured-cover"><img src="' + imgUrl(work.poster || ('images/posters/' + work.id + '.jpg')) + '" alt="' + f.title + ' 作品画面" width="480" height="270">' +
           '<span class="featured-play" aria-hidden="true">▶</span></div>' +
           '<div class="featured-body">' +
           '<h3 class="featured-title">' + f.title + '</h3>' +
           '<p class="featured-sub">' + f.sub + '</p>' +
           '<p class="featured-award">' + f.award + '</p>' +
-          '<span class="featured-open">观看作品与创作说明 ↗</span></div>' +
+          '<span class="featured-open">观看成片与案例拆解 ↗</span></div>' +
         '</a>';
     }).join('');
   }
 
-  /* ==================== 渲染：陆 · 创作过程 ==================== */
+  /* ==================== 渲染：伍 · 创作过程（Tab 分类 + 3 项目快捷拆解） ==================== */
   function renderProcess() {
     var wrap = byId('processWrap');
     if (!wrap) { return; }
@@ -764,13 +774,21 @@
         }).join('') +
       '</ol>';
 
+    var tabsHtml = '<div class="gallery-tabs reveal" role="tablist" aria-label="创作过程分类">' +
+      PROCESS_GALLERY.map(function (g, gi) {
+        return '<button class="gallery-tab' + (gi === 0 ? ' active' : '') + '" type="button" role="tab"' +
+          ' aria-selected="' + (gi === 0 ? 'true' : 'false') + '" data-tab-scope="process" data-tab-idx="' + gi + '">' +
+          g.group + '<span>' + g.items.length + '</span></button>';
+      }).join('') +
+    '</div>';
+
     /* 创作过程画廊的灯箱索引 = 视觉设计画廊总数之后继续编号 */
     var base = GALLERY.reduce(function (n, g) { return n + g.items.length; }, 0);
-    var galleryHtml = PROCESS_GALLERY.map(function (g) {
+    var galleryHtml = PROCESS_GALLERY.map(function (g, gi) {
       var b = base;
       base += g.items.length;
       return '' +
-        '<div class="gallery-group reveal">' +
+        '<div class="gallery-group tab-panel reveal' + (gi === 0 ? ' active' : '') + '" data-panel-scope="process" data-panel-idx="' + gi + '">' +
           '<div class="gallery-group-head">' +
             '<span class="g-group-name">' + g.group + '</span>' +
             '<span class="g-group-en">' + g.en + '</span>' +
@@ -793,14 +811,14 @@
                 '</figure>';
             }).join('') +
           '</div>' +
-          (g.items.length > 6 ? '<div class="gallery-expand-wrap"><button class="gallery-expand" type="button" data-total="' + g.items.length + '">展开全部 ' + g.items.length + ' 件 ＋</button></div>' : '') +
+          (g.items.length > 8 ? '<div class="gallery-expand-wrap"><button class="gallery-expand" type="button" data-total="' + g.items.length + '">展开全部 ' + g.items.length + ' 件 ＋</button></div>' : '') +
         '</div>';
     }).join('');
 
     var quotesHtml =
       '<div class="process-block reveal">' +
         '<div class="process-block-head">' +
-          '<span class="pb-name">文案与拆解摘录</span>' +
+          '<span class="pb-name">创作笔记与工程化拆解</span>' +
           '<span class="pb-en">WRITING EXCERPTS</span>' +
         '</div>' +
         '<div class="quote-grid">' +
@@ -824,13 +842,15 @@
         '<div class="docs-grid">' + renderDocCards(PROCESS_DOCS) + '</div>' +
       '</div>';
 
-    var projectHtml = '<div class="process-projects reveal">' + ['itd_ironfire', 'ai_xiuzhang'].map(function (id) {
+    var projectHtml = '<div class="process-projects reveal">' + ['ai_xiuzhang', 'ai_cannes', 'itd_ironfire'].map(function (id) {
       var work = findWork(id);
+      if (!work || !PROJECT_NOTES[id]) { return ''; }
       return '<button class="process-project" type="button" data-open-work="' + id + '">' +
-        '<span class="process-project-label">项目制作路径</span><strong>' + work.title + '</strong>' +
-        '<span>' + PROJECT_NOTES[id].focus + '</span><span class="process-project-open">查看成片与相关材料 ↗</span></button>';
+        '<span class="process-project-label">深度案例拆解</span><strong>' + work.title + '</strong>' +
+        '<span>' + PROJECT_NOTES[id].focus + '</span><span class="process-project-open">查看成片与工作流材料 ↗</span></button>';
     }).join('') + '</div>';
-    wrap.innerHTML = projectHtml + stepsHtml + galleryHtml + quotesHtml + docsHtml;
+
+    wrap.innerHTML = projectHtml + stepsHtml + tabsHtml + galleryHtml + quotesHtml + docsHtml;
   }
 
   function renderDocCards(docs) {
@@ -843,12 +863,12 @@
           '</div>' +
           '<h3 class="doc-title">' + d.title + '</h3>' +
           '<p class="doc-desc">' + d.desc + '</p>' +
-          '<p class="doc-foot">' + d.foot + (d.meta ? '<span class="doc-meta">' + d.meta + '</span>' : '') + '<span class="doc-open">查看 PDF ↗</span></p>' +
+          '<p class="doc-foot"><span class="doc-foot-info">' + d.foot + (d.meta ? '<span class="doc-meta">' + d.meta + '</span>' : '') + '</span><span class="doc-open">查看 PDF ↗</span></p>' +
         '</a>';
     }).join('');
   }
 
-  /* ==================== 渲染：柒 · 文字与策划 ==================== */
+  /* ==================== 渲染：陆 · 文字与策划 ==================== */
   function renderWriting() {
     var wrap = byId('writingWrap');
     if (!wrap) { return; }
@@ -856,7 +876,7 @@
       '<div class="docs-grid reveal">' + renderDocCards(WRITING_DOCS) + '</div>';
   }
 
-  /* ==================== 渲染：捌 · 技术代码 ==================== */
+  /* ==================== 渲染：柒 · 技术代码 ==================== */
   function renderCode() {
     var wrap = byId('codeWrap');
     if (!wrap) { return; }
@@ -898,8 +918,8 @@
     wrap.innerHTML =
       '<div class="process-block">' +
         '<div class="process-block-head">' +
-          '<span class="pb-name">源码与脚本 · 可下载</span>' +
-          '<span class="pb-en">SOURCE CODE</span>' +
+          '<span class="pb-name">源码与自动化脚本 · 可下载</span>' +
+          '<span class="pb-en">SOURCE CODE &amp; SCRIPTS</span>' +
         '</div>' +
         '<div class="code-grid reveal">' + codeHtml + '</div>' +
       '</div>' +
@@ -912,8 +932,28 @@
       '</div>';
   }
 
+  /* ==================== Tab 切换 / 画廊折叠 / 复制按钮 ==================== */
+  function initGalleryTabs() {
+    document.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('.gallery-tab') : null;
+      if (!btn) { return; }
+      var scope = btn.getAttribute('data-tab-scope');
+      var idx = btn.getAttribute('data-tab-idx');
+      var tabs = document.querySelectorAll('.gallery-tab[data-tab-scope="' + scope + '"]');
+      var panels = document.querySelectorAll('.tab-panel[data-panel-scope="' + scope + '"]');
+      for (var i = 0; i < tabs.length; i++) {
+        var isCur = tabs[i].getAttribute('data-tab-idx') === idx;
+        tabs[i].classList.toggle('active', isCur);
+        tabs[i].setAttribute('aria-selected', isCur ? 'true' : 'false');
+      }
+      for (var j = 0; j < panels.length; j++) {
+        var match = panels[j].getAttribute('data-panel-idx') === idx;
+        panels[j].classList.toggle('active', match);
+        if (match) { panels[j].classList.add('visible', 'force-visible'); }
+      }
+    });
+  }
 
-  /* ==================== 画廊折叠 / 复制按钮 ==================== */
   function initGalleryExpand() {
     document.addEventListener('click', function (e) {
       var btn = e.target && e.target.closest ? e.target.closest('.gallery-expand') : null;
@@ -1047,7 +1087,6 @@
   if (lightboxCloseBtn) { lightboxCloseBtn.addEventListener('click', closeLightbox); }
   if (lightboxPrevBtn) { lightboxPrevBtn.addEventListener('click', function () { stepLightbox(-1); }); }
   if (lightboxNextBtn) { lightboxNextBtn.addEventListener('click', function () { stepLightbox(1); }); }
-  /* 点击遮罩（或灯箱空白处）关闭 */
   if (lightbox) {
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightboxBackdrop || e.target === lightboxStage) { closeLightbox(); }
@@ -1077,8 +1116,8 @@
         '<img src="' + imgUrl(src) + '" alt="' + item.title + '" loading="lazy">' +
         '<span>' + item.title + ' ＋</span></button>';
     }).join('');
-    return '<section class="project-note" aria-label="创作说明">' +
-      '<p class="case-kicker">PROJECT NOTES · 创作说明</p>' +
+    return '<section class="project-note" aria-label="案例拆解">' +
+      '<p class="case-kicker">CASE STUDY · 工作流与案例拆解</p>' +
       '<h4 class="case-focus">' + note.focus + '</h4><p class="case-idea">' + note.idea + '</p>' +
       '<ol class="case-steps">' + note.steps.map(function (step, i) {
         return '<li><span class="case-step-num">0' + (i + 1) + '</span><h5>' + step.title + '</h5><p>' + step.text + '</p></li>';
@@ -1098,7 +1137,6 @@
     var wrap = byId('modalVideoWrap');
     var bili = byId('modalBili');
 
-    /* 若作品配置了 B 站 BV 号：用国内 CDN 的 B 站播放器嵌入（秒开） */
     if (work.bili && wrap && bili) {
       wrap.classList.add('bili-mode');
       bili.classList.add('active');
@@ -1115,7 +1153,7 @@
     }
 
     modalTitle.textContent = work.title;
-    modalSub.innerHTML = '<b>' + work.year + '</b>' + work.credit;
+    modalSub.innerHTML = '<b>' + work.year + '</b>' + (work.credit || work.highlight || '');
     byId('modalDescription').textContent = work.desc;
     byId('modalTags').innerHTML = work.tags.map(function (tag) { return '<li>' + tag + '</li>'; }).join('');
     byId('modalCase').innerHTML = renderProjectNotes(id);
@@ -1162,7 +1200,6 @@
 
   /* 键盘：ESC 关闭弹层；Enter/Space 打开卡片 */
   document.addEventListener('keydown', function (e) {
-    /* 灯箱叠在项目之上时，只让最上层处理关闭与焦点。 */
     if (e.defaultPrevented || (lightbox && lightbox.classList.contains('open'))) { return; }
     if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
       closePlayer();
@@ -1238,19 +1275,23 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px 40px 0px' });
     els.forEach(function (el) { io.observe(el); });
   }
 
-
-  /* ==================== 锚点跳转：强制显示目标区域 ==================== */
+  /* ==================== 锚点跳转：即时强制显示目标区域（杜绝白屏） ==================== */
   function initAnchorReveal() {
     function revealSection(id) {
+      if (!id) { return; }
       var sec = byId(id);
       if (!sec) { return; }
       var els = sec.querySelectorAll('.reveal');
       for (var i = 0; i < els.length; i++) {
         els[i].classList.add('visible', 'force-visible');
+      }
+      var cards = sec.querySelectorAll('.work-card, .gallery-item, .dir-card');
+      for (var j = 0; j < cards.length; j++) {
+        cards[j].classList.add('reveal-in');
       }
     }
     document.addEventListener('click', function (e) {
@@ -1258,13 +1299,15 @@
       if (!a) { return; }
       var id = a.getAttribute('href').slice(1);
       if (!id) { return; }
-      setTimeout(function () { revealSection(id); }, 300);
+      revealSection(id);
+      setTimeout(function () { revealSection(id); }, 120);
     });
     window.addEventListener('hashchange', function () {
-      setTimeout(function () { revealSection(location.hash.slice(1)); }, 300);
+      revealSection(location.hash.slice(1));
     });
     if (location.hash.length > 1) {
-      setTimeout(function () { revealSection(location.hash.slice(1)); }, 400);
+      revealSection(location.hash.slice(1));
+      setTimeout(function () { revealSection(location.hash.slice(1)); }, 200);
     }
   }
 
@@ -1324,12 +1367,12 @@
   renderDirections();
   renderWorks();
   renderGallery();
-  renderIPDesign();
   renderProcess();
   renderWriting();
   renderCode();
   initReveal();
   initAnchorReveal();
+  initGalleryTabs();
   initGalleryExpand();
   initCopyButtons();
   initActiveNav();

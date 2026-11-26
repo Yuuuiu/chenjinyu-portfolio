@@ -6,18 +6,20 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasHover = window.matchMedia('(hover: hover)').matches;
 
-  /* ---------- 载入动画 ---------- */
+  /* ---------- 载入动画（加速收起，避免首屏等待空白） ---------- */
   function initLoader() {
     var loader = document.querySelector('.loader');
     if (!loader) { document.body.classList.add('loaded'); return; }
+    var done = false;
     var finish = function () {
+      if (done) { return; }
+      done = true;
       loader.classList.add('done');
       document.body.classList.add('loaded');
-      setTimeout(function () { loader.style.display = 'none'; }, 800);
+      setTimeout(function () { loader.style.display = 'none'; }, 500);
     };
-    if (document.readyState === 'complete') { setTimeout(finish, 120); }
-    else { window.addEventListener('load', function () { setTimeout(finish, 120); }); }
-    setTimeout(finish, 1800); /* 兜底 */
+    setTimeout(finish, 80);
+    setTimeout(finish, 600); /* 兜底 */
     /* 标题兜底：动画结束后强制可见，避免任何环境停在隐藏态 */
     setTimeout(function () {
       var chs = document.querySelectorAll('.hero-title .ch');
@@ -27,10 +29,10 @@
         chs[i].style.opacity = '1';
       }
       document.body.classList.add('loaded');
-    }, 1200);
+    }, 650);
   }
 
-  /* ---------- 逐字标题 ---------- */
+  /* ---------- 逐字标题（提速入场） ---------- */
   function initSplitText() {
     var t = document.querySelector('.hero-title');
     if (!t) { return; }
@@ -43,7 +45,7 @@
     }).join('');
     var all = t.querySelectorAll('.ch');
     for (var i = 0; i < all.length; i++) {
-      all[i].style.transitionDelay = (0.06 + i * 0.02) + 's';
+      all[i].style.transitionDelay = (0.02 + i * 0.012) + 's';
     }
   }
 
@@ -179,7 +181,7 @@
           io.unobserve(en.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.02 });
     [].forEach.call(cards, function (c) { io.observe(c); });
   }
 
@@ -208,8 +210,8 @@
     initMarquee();
     initWorkPreview();
     initMagnetic();
-    setTimeout(initRevealBoost, 300);
-    setTimeout(initSecNumbers, 200);
+    setTimeout(initRevealBoost, 180);
+    setTimeout(initSecNumbers, 100);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

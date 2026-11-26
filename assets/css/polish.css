@@ -1,18 +1,19 @@
 /* ============================================================
-   POLISH — 按外部 review 的视觉/交互修正
+   POLISH — 视觉对比度、AI 实习导向组件与交互修正
    ============================================================ */
 
 /* ---------- 1. 文字对比度 ---------- */
 :root {
-  --gray: #565656;
-  --gray-2: #747474;
+  --gray: #525252;
+  --gray-2: #6E6E6E;
 }
-.head-en { color: #767676; }
-.sec-num { -webkit-text-stroke: 1px #D3D1CA; }
+.head-en { color: #6B6B6B; }
+.sec-num { -webkit-text-stroke: 1px #CFCBC2; }
 .hero-sub, .hero-meta li, .about-text, .work-credit, .g-desc, .doc-desc, .quote-foot {
-  color: #5A5A5A;
+  color: #545454;
 }
-.footer-note, .copyright-line { color: #7A7A7A; }
+.footer-note, .copyright-line { color: #707070; }
+.hero-title .ch { transition: transform .55s var(--ease), opacity .45s ease !important; }
 
 /* ---------- 2. 水印降到弹层之下 ---------- */
 .wm-layer { z-index: 30 !important; }
@@ -21,11 +22,12 @@
 .reveal.force-visible { opacity: 1 !important; transform: none !important; }
 
 /* ---------- 4. 顶部 CTA / 首屏 CTA ---------- */
+.site-nav { gap: 20px; }
 .header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: 18px;
+  margin-left: 16px;
   flex: 0 0 auto;
 }
 .header-cta {
@@ -66,7 +68,60 @@
 
 .about-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 
-/* ---------- 5. 作品卡获奖/亮点行 ---------- */
+/* ---------- 5. AIGC 生产管线速览条（01 板块） ---------- */
+.ai-pipeline-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 34px;
+}
+.ai-pipe-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ai-pipe-num {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.ai-pipe-item strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.ai-pipe-item p {
+  font-size: 11.5px;
+  color: var(--gray);
+  line-height: 1.65;
+}
+.ai-pipe-item a {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.ai-pipe-item a:hover { text-decoration: underline; }
+
+/* ---------- 6. 作品卡获奖/亮点行与案例拆解徽标 ---------- */
+.case-badge {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 4;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  background: rgba(17, 17, 17, 0.84);
+  color: #FAFAF9;
+  padding: 3px 9px;
+  backdrop-filter: blur(4px);
+}
 .work-award {
   margin-top: 10px;
   font-size: 12px;
@@ -77,22 +132,72 @@
 }
 .work-credit { margin-top: 8px; }
 
-/* ---------- 6. 文档卡片 meta（页数/大小） ---------- */
+/* ---------- 7. 文档卡片 meta 与底部对齐 ---------- */
 .doc-meta {
   font-size: 11px;
-  color: #8A8A8A;
+  color: #7A7A7A;
   margin-left: 8px;
   letter-spacing: 0.02em;
 }
-.doc-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.doc-foot {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.doc-foot-info {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.doc-open { flex: 0 0 auto; }
 
-/* ---------- 7. 画廊/过程组：折叠 + 展开按钮 ---------- */
-.gallery-group:not(.expanded) .gallery-item:nth-child(n+7) { display: none; }
+/* ---------- 8. 画廊与创作过程：Tab 分类 + 折叠展开 ---------- */
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.gallery-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: var(--ink-2);
+  background: var(--white);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: background .18s, color .18s, border-color .18s;
+}
+.gallery-tab span {
+  font-size: 10.5px;
+  color: var(--gray-2);
+}
+.gallery-tab:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.gallery-tab.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.gallery-tab.active span {
+  color: rgba(250, 250, 249, 0.72);
+}
+.tab-panel { display: none; margin-top: 0 !important; }
+.tab-panel.active { display: block; }
+
+.gallery-group:not(.expanded) .gallery-item:nth-child(n+9) { display: none; }
 .gallery-expand {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin: 18px auto 0;
+  margin: 22px auto 0;
   padding: 9px 18px;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -106,22 +211,36 @@
 .gallery-expand:hover { border-color: var(--ink); background: var(--white); }
 .gallery-expand-wrap { text-align: center; }
 
-/* ---------- 8. 词组不拆行 ---------- */
+/* 创作过程 3 项案例拆解卡片 */
+.process-projects {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ---------- 9. 词组不拆行 ---------- */
 .dir-tagline { word-break: keep-all; }
 .head-title, .dir-name, .work-title, .doc-title { word-break: keep-all; }
 
-/* ---------- 9. 移动端：CTA 收起为图标式小按钮 ---------- */
+/* ---------- 10. 响应式适配 ---------- */
 @media (max-width: 1024px) {
+  .site-nav { gap: clamp(10px, 1.4vw, 16px); }
   .header-actions { margin-left: 10px; gap: 6px; }
   .header-cta { padding: 6px 10px; font-size: 11px; }
+  .ai-pipeline-strip { grid-template-columns: repeat(2, 1fr); }
+  .process-projects { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 800px) {
   .header-actions { display: none; }
   .hero-actions { gap: 8px; }
   .btn-primary, .btn-ghost { flex: 1 1 auto; min-width: 44%; padding: 11px 12px; }
 }
+@media (max-width: 680px) {
+  .ai-pipeline-strip { grid-template-columns: 1fr; }
+  .process-projects { grid-template-columns: 1fr; }
+  .gallery-tab { padding: 7px 12px; font-size: 12px; }
+  .doc-foot { flex-wrap: wrap; }
+}
 
-/* ---------- 10. 复制成功反馈 ---------- */
+/* ---------- 11. 复制成功反馈 ---------- */
 .btn-ghost.copied, .about-actions .btn-ghost.copied {
   border-color: #2E7D4F;
   color: #2E7D4F;
