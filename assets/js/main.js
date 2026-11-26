@@ -764,7 +764,11 @@
         { title: '小组协同与联调展示', text: '作为第九组组长统筹方案与实时联调，完成交互装置设计课程的现场体验演示。' }
       ],
       images: [],
-      docs: []
+      docs: [
+        { href: 'docs/xinmai_design.pdf', label: '多感官情绪互动装置设计', kind: 'PDF' },
+        { href: 'docs/xinmai_tech.pdf', label: '交互装置技术方案', kind: 'PDF' },
+        { href: 'docs/xinmai_aesthetic.pdf', label: '交互美学与情感共生方案', kind: 'PDF' }
+      ]
     },
     film_wusheng: {
       focus: 'After Effects 动态视觉 / 情绪物质化 / 实验影像',
