@@ -106,6 +106,7 @@
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'Midjourney', 'After Effects', '剪辑合成'],
+      result: '', scale: '', teamSize: '',
       desc: '「道藏三千：非遗证道录」AI 漫剧参赛作品：以道家符箓与非遗纹样构建世界观，主创推进设定集、剧本、概念设计与 PV 分镜全流程。',
       credit: '',
       highlight: '西湖新风 AI 漫剧创作大赛 · 全流程含设定集与 PV 分镜'
@@ -118,6 +119,7 @@
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'AIGC 视频生成', '后期调色剪辑'],
+      result: '', scale: '', teamSize: '',
       desc: '水墨与流体抽象的 AI 影像诗：金色流线、蓝雾与星屑在画面中聚散，以「盐阳」古意为题呈现东方意象的情绪流动。',
       credit: '',
       highlight: '中国好创意大赛 · 应用组国家级二等奖'
@@ -130,6 +132,7 @@
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'Midjourney', '剪辑调色'],
+      result: '', scale: '', teamSize: '',
       desc: '真实感 AI 剧情短片：疲惫的设计师驾车、伏案绘图，与白发角色的往事在镜头间交织，探讨创作与时间。',
       credit: '',
       highlight: '电影感真实系 AI 剧情短片 · 含主视觉海报系列'
@@ -142,6 +145,7 @@
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'AIGC 视频生成', '剪辑合成'],
+      result: '', scale: '', teamSize: '',
       desc: '暗黑科幻 AI 概念短片：废墟战场上女性战士与巨兽对峙，「灾厄降临」世界观的大场面动态探索。',
       credit: '',
       highlight: '暗黑科幻大场面 · 概念预告片视觉探索'
@@ -154,6 +158,7 @@
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'AI 数字人', '剪辑合成'],
+      result: '', scale: '', teamSize: '',
       desc: 'AI 废土科幻短片：橙色沙海中的异星生物与巨型光柱，数字人角色串联起荒芜世界里的日常对话。',
       credit: '',
       highlight: 'AI 数字人口播 × 废土科幻场景融合'
@@ -166,6 +171,7 @@
       role: '主创 · 全程参与（概念 / 分镜 / AI 生成 / 剪辑）',
       team: '团队协作',
       tools: ['即梦', 'AIGC 视频生成', '剪辑配音'],
+      result: '', scale: '', teamSize: '',
       desc: '动作喜剧 AI 短片：废墟中五人争夺一箱「野生狗奶」，古装角色与现代包装碰撞出穿越式笑点（150 秒剧本改编）。',
       credit: '',
       highlight: '多角色快节奏动作喜剧 · 150 秒剧本改编'
@@ -180,6 +186,7 @@
       team: '独立完成',
       tools: ['Processing', '音画互动', '灯光联动'],
       poster: 'https://yuuuiu.github.io/chenjinyu-portfolio/assets/images/itd_shange_v2.jpg',
+      result: '', scale: '', teamSize: '',
       desc: '声音与灯光交互装置：以《文山·沉积之书》影像为呈现载体，观众的声音与动作驱动灯光与画面回应，把「山歌」转译为空间中的声光回响。',
       credit: '独立创作 · 中国好创意大赛 · 学术组国家级二等奖'
     },
@@ -191,6 +198,7 @@
       role: '独立创作 · 队长（TD 粒子 / 手势交互 / 展板）',
       team: '独立完成',
       tools: ['TouchDesigner', '粒子系统', '手势识别'],
+      result: '', scale: '', teamSize: '',
       desc: '壮锦·绣球非遗数字交互装置：蛙纹、花卉、祥云纹样转译为粒子，观众以自然手势操控纹样汇聚生长与解构重组。',
       credit: '独立创作 · 队长 · 米兰设计周国家级三等奖（指导教师：李紫阳、程思、刘琼）'
     },
@@ -202,6 +210,7 @@
       role: '独立创作（概念 / 分镜 / TD 粒子 / 脚本成片）',
       team: '独立完成',
       tools: ['TouchDesigner', 'GPU 粒子', 'PowerShell / ffmpeg'],
+      result: '', scale: '', teamSize: '',
       desc: '非遗打铁花数字交互装置：1600℃ 铁水转译为 GPU 粒子，观众手势驱动铁火熔炼、迸发与绽放，让「看一次少一次」的打铁花可以被反复走近、反复体验。',
       credit: '独立创作 · 第十四届全国大学生数字媒体科技作品及创意竞赛参赛作品（编号 328499）'
     },
@@ -213,6 +222,7 @@
       role: '交互视觉与地图实现',
       team: '计时赛团队',
       tools: ['TouchDesigner', '互动地图'],
+      result: '', scale: '', teamSize: '',
       desc: '恩施文旅融合创新计时赛作品，中国好创意大赛国家级三等奖。红花峰林景区十六景点交互游览地图。',
       credit: '中国好创意大赛 · 国家级三等奖（“跃动峡谷，潮玩清江”文旅融合与创新计时赛）'
     },
@@ -224,6 +234,7 @@
       role: '组长（传感器接入 / 流体粒子交互）',
       team: '第九组协作',
       tools: ['TouchDesigner', 'MediaPipe', '心率传感'],
+      result: '', scale: '', teamSize: '',
       desc: '情绪可视化交互装置：心率传感与面部微表情（MediaPipe）实时驱动流体粒子，「心脉」被翻译成花与影。',
       credit: '组长（第九组）· 交互装置设计课程'
     },
@@ -236,6 +247,7 @@
       role: '独立创作（概念 / 动态视觉 / 后期合成）',
       team: '独立完成',
       tools: ['After Effects', '动态图形合成'],
+      result: '', scale: '', teamSize: '',
       desc: '情绪物质化实验影像：缓慢流动的粘稠液体、机械与生物组织的碰撞、闪烁噪点，把难以宣泄的压抑转成视觉系统。',
       credit: '独立创作'
     },
@@ -247,6 +259,7 @@
       role: '独立创作（AI 生成 / 实拍素材整合 / 剪辑）',
       team: '独立完成',
       tools: ['AI 生成', '实拍', '剪辑合成'],
+      result: '', scale: '', teamSize: '',
       desc: '丝绸之路主题影像：融合 AI 生成与实拍画面，从沙漠公路到森林、雪地、戈壁与城市高架，跨越古今讲述丝路传承。',
       credit: '独立创作 · 影视创作课程'
     },
@@ -258,6 +271,7 @@
       role: '拍摄 / 剪辑 / 调色',
       team: '双人合作（与焦星宇）',
       tools: ['实拍', '剪辑调色'],
+      result: '', scale: '', teamSize: '',
       desc: '雨中东湖的影像实验：刻意等待雨天拍摄，栈桥、荷叶、古亭在雨雾中如水墨，探索城市与自然的关系。',
       credit: '与焦星宇合作 · 指导教师：彭隽'
     },
@@ -269,6 +283,7 @@
       role: '独立创作（剧本 / 拍摄 / 剪辑）',
       team: '独立完成',
       tools: ['剧本', '实拍', '剪辑调色'],
+      result: '', scale: '', teamSize: '',
       desc: '暖色调泡面创意短片：主角小吴从超市选购「茄皇」到宿舍煮食的线性叙事，把对家的思念藏进一碗面。',
       credit: '独立创作 · 指导教师：刘琼'
     },
@@ -280,6 +295,7 @@
       role: '独立创作（剧本 / 手持拍摄 / 剪辑）',
       team: '独立完成',
       tools: ['剧本', '实拍', '视听剪辑'],
+      result: '', scale: '', teamSize: '',
       desc: '视听语言课程短片：以暗调光影与手持镜头记录「早八」前后的宿舍深夜，把起床的挣扎拍成一场小型战役。',
       credit: '独立创作 · 视听语言课程'
     }
@@ -1512,6 +1528,9 @@
     if (work.team) { rows.push({ k: '协作方式', v: work.team }); }
     if (work.tools && work.tools.length) { rows.push({ k: '核心工具', v: work.tools.join(' · ') }); }
     if (work.duration) { rows.push({ k: '作品时长', v: work.duration }); }
+    if (work.result) { rows.push({ k: '成果与数据', v: work.result }); }
+    if (work.scale) { rows.push({ k: '项目场景', v: work.scale }); }
+    if (work.teamSize) { rows.push({ k: '团队规模', v: work.teamSize }); }
     if (!rows.length) {
       modalFacts.innerHTML = '';
       modalFacts.hidden = true;
@@ -1562,7 +1581,7 @@
 
 
   /* ==================== 个人 Showreel 播放 ==================== */
-  var SHOWREEL_SRC = 'assets/videos/chenjinyu_showreel_60s_720p.mp4';
+  var SHOWREEL_SRC = 'assets/videos/chenjinyu_showreel_60s_1080p.mp4';
   var SHOWREEL_POSTER = 'assets/images/showreel_cover.jpg';
 
   function openShowreel() {

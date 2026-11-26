@@ -594,3 +594,13 @@ section[id] { scroll-margin-top: 84px; }
 #playerModal.showreel-mode .modal-facts,
 #playerModal.showreel-mode .modal-tags,
 #playerModal.showreel-mode .project-note { display: none !important; }
+
+/* ---------- 英文摘要（关于我） ---------- */
+.about-en {
+  margin-top: 10px;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--gray-2);
+  letter-spacing: 0.01em;
+  max-width: 560px;
+}

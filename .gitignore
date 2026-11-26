@@ -17,3 +17,6 @@ showreel_overlays/
 !assets/videos/
 !assets/videos/*.mp4
 
+
+render_showreel*.ps1
+
