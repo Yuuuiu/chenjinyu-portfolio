@@ -327,6 +327,18 @@
       ]
     },
     {
+      slug: 'team',
+      group: '团队项目 · 像素创研', en: 'TEAM PROJECTS · PIXEL LAB', portrait: true,
+      intro: '与团队协作完成的 AI 视觉海报系列（参与视觉与制作），含《IRON CLAW》《WILD WING》《CHICK SQUAD》《NOVA》《GALAXY GUARDIANS》。',
+      items: [
+        { src: 'assets/images/team/team_iron_claw.jpg', title: '《IRON CLAW》海报', desc: '团队协作项目 · AI 视觉与海报参与制作' },
+        { src: 'assets/images/team/team_wild_wing.jpg', title: '《WILD WING》海报', desc: '团队协作项目 · AI 视觉与海报参与制作' },
+        { src: 'assets/images/team/team_chick_squad.jpg', title: '《CHICK SQUAD》海报', desc: '团队协作项目 · AI 视觉与海报参与制作' },
+        { src: 'assets/images/team/team_nova.jpg', title: '《NOVA》海报', desc: '团队协作项目 · AI 视觉与海报参与制作' },
+        { src: 'assets/images/team/team_galaxy.jpg', title: '《GALAXY GUARDIANS》海报', desc: '团队协作项目 · 横版群像视觉' }
+      ]
+    },
+    {
       slug: 'poster',
       group: '海报设计', en: 'POSTER DESIGN', portrait: true,
       intro: '《绣藏》《倒退的棕榈叶》等 AI 影像与影视短片主海报，以及《盐阳叹》《灾厄战线》《野生狗奶》《丝路新篇》的 AI 视觉延展海报（标注非原画/实拍）。',

@@ -1,0 +1,83 @@
+/* ============================================================
+   黑白极简主题：全站去色（图片除外），只留 黑 / 白 / 灰
+   ============================================================ */
+:root {
+  --accent: #17130f;          /* 原蓝色强调色 -> 墨黑 */
+  --accent-soft: rgba(23, 19, 15, 0.08);
+  --paper: #fafafa;
+  --white: #ffffff;
+  --ink: #111111;
+  --ink-2: #333333;
+  --gray: #6b6b6b;
+  --gray-2: #909090;
+  --line: #e2e2e0;
+}
+
+body { background: var(--paper); color: var(--ink); }
+
+/* 按钮：黑白 */
+.btn-primary, .header-cta {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  border-radius: 0;
+}
+.btn-primary:hover, .header-cta:hover {
+  background: #3a3a3a;
+  border-color: #3a3a3a;
+  color: #fff;
+}
+.btn-ghost, .header-cta-ghost {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+  border-radius: 0;
+}
+.btn-ghost:hover, .header-cta-ghost:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* 强调色全部降为墨黑 */
+.doc-tag, .doc-open, .lb-count, .modal-index, .case-step-num, .kicker {
+  color: var(--ink) !important;
+}
+.doc-tag { border-color: var(--line); background: #f2f2f2; }
+.tags li:not(:last-child)::after { color: #c9c9c9; }
+.year-chip { background: var(--ink); color: #fff; }
+.gallery-tab-ink { background: var(--ink); }
+.side-dots .dot.active { background: var(--ink); }
+
+/* 标题保持黑体（不用宋体），整体更“单调” */
+.hero-title, .head-title, .work-title, .g-title, .doc-title, .about-figure figcaption {
+  font-family: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.hero-title { font-size: clamp(46px, 6.2vw, 88px); line-height: 1.08; }
+.head-title { font-size: clamp(26px, 2.6vw, 34px); }
+.work-title { font-size: 17px; }
+.g-title { font-size: 13.5px; }
+
+/* 卡片与分割线 */
+.work-card { background: transparent; border: 0; }
+.work-card .work-body { padding: 13px 0 0; }
+.doc-card, .td-card, .code-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+.doc-card:hover { border-color: var(--ink); }
+
+/* 导航/页脚 */
+.site-header { background: rgba(250, 250, 250, 0.94); }
+.site-nav a.active { border-bottom-color: var(--ink); }
+footer { border-top: 1px solid var(--line); }
+
+/* 弹窗/灯箱保持深色背景 */
+.lightbox-backdrop { background: rgba(10, 10, 10, 0.95); }
+
+@media (max-width: 800px) {
+  .hero-title { font-size: clamp(38px, 9.6vw, 54px); }
+  .head-title { font-size: 24px; }
+}
