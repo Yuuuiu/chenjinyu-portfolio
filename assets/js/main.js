@@ -446,6 +446,17 @@
       ]
     },
     {
+      slug: 'aiscene',
+      group: 'AI 场景 · 概念', en: 'AI SCENE · CONCEPT', portrait: false,
+      intro: 'AI 场景概念：从雾城、洞窟到夜雪城门与窗棂山河，练习空间氛围与光影叙事。',
+      items: [
+        { src: 'assets/images/assets3/scene_mist_city.jpg', title: 'AI 场景 · 雾城遗迹', desc: 'AI 场景概念 · 冷暖对比构图' },
+        { src: 'assets/images/assets3/scene_cave_light.jpg', title: 'AI 场景 · 洞窟天光', desc: 'AI 场景概念 · 光影与体积感' },
+        { src: 'assets/images/assets3/scene_night_gate.jpg', title: 'AI 场景 · 夜雪城门', desc: 'AI 场景概念 · 奇幻叙事' },
+        { src: 'assets/images/assets3/scene_room.jpg', title: 'AI 场景 · 窗棂山河', desc: 'AI 场景概念 · 室内外景深' }
+      ]
+    },
+    {
       slug: 'team',
       group: '团队项目 · 像素创研', en: 'TEAM PROJECTS · PIXEL LAB', portrait: true,
       intro: '与团队协作完成的 AI 视觉海报系列（参与视觉与制作），含《IRON CLAW》《WILD WING》《CHICK SQUAD》《NOVA》《GALAXY GUARDIANS》。',
