@@ -722,13 +722,13 @@
       foot: '大四专题 · 第三组（陈锦育等）'
     },
     {
-      href: fileUrl('docs/yumeng_studio_ip_plan.pptx'), meta: '提案 · 8.5 MB', tag: '品牌提案',
+      href: fileUrl('docs/yumeng_studio_ip_plan.pptx'), meta: '下载 PPTX · 8.5 MB', tag: '品牌提案',
       title: '《宇梦造物》工作室 IP 全案提案',
       desc: '工作室品牌定位、VI 基础系统、IP 吉祥物与商业短片视觉方向的全案提案（PPTX）。',
       foot: '工作室项目 · 自研提案'
     },
     {
-      href: fileUrl('docs/yumeng_jinxi_storyboard.md'), meta: '分镜 · 文本', tag: '分镜与提示词',
+      href: 'docs/yumeng_jinxi_storyboard.pdf', meta: '分镜 · PDF', tag: '分镜与提示词',
       title: '《锦息》分镜与提示词',
       desc: '产品概念短片的分镜规划、镜头描述与 AI 生成提示词记录。',
       foot: '商业向 AI 概念短片 · 分镜文档'
