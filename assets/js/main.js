@@ -553,22 +553,15 @@
   var PROCESS_GALLERY = [
     {
       slug: 'concept',
-      group: '绣藏 · 概念与分镜', en: 'XIUZANG CONCEPT & STORYBOARD', portrait: false,
-      intro: '《绣藏》概念设计、PV 分镜原画与即梦 / MJ 场景探索，展示从概念定调到镜头构图的推演。',
+      group: '绣藏 · 概念与分镜', en: 'XIUZANG CONCEPT & PV', portrait: false,
+      intro: '《绣藏》概念设计文档与 PV 成片静帧，展示角色、场景与镜头的最终呈现。',
       items: [
         { src: 'images/process/concept_xiuzang_1.jpg', title: '《绣藏》概念设计 · 第一页', desc: 'AI 漫剧参赛作品的概念设计文档（世界观 / 角色 / 视觉基调）' },
         { src: 'images/process/concept_xiuzang_2.jpg', title: '《绣藏》概念设计 · 第二页', desc: 'AI 漫剧参赛作品的概念设计文档（场景 / 镜头 / 风格参考）' },
-        { src: 'images/process/xiuzang_frame_beast_1.jpg', title: '《绣藏》分镜原画 · 神兽一', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
-        { src: 'images/process/xiuzang_frame_catastrophe_1.jpg', title: '《绣藏》分镜原画 · 灾厄战线一', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
-        { src: 'images/process/ai_gen_1.jpg', title: '即梦生成 · 4K 主视觉', desc: '即梦文生图产出的 4K 主视觉画面（2026.09）' },
-        { src: 'images/process/ai_gen_2.jpg', title: 'MJ 生成 · 场景概念', desc: 'MJ 文生图产出的场景概念画面（2026.09）' },
-        { src: 'images/process/ai_gen_3.jpg', title: 'AI 生成 · 分镜参考 一', desc: '即梦 / MJ 生成的分镜参考画面 · 之一' },
-        { src: 'images/process/ai_gen_4.jpg', title: 'AI 生成 · 分镜参考 二', desc: '即梦 / MJ 生成的分镜参考画面 · 之二' },
-        { src: 'images/process/xiuzang_frame_beast_2.jpg', title: '《绣藏》分镜原画 · 神兽二', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
-        { src: 'images/process/xiuzang_frame_beast_3.jpg', title: '《绣藏》分镜原画 · 神兽三', desc: 'PV 分镜原画 · 神兽角色与镜头构图' },
-        { src: 'images/process/xiuzang_frame_catastrophe_2.jpg', title: '《绣藏》分镜原画 · 灾厄战线二', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
-        { src: 'images/process/xiuzang_frame_catastrophe_3.jpg', title: '《绣藏》分镜原画 · 灾厄战线三', desc: 'PV 分镜原画 · 灾厄战线场面与动作设计' },
-        { src: 'images/process/concept_card.jpg', title: '《铁火生花》片头设计概念卡', desc: '《铁火生花》片头概念卡：定世界观与视觉基调，八层羽化色块 + 精确居中的排版' }
+        { src: 'assets/images/bulk/xiuzang_pv_01.jpg', title: '《绣藏》PV 静帧 · 白泽飞兽', desc: '《绣藏》PV 成片静帧 · 角色与场景构图' },
+        { src: 'assets/images/bulk/xiuzang_pv_02.jpg', title: '《绣藏》PV 静帧 · 羽翼同行', desc: '《绣藏》PV 成片静帧 · 角色与场景构图' },
+        { src: 'assets/images/bulk/xiuzang_pv_03.jpg', title: '《绣藏》PV 静帧 · 蓝色涡流', desc: '《绣藏》PV 成片静帧 · 角色与场景构图' },
+        { src: 'assets/images/bulk/xiuzang_pv_04.jpg', title: '《绣藏》PV 静帧 · 对峙', desc: '《绣藏》PV 成片静帧 · 角色与场景构图' }
       ]
     },
     {
