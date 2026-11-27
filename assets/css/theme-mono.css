@@ -67,3 +67,11 @@ footer, .site-footer { border-top-color: var(--line); }
 
 /* 图片保持原色（不灰度化） */
 img { filter: none; }
+
+/* 修：导航栏与卡片底色仍是暖纸色（来自 editorial 硬编码），统一改为中性灰白 */
+.site-header {
+  background: rgba(247, 247, 245, 0.94) !important;
+}
+.work-card .cover {
+  background: #ececeb !important;
+}
