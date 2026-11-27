@@ -344,6 +344,24 @@
       ]
     },
     {
+      slug: 'shanhai',
+      group: 'AI 概念 · 山海经', en: 'AI CONCEPT · MYTHICAL CREATURES', portrait: false,
+      intro: 'AI 概念设计：山海经神兽与神话场景（《天问》项目与练习），均为个人 AI 生成 + 后期调色输出。',
+      items: [
+        { src: 'assets/images/assets2/shanhai_qilin.jpg', title: '《山海经》概念 · 麒麟', desc: 'AI 概念设计 · 神兽 · 3840×2160' },
+        { src: 'assets/images/assets2/shanhai_phoenix.jpg', title: '《山海经》概念 · 白凤', desc: 'AI 概念设计 · 神鸟 · 祥云场景' },
+        { src: 'assets/images/assets2/shanhai_goat.jpg', title: '《山海经》概念 · 白泽', desc: 'AI 概念设计 · 神兽 · 云海' },
+        { src: 'assets/images/assets2/shanhai_tiger.jpg', title: '《山海经》概念 · 翼虎', desc: 'AI 概念设计 · 神兽 · 城阙' },
+        { src: 'assets/images/assets2/shanhai_dragon.jpg', title: '《山海经》概念 · 青龙', desc: 'AI 概念设计 · 龙形神兽' },
+        { src: 'assets/images/assets2/concept_tianwen.jpg', title: '《天问》概念 · 青鸾', desc: 'AI 场景概念 · 神话叙事 · 5504×3072' },
+        { src: 'assets/images/assets2/concept_gate.jpg', title: '《天问》概念 · 山门', desc: 'AI 场景概念 · 巨门与瀑布' },
+        { src: 'assets/images/assets2/concept_aoyu.jpg', title: '《天问》概念 · 傲羽神兽', desc: 'AI 概念设计 · 巨兽与宫阙' },
+        { src: 'assets/images/assets2/concept_qilin_run.jpg', title: '《天问》概念 · 麒麟踏雪', desc: 'AI 概念设计 · 动态构图' },
+        { src: 'assets/images/assets2/concept_pegasus.jpg', title: '《天问》概念 · 天马', desc: 'AI 场景概念 · 山峦仙境' },
+        { src: 'assets/images/assets2/char_girl.jpg', title: 'AI 角色设计 · 少女三视图', desc: 'AI 角色设定 · 三视图与服装细节' }
+      ]
+    },
+    {
       slug: 'team',
       group: '团队项目 · 像素创研', en: 'TEAM PROJECTS · PIXEL LAB', portrait: true,
       intro: '与团队协作完成的 AI 视觉海报系列（参与视觉与制作），含《IRON CLAW》《WILD WING》《CHICK SQUAD》《NOVA》《GALAXY GUARDIANS》。',
