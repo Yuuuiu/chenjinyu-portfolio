@@ -728,7 +728,7 @@
       foot: '工作室项目 · 自研提案'
     },
     {
-      href: 'docs/yumeng_jinxi_storyboard.pdf', meta: '分镜 · PDF', tag: '分镜与提示词',
+      href: fileUrl('docs/yumeng_jinxi_storyboard.pdf'), meta: '分镜 · PDF', tag: '分镜与提示词',
       title: '《锦息》分镜与提示词',
       desc: '产品概念短片的分镜规划、镜头描述与 AI 生成提示词记录。',
       foot: '商业向 AI 概念短片 · 分镜文档'
@@ -1999,6 +1999,24 @@
     });
     [].forEach.call(navMore.querySelectorAll('a'), function (a) {
       a.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+
+
+  /* ==================== 分类 Tab 横滑提示（移动端） ==================== */
+  (function () {
+    var bars = document.querySelectorAll('.gallery-tabs');
+    if (!bars.length) { return; }
+    [].forEach.call(bars, function (bar) {
+      function update() {
+        var canScroll = bar.scrollWidth - bar.clientWidth > 8;
+        bar.classList.toggle('is-scrollable', canScroll);
+        bar.classList.toggle('at-end', canScroll && bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 8);
+      }
+      bar.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+      setTimeout(update, 600);
     });
   })();
 

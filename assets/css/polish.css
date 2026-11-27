@@ -742,3 +742,21 @@ section[id] { scroll-margin-top: 84px; }
   color: var(--gray-2);
   text-align: center;
 }
+
+/* 分类 Tab 横滑提示：右侧渐隐，滑到底消失 */
+@media (max-width: 900px) {
+  .gallery-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-tabs::-webkit-scrollbar { display: none; }
+  .gallery-tabs.is-scrollable {
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 34px), transparent 100%);
+    mask-image: linear-gradient(90deg, #000 calc(100% - 34px), transparent 100%);
+  }
+  .gallery-tabs.is-scrollable.at-end {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
