@@ -2003,22 +2003,7 @@
   })();
 
 
-  /* ==================== 分类 Tab 横滑提示（移动端） ==================== */
-  (function () {
-    var bars = document.querySelectorAll('.gallery-tabs');
-    if (!bars.length) { return; }
-    [].forEach.call(bars, function (bar) {
-      function update() {
-        var canScroll = bar.scrollWidth - bar.clientWidth > 8;
-        bar.classList.toggle('is-scrollable', canScroll);
-        bar.classList.toggle('at-end', canScroll && bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 8);
-      }
-      bar.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update);
-      update();
-      setTimeout(update, 600);
-    });
-  })();
+
 
   /* ==================== 滚动渐入动画 ==================== */
   function initReveal() {
@@ -2141,4 +2126,29 @@
   initCopyableMeta();
   initActiveNav();
   initParticles();
+
+  /* ==================== 分类 Tab 横滑提示（移动端） ==================== */
+  (function () {
+    function initTabHints() {
+      var bars = document.querySelectorAll('.gallery-tabs');
+      if (!bars.length) { return; }
+      [].forEach.call(bars, function (bar) {
+        if (bar.dataset.hintBound === '1') { return; }
+        bar.dataset.hintBound = '1';
+        function update() {
+          var canScroll = bar.scrollWidth - bar.clientWidth > 8;
+          bar.classList.toggle('is-scrollable', canScroll);
+          bar.classList.toggle('at-end', canScroll && bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 8);
+        }
+        bar.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+        setTimeout(update, 400);
+      });
+    }
+    window.addEventListener('load', initTabHints);
+    setTimeout(initTabHints, 800);
+    setTimeout(initTabHints, 2000);
+  })();
+
 })();
