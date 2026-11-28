@@ -185,6 +185,36 @@
       credit: '',
       highlight: '多角色快节奏动作喜剧 · 150 秒剧本改编'
     },
+    {
+      id: 'ai_jinxi', dir: 'ai',
+      duration: '0:15',
+      title: '《锦息》',
+      year: '2026', tags: ['商业短片', '产品概念', 'AI 影像'],
+      role: '概念 / 分镜 / AI 生成 / 剪辑',
+      team: '工作室项目',
+      tools: ['即梦', 'AIGC 视频生成', 'After Effects', '剪辑合成'],
+      result: '', scale: '', teamSize: '',
+      poster: 'images/posters/ai_jinxi.jpg',
+      videoFile: 'ai_jinxi_15s.mp4',
+      desc: '《锦息》产品概念短片：以香液滴落、东方纹样与光雾为视觉核心，15 秒完成品牌调性与产品记忆点的商业表达。',
+      credit: '',
+      highlight: '宇梦造物 · 商业向 AI 概念短片 · 1080p'
+    },
+    {
+      id: 'ai_headphones', dir: 'ai',
+      duration: '0:22',
+      title: '《破界之声》',
+      year: '2026', tags: ['商业短片', '耳机产品', 'AI 影像'],
+      role: '概念 / 分镜 / AI 生成 / 剪辑',
+      team: '工作室项目',
+      tools: ['即梦', 'AIGC 视频生成', 'After Effects', '剪辑合成'],
+      result: '', scale: '', teamSize: '',
+      poster: 'images/posters/ai_headphones.jpg',
+      videoFile: 'ai_headphones_22s.mp4',
+      desc: '《破界之声》耳机产品概念短片：以声波、材质与光影塑造「突破边界」的听觉可视化，22 秒商业概念成片。',
+      credit: '',
+      highlight: '宇梦造物 · 商业向 AI 概念短片 · 1080p'
+    },
     /* ---- 贰 · 交互装置 ---- */
     {
       id: 'itd_shange', dir: 'interactive',
